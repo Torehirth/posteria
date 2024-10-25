@@ -1,0 +1,23 @@
+{
+  "name": "css-frameworks",
+  "version": "1.0.0",
+  "description": "![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)",
+  "main": "index.js",
+  "author": "Tore M. Hirth",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css",
+    "watch": "concurrently \"sass --watch src/scss:dist/css\" \" live-server\"",
+    "start": "live-server --port=8080"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "eslint": "^8.57.1",
+    "live-server": "^1.2.2",
+    "sass": "^1.80.4"
+  }
+}
