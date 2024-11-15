@@ -16,19 +16,30 @@
     <!-- JavaScript/Script -->
     <script type="module" src="./src/js/views/main.mjs"></script>
     <!-- favicon -->
-    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+    <link rel="icon" href="./src/assets/logo/favicon.ico" type="image/x-icon" />
     <!-- Page title -->
-    <title>Tore M. Hirth | CSS Frameworks Assignment</title>
+    <title>Log in | Posteria</title>
   </head>
-  <body>
-    <header class="">
-      <h1
-        class="text-5xl text-rose-600 font-bold border-4 border-rose-500 container mx-auto py-5 px-8 w-fit mt-12 shadow-xl">
-        Hello World!
-      </h1>
-    </header>
-
-    <main></main>
-    <footer></footer>
+  <body class="bg-gray-600 text-black dark:bg-black">
+    <div class="w-screen h-screen">
+      <h1>Login</h1>
+      <form id="login" class="">
+        <div class="">
+          <label for="email" class="">Email</label>
+          <input type="email" id="email" name="email" class="bg-gray-500" required />
+        </div>
+        <div class="">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="bg-darkGrey"
+            minlength="8"
+            required />
+        </div>
+        <button type="submit" class="">Login</button>
+      </form>
+    </div>
   </body>
 </html>
