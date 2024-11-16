@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+/* @layer components {
   .btn-primary {
     @apply py-2 px-5 bg-eden-400 text-black font-semibold rounded-md shadow-md hover:bg-eden-400 focus:outline-none focus:ring focus:ring-eden-900 focus:ring-opacity-75;
   }
-}
+} */
+
+
+/* hover:bg-eden-400 focus:outline-none focus:ring focus:ring-eden-900 focus:ring-opacity-75 */
