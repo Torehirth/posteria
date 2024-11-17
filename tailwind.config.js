@@ -4,6 +4,14 @@ module.exports = {
   darkMode: "selector",
   theme: {
     extend: {
+      screens: {
+        xs: "425px",
+        sm: "550px",
+        md: "650px",
+        lg: "768px",
+        xl: "1024px",
+        xxl: "1280px",
+      },
       fontFamily: {
         sans: ["Open-Sans", "sans-serif"],
       },

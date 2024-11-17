@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en" class="scroll-smooth h-full dark">
   <head>
     <!-- Basic meta tags/page info -->
     <meta charset="UTF-8" />
@@ -22,9 +22,10 @@
     <!-- Page title -->
     <title>Profile | Posteria</title>
   </head>
-  <body class="flex flex-col min-h-full bg-white text-black dark:bg-black dark:text-white">
+  <body
+    class="flex flex-col min-h-full bg-white text-black dark:bg-black dark:text-white">
     <header>
-      <div class="w-full h-32">
+      <div class="w-full h-32 xs:h-36 sm:h-44 md:h-52">
         <img
           class="w-full h-full object-cover"
           src="../src/assets/images/banner/steve-doig-tOgc0Gjj_8E-unsplash.webp"
@@ -32,10 +33,13 @@
       </div>
     </header>
     <main>
-      <section class="border-t-4 border-slate-700 dark:border-eden-500 px-3">
-        <div class="flex flex-col -mt-14 items-center">
+      <!-- ---------------------- -->
+      <!-- profile info section -->
+      <!-- ---------------------- -->
+      <section class="border-t-4 border-darkGray dark:border-eden-500 px-3">
+        <div class="flex flex-col -mt-14 sm:-mt-20 items-center">
           <img
-            class="w-28 h-28 object-cover rounded-full mb-1 border-4 border-slate-700 dark:border-eden-500"
+            class="w-28 h-28 sm:w-40 sm:h-40 sm:mb-4 object-cover rounded-full mb-1 border-4 border-darkGray dark:border-eden-500"
             src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
             alt="Jane Smith's profile image" />
           <h1 class="text-2xl font-semibold">Jane Smith</h1>
@@ -51,7 +55,7 @@
             <p>Posts</p>
           </a>
           <a href="#followers" class="flex flex-col items-center text-sm">
-            <p class="">435</p>
+            <p>435</p>
             <p>Followers</p>
           </a>
           <a href="#following" class="flex flex-col items-center text-sm">
@@ -60,27 +64,241 @@
           </a>
         </div>
       </section>
-      <section class="flex justify-between px-3 mb-4 font-semibold">
-        <a href="#posts" class="text-center w-1/3 pb-1 border-b-2 border-eden-400">Posts</a>
-        <a href="#followers" class="text-center w-1/3 pb-1">Followers</a>
-        <a href="#following" class="text-center w-1/3 pb-1">Following</a>
+      <!-- ---------------------- -->
+      <!-- posts/followers/following section -->
+      <!-- ---------------------- -->
+      <section class="px-3">
+        <div class="flex justify-between mb-4 font-semibold max-w-xl mx-auto">
+          <a
+            href="#posts"
+            class="text-center w-1/3 pb-1 border-b-2 border-eden-400 transition-all"
+            >Posts</a
+          >
+          <a href="#followers" class="text-center w-1/3 pb-1">Followers</a>
+          <a href="#following" class="text-center w-1/3 pb-1">Following</a>
+        </div>
       </section>
-      <div class="px-3">
-        <div id="posts">
-          <div class="flex flex-col">
-            <div class="flex gap-2 items-center border border-red-200">
+
+      <div class="px-3 max-w-xl mx-auto">
+        <!-- ---------------------- -->
+        <!-- posts section -->
+        <!-- ---------------------- -->
+        <div id="posts" class="flex flex-col gap-4 pt-2 items-center justify-center">
+          <!-- ---------------------- -->
+          <!-- post -->
+          <!-- ---------------------- -->
+          <div id="posts" class="flex flex-col">
+            <div class="flex flex-col gap-4">
+              <a href="#" class="flex gap-2 items-center -mb-2 w-fit">
+                <img
+                  class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+                  src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
+                  alt="Profile image" />
+                <div class="flex flex-col">
+                  <p class="text-sm">Jane Smith</p>
+                  <p
+                    class="text-xs font-light opacity-80"
+                    aria-label="When content was posted">
+                    1h ago
+                  </p>
+                </div>
+              </a>
+              <div class="flex max-h-48 xs:max-h-60 sm:max-h-72 md:max-h-80 lg:max-h-96">
+                <img
+                  class="object-cover rounded-lg"
+                  src="../src/assets/images/profile/christopher-campbell-rDEOVtE7vOs-unsplash.webp"
+                  alt="lorem ipsum" />
+              </div>
+              <p class="text-sm max-w-prose">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae culpa, saepe
+                deserunt iure similique quo, ipsum est voluptates amet, pariatur illum?
+                Quas voluptates nihil molestias, temporibus incidunt ullam quidem dolorum!
+              </p>
+              <div class="flex gap-4">
+                <div>
+                  <input
+                    type="checkbox"
+                    id="like"
+                    class="peer absolute size-6 opacity-0 cursor-pointer" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 icon-states peer-checked:fill-rose-600 peer-checked:stroke-rose-600 peer-hover:stroke-2 peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-black peer-focus-visible:rounded-sm">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                  </svg>
+                </div>
+                <button type="button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 icon-states">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div
+              aria-hidden="true"
+              class="w-full border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10 pt-4"></div>
+          </div>
+
+          <!-- ---------------------- -->
+          <!-- post -->
+          <!-- ---------------------- -->
+          <div id="posts" class="flex flex-col">
+            <div class="flex flex-col gap-4">
+              <a href="#" class="flex gap-2 items-center -mb-2 w-fit">
+                <img
+                  class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+                  src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
+                  alt="Profile image" />
+                <div class="flex flex-col">
+                  <p class="text-sm">Jane Smith</p>
+                  <p
+                    class="text-xs font-light opacity-80"
+                    aria-label="When content was posted">
+                    1h ago
+                  </p>
+                </div>
+              </a>
+              <div class="flex max-h-48 xs:max-h-60 sm:max-h-72 md:max-h-80 lg:max-h-96">
+                <img
+                  class="object-cover rounded-lg"
+                  src="../src/assets/images/profile/christopher-campbell-rDEOVtE7vOs-unsplash.webp"
+                  alt="lorem ipsum" />
+              </div>
+              <p class="text-sm max-w-prose">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae culpa, saepe
+                deserunt iure similique quo, ipsum est voluptates amet, pariatur illum?
+                Quas voluptates nihil molestias, temporibus incidunt ullam quidem dolorum!
+              </p>
+              <div class="flex gap-4">
+                <div>
+                  <input
+                    type="checkbox"
+                    id="like"
+                    class="peer absolute size-6 opacity-0 cursor-pointer" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 icon-states peer-checked:fill-rose-600 peer-checked:stroke-rose-600 peer-hover:stroke-2 peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-black peer-focus-visible:rounded-sm">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                  </svg>
+                </div>
+                <button type="button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 icon-states">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="w-full border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10 last-of-type:opacity-0"></div>
+        </div>
+        <!-- ----------------- -->
+        <!-- Followers section -->
+        <div id="followers" class="flex flex-col gap-4 pt-2 justify-center">
+          <div
+            class="flex justify-center items-center px-4 py-2 rounded-lg bg-gray-200 dark:bg-darkGray focus-within:bg-gray-300 dark:focus-within:bg-opacity-20">
+            <label for="followers-search"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 opacity-70 dark:opacity-70">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              </svg>
+            </label>
+            <input
+              type="search"
+              id="followers-search"
+              class="w-full py-1 pl-4 bg-transparent border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50"
+              placeholder="Search" />
+          </div>
+          <div class="flex flex-col gap-3 pb-4">
+            <a href="#" class="flex gap-2 items-center w-fit">
               <img
-                class="w-8 h-8 rounded-full object-cover"
+                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
                 src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
                 alt="Profile image" />
               <div class="flex flex-col">
                 <p class="text-sm">Jane Smith</p>
-                <p class="text-xs font-light opacity-80" aria-label="When content was posted">1h ago</p>
               </div>
-            </div>
+            </a>
+            <a href="#" class="flex gap-2 items-center w-fit">
+              <img
+                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
+                alt="Profile image" />
+              <div class="flex flex-col">
+                <p class="text-sm">Jane Smith</p>
+              </div>
+            </a>
+            <a href="#" class="flex gap-2 items-center w-fit">
+              <img
+                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
+                alt="Profile image" />
+              <div class="flex flex-col">
+                <p class="text-sm">Jane Smith</p>
+              </div>
+            </a>
+            <a href="#" class="flex gap-2 items-center w-fit">
+              <img
+                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
+                alt="Profile image" />
+              <div class="flex flex-col">
+                <p class="text-sm">Jane Smith</p>
+              </div>
+            </a>
+            <a href="#" class="flex gap-2 items-center w-fit">
+              <img
+                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
+                alt="Profile image" />
+              <div class="flex flex-col">
+                <p class="text-sm">Jane Smith</p>
+              </div>
+            </a>
           </div>
         </div>
-        <div id="followers"></div>
+        <!-- ------------------- -->
+        <!-- Followings section -->
         <div id="following"></div>
       </div>
     </main>
