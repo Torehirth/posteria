@@ -2,11 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer components {
-  .btn-primary {
-    @apply py-2 px-5 bg-eden-400 text-black font-semibold rounded-md shadow-md hover:bg-eden-400 focus:outline-none focus:ring focus:ring-eden-900 focus:ring-opacity-75;
+@layer base {
+  @font-face {
+    font-family: "Open-Sans";
+    font-style: normal;
+    font-weight: 100 900;
+    font-stretch: 25% 151%;
+    font-display: swap;
+    src: url(../assets/fonts/OpenSans-VariableFont_wdth_wght.ttf) format("truetype");
   }
-} */
+  @font-face {
+    font-family: "Open-Sans";
+    font-style: italic;
+    font-weight: 100 900;
+    font-stretch: 25% 151%;
+    font-display: swap;
+    src: url(../assets/fonts/OpenSans-Italic-VariableFont_wdth_wght.ttf)
+      format("truetype");
+  }
+}
 
-
-/* hover:bg-eden-400 focus:outline-none focus:ring focus:ring-eden-900 focus:ring-opacity-75 */
+@layer components {
+  .primary-btn {
+    @apply flex justify-center items-center py-1 px-5 bg-eden-400 text-black font-semibold rounded-md shadow-md hover:bg-eden-500 transition 
+    focus:outline-none focus:ring-2 focus:ring-eden-500;
+  }
+  .secondary-btn {
+    @apply flex justify-center items-center py-1 px-5 border-2 border-eden-400 text-black font-semibold rounded-md shadow-md hover:border-eden-500 transition focus:outline-none focus:ring-2 focus:ring-eden-500 dark:text-white;
+  }
+}

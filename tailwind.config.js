@@ -4,6 +4,9 @@ module.exports = {
   darkMode: "selector",
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Open-Sans", "sans-serif"],
+      },
       colors: {
         darkGray: "#323436",
         black: "#181A1C",
