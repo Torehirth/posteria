@@ -9,7 +9,8 @@
     font-weight: 100 900;
     font-stretch: 25% 151%;
     font-display: swap;
-    src: url(../assets/fonts/OpenSans-VariableFont_wdth_wght.ttf) format("truetype");
+    src: url(../assets/fonts/OpenSans-VariableFont_wdth_wght.ttf)
+      format("truetype");
   }
   @font-face {
     font-family: "Open-Sans";
