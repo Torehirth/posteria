@@ -24,11 +24,12 @@
   </head>
   <body
     class="flex flex-col min-h-full bg-white text-black dark:bg-black dark:text-white">
+    <!-- Side navigation -->
     <aside class="hidden lg:flex sticky top-0 z-50 bg-transparent">
       <nav class="flex flex-col absolute">
-        <!-- Feed -->
         <div
           class="flex flex-col gap-3 items-start justify-center h-screen my-auto font-semibold pl-1">
+          <!-- Feed -->
           <a
             href="../feed/index.html"
             aria-label="Feed/home button"
@@ -123,9 +124,46 @@
             </svg>
             <span class="hidden xl:block">Profile</span>
           </a>
+          <!-- Theme toggle -->
+          <button
+            type="button"
+            id="theme-toggle-btn"
+            aria-label="theme toggle button"
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400">
+            <svg
+              id="dark-mode-icon"
+              aria-label="Dark mode icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-7 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+            </svg>
+            <svg
+              id="light-mode-icon"
+              aria-label="Light mode icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="hidden size-7 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+            </svg>
+            <span class="hidden xl:block">Mode</span>
+          </button>
         </div>
       </nav>
     </aside>
+    <!-- Banner -->
     <header>
       <div class="w-full h-32 xs:h-36 sm:h-44 md:h-52">
         <img
@@ -167,7 +205,7 @@
         </div>
       </section>
       <!-- ---------------------- -->
-      <!-- posts/followers/following section -->
+      <!-- posts/followers/following tabs -->
       <!-- ---------------------- -->
       <section class="px-3 sticky top-0 bg-white dark:bg-black py-2 -my-2 z-40">
         <div class="flex justify-between font-semibold max-w-xl mx-auto">
@@ -182,6 +220,9 @@
           >
         </div>
       </section>
+      <!-- ---------------------- -->
+      <!-- posts/followers/following section -->
+      <!-- ---------------------- -->
       <div class="px-3 max-w-xl mx-auto">
         <!-- ---------------------- -->
         <!-- posts section -->
