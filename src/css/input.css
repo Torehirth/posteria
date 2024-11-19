@@ -17,7 +17,8 @@
     font-weight: 100 900;
     font-stretch: 25% 151%;
     font-display: swap;
-    src: url(../assets/fonts/OpenSans-Italic-VariableFont_wdth_wght.ttf) format("truetype");
+    src: url(../assets/fonts/OpenSans-Italic-VariableFont_wdth_wght.ttf)
+      format("truetype");
   }
 }
 
@@ -30,6 +31,12 @@
     @apply flex justify-center items-center py-1 px-5 border-2 border-eden-400 text-black font-semibold rounded-md shadow-md hover:border-eden-500 transition focus:outline-none focus:ring-2 focus:ring-eden-500 dark:text-white;
   }
   .icon-states {
-    @apply transition-all hover:stroke-2 hover:text-black active:stroke-1 active:text-black;
+    @apply transition-all hover:stroke-2 hover:text-black dark:hover:text-eden-400 active:stroke-1 active:text-black;
+  }
+  .icon-states-off {
+    @apply transition-all hover:stroke-2;
+  }
+  .pt-active {
+    @apply border-b-2 border-eden-400 transition-all; /* profile tab active */
   }
 }
