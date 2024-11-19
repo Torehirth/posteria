@@ -22,107 +22,106 @@
     <!-- Page title -->
     <title>Profile | Posteria</title>
   </head>
-  <!-- max-w-7xl mx-auto -->
   <body
     class="flex flex-col min-h-full bg-white text-black dark:bg-black dark:text-white">
-    <aside class="hidden xl:flex sticky top-0 z-50 bg-transparent">
+    <aside class="hidden lg:flex sticky top-0 z-50 bg-transparent">
       <nav class="flex flex-col absolute">
-        <!-- home -->
+        <!-- Feed -->
         <div
           class="flex flex-col gap-3 items-start justify-center h-screen my-auto font-semibold pl-1">
           <a
-            href="#"
-            aria-label="Home button"
-            class="flex text-sm items-center xl:w-fit xl:ml-5 xxl:w-full gap-4 py-2 xxl:px-5 xxl:ml-0 rounded-lg transition xxl:hover:bg-eden-400 xxl:hover:shadow-md xxl:hover:dark:text-black xxl:active:ring-2 xxl:ring-eden-400"
+            href="../feed/index.html"
+            aria-label="Feed/home button"
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-7 xl:hover:stroke-2 xl:active:stroke-1 dark:xl:hover:stroke-eden-400 dark:xxl:hover:stroke-black">
+              class="size-7 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
             </svg>
-            <span class="hidden xxl:block">Home</span>
+            <span class="hidden xl:block">Feed</span>
           </a>
-          <!-- message/inbox -->
+          <!-- messages/inbox -->
           <a
             href="#"
-            aria-label="Inbox button"
-            class="flex text-sm items-center xl:w-fit xl:ml-5 xxl:w-full gap-4 py-2 xxl:px-5 xxl:ml-0 rounded-lg transition-all xxl:hover:bg-eden-400 xxl:hover:shadow-md xxl:hover:dark:text-black xxl:active:ring-2 xxl:ring-eden-400"
+            aria-label="Messages button"
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-7 xl:hover:stroke-2 xl:active:stroke-1 dark:xl:hover:stroke-eden-400 dark:xxl:hover:stroke-black">
+              class="size-7 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
             </svg>
-            <span class="hidden xxl:block">Messages</span>
+            <span class="hidden xl:block">Messages</span>
           </a>
           <!-- plus/new post -->
           <a
             href="#"
             aria-label="New post button"
-            class="flex text-sm items-center xl:w-fit xl:ml-5 xxl:w-full gap-4 py-2 xxl:px-5 xxl:ml-0 rounded-lg transition-all xxl:hover:bg-eden-400 xxl:hover:shadow-md xxl:hover:dark:text-black xxl:active:ring-2 xxl:ring-eden-400"
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-7 xl:hover:stroke-2 xl:active:stroke-1 dark:xl:hover:stroke-eden-400 dark:xxl:hover:stroke-black">
+              class="size-7 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
-            <span class="hidden xxl:block">New post</span>
+            <span class="hidden xl:block">New post</span>
           </a>
           <!-- notifications -->
           <a
             href="#"
             aria-label="Notifications button"
-            class="flex text-sm items-center xl:w-fit xl:ml-5 xxl:w-full gap-4 py-2 xxl:px-5 xxl:ml-0 rounded-lg transition-all xxl:hover:bg-eden-400 xxl:hover:shadow-md xxl:hover:dark:text-black xxl:active:ring-2 xxl:ring-eden-400"
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-7 xl:hover:stroke-2 xl:active:stroke-1 dark:xl:hover:stroke-eden-400 dark:xxl:hover:stroke-black">
+              class="size-7 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
             </svg>
-            <span class="hidden xxl:block">Notifications</span>
+            <span class="hidden xl:block">Notifications</span>
           </a>
           <!-- profile -->
           <a
             href="#"
             aria-label="Profile button"
-            class="flex text-sm items-center xl:w-fit xl:ml-5 xxl:w-full gap-4 py-2 xxl:px-5 xxl:ml-0 rounded-lg transition-all xxl:hover:bg-eden-400 xxl:hover:shadow-md xxl:hover:dark:text-black xxl:active:ring-2 xxl:ring-eden-400"
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-7 xl:hover:stroke-2 xl:active:stroke-1 dark:xl:hover:stroke-eden-400 dark:xxl:hover:stroke-black">
+              class="size-7 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
             </svg>
-            <span class="hidden xxl:block">Profile</span>
+            <span class="hidden xl:block">Profile</span>
           </a>
         </div>
       </nav>
@@ -707,9 +706,9 @@
       </div>
     </main>
     <footer class="bg-darkGray text-white mt-auto">
-      <nav class="flex justify-evenly items-center px-3 py-1 xl:hidden">
-        <!-- home -->
-        <a href="#" aria-label="Home button"
+      <nav class="flex justify-evenly items-center px-3 py-1 lg:hidden">
+        <!-- Feed -->
+        <a href="../feed/index.html" aria-label="Feed/home button"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -723,8 +722,8 @@
               d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
           </svg>
         </a>
-        <!-- message/inbox -->
-        <a href="#" aria-label="Inbox button"
+        <!-- messages/inbox -->
+        <a href="#" aria-label="Messages button"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
