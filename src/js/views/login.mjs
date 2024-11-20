@@ -3,3 +3,7 @@ import { applySystemTheme, toggleColourTheme } from "../handlers/themeHandlers.m
 const themeToggleBtn = document.querySelector("#theme-toggle-btn");
 applySystemTheme();
 themeToggleBtn.addEventListener("click", toggleColourTheme);
+
+document.addEventListener("click", (e) => {
+  console.log(e.target);
+});

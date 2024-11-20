@@ -163,7 +163,9 @@
       </nav>
     </aside>
     <header>
-      <div class="flex items-center justify-between px-3 max-w-xl mx-auto">
+      <div
+        class="flex items-center justify-start gap-6 px-3 pt-2 xs:max-w-xl lg:hidden mx-auto">
+        <!-- logo -->
         <a href="#" aria-label="Home/feed button"
           ><svg
             aria-label="Posteria logo"
@@ -172,23 +174,24 @@
             viewBox="0 0 41 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            class="size-8">
+            class="size-8 opacity-80">
             <rect
               x="1.5"
               y="1"
               width="38"
               height="38"
               rx="19"
-              stroke="#1E1E1E"
+              stroke="currentColor"
               stroke-width="2" />
             <path
               d="M11.38 30V13.744L11.06 11.152H25.876C27.3053 11.152 28.4467 11.312 29.3 11.632C30.1747 11.9307 30.8253 12.3467 31.252 12.88C31.7 13.392 31.988 14 32.116 14.704C32.2653 15.3867 32.34 16.112 32.34 16.88V19.408C32.34 20.432 32.1693 21.3813 31.828 22.256C31.508 23.1093 30.9 23.8027 30.004 24.336C29.1293 24.848 27.86 25.104 26.196 25.104H23.988C22.644 25.104 21.3853 25.072 20.212 25.008C19.06 24.944 18.196 24.8907 17.62 24.848V30H11.38ZM17.62 20.752H24.244C24.948 20.752 25.4387 20.6133 25.716 20.336C25.9933 20.0587 26.132 19.6107 26.132 18.992V17.36C26.132 16.7413 26.004 16.2933 25.748 16.016C25.492 15.7173 25.0013 15.568 24.276 15.568H17.62V20.752Z"
-              fill="#1E1E1E" />
+              fill="currentColor" />
           </svg>
         </a>
+        <!-- search bar -->
         <div
-          class="flex justify-center items-center px-4 py-2 rounded-lg bg-gray-200 dark:bg-darkGray focus-within:bg-gray-300 dark:focus-within:bg-opacity-20">
-          <label for="followers-search"
+          class="flex w-full items-center px-4 py-1 rounded-lg bg-gray-200 dark:bg-darkGray peer focus-within:bg-black focus-within:ring-1 ring-eden-400 dark:focus-within:bg-opacity-20">
+          <label for="feed-search"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -204,14 +207,49 @@
           </label>
           <input
             type="search"
-            id="followers-search"
-            class="w-full py-1 pl-4 bg-transparent border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50"
+            id="feed-search"
+            class="w-full pl-4 appearance-none bg-transparent autofill:-black border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50"
             placeholder="Search" />
         </div>
+        <!-- Theme toggle -->
+        <button
+          type="button"
+          id="header-theme-toggle-btn"
+          aria-label="theme toggle button"
+          class="flex text-sm justify-end items-center w-fit my-2 rounded-lg transition">
+          <svg
+            id="header-dark-mode-icon"
+            aria-label="Dark mode icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+          </svg>
+          <svg
+            id="header-light-mode-icon"
+            aria-label="Light mode icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="hidden size-6 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+          </svg>
+        </button>
       </div>
     </header>
     <main></main>
-    <footer class="bg-darkGray text-white mt-auto">
+    <footer class="sticky bottom-0 rounded-t-lg bg-darkGray text-white mt-auto">
       <nav class="flex justify-evenly items-center px-3 py-1 lg:hidden">
         <!-- Feed -->
         <a href="#" aria-label="Feed/home button"
