@@ -22,12 +22,10 @@
     <!-- Page title -->
     <title>Feed | Posteria</title>
   </head>
-  <body
-    class="flex flex-col min-h-full bg-white text-black dark:bg-black dark:text-white">
+  <body class="flex flex-col min-h-full bg-white text-black dark:bg-black dark:text-white">
     <aside class="hidden lg:flex sticky top-0 z-50 bg-transparent">
       <nav class="flex flex-col absolute">
-        <div
-          class="flex flex-col gap-3 items-start justify-center h-screen my-auto font-semibold pl-1">
+        <div class="flex flex-col gap-3 items-start justify-center h-screen my-auto font-semibold pl-1">
           <!-- Feed -->
           <a
             href="#"
@@ -162,9 +160,8 @@
         </div>
       </nav>
     </aside>
-    <header>
-      <div
-        class="flex items-center justify-start gap-6 px-3 pt-2 xs:max-w-xl lg:hidden mx-auto">
+    <header class="sticky top-0 bg-black z-50">
+      <div class="flex items-center justify-start gap-6 px-3 py-1 xs:max-w-xl lg:hidden mx-auto">
         <!-- logo -->
         <a href="#" aria-label="Home/feed button"
           ><svg
@@ -182,15 +179,17 @@
               height="38"
               rx="19"
               stroke="currentColor"
-              stroke-width="2" />
+              stroke-width="2"
+              class="stroke-white" />
             <path
               d="M11.38 30V13.744L11.06 11.152H25.876C27.3053 11.152 28.4467 11.312 29.3 11.632C30.1747 11.9307 30.8253 12.3467 31.252 12.88C31.7 13.392 31.988 14 32.116 14.704C32.2653 15.3867 32.34 16.112 32.34 16.88V19.408C32.34 20.432 32.1693 21.3813 31.828 22.256C31.508 23.1093 30.9 23.8027 30.004 24.336C29.1293 24.848 27.86 25.104 26.196 25.104H23.988C22.644 25.104 21.3853 25.072 20.212 25.008C19.06 24.944 18.196 24.8907 17.62 24.848V30H11.38ZM17.62 20.752H24.244C24.948 20.752 25.4387 20.6133 25.716 20.336C25.9933 20.0587 26.132 19.6107 26.132 18.992V17.36C26.132 16.7413 26.004 16.2933 25.748 16.016C25.492 15.7173 25.0013 15.568 24.276 15.568H17.62V20.752Z"
-              fill="currentColor" />
+              fill="currentColor"
+              class="fill-white" />
           </svg>
         </a>
         <!-- search bar -->
         <div
-          class="flex w-full items-center px-4 py-1 rounded-lg bg-gray-200 dark:bg-darkGray peer focus-within:bg-black focus-within:ring-1 ring-eden-400 dark:focus-within:bg-opacity-20">
+          class="flex w-full items-center px-4 py-1 rounded-lg bg-gray-200 dark:bg-darkGray focus-within:bg-black focus-within:ring-1 ring-eden-400 dark:focus-within:bg-opacity-20">
           <label for="feed-search"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -208,7 +207,7 @@
           <input
             type="search"
             id="feed-search"
-            class="w-full pl-4 appearance-none bg-transparent autofill:-black border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50"
+            class="w-full pl-4 appearance-none bg-transparent autofill:-black border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50 focus:py-1 transition-all"
             placeholder="Search" />
         </div>
         <!-- Theme toggle -->
@@ -225,7 +224,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-6 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
+            class="size-6 stroke-white lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -248,7 +247,180 @@
         </button>
       </div>
     </header>
-    <main></main>
+    <main>
+      <!-- create post  -->
+      <section class="flex flex-col gap-4 mt-4 px-3 max-w-xl mx-auto">
+        <h1 class="text-center text-lg font-semibold">Create new post</h1>
+        <form
+          id="create-post-form"
+          enctype="multipart/form-data"
+          class="flex flex-col gap-4 h-full border border-black dark:border-eden-400 rounded-lg">
+          <!-- text content area -->
+          <textarea
+            name="post-content"
+            id="create-post"
+            placeholder="What's on your mind?"
+            class="appearance-none outline-none pt-3 pl-3 bg-transparent h-20 placeholder:opacity-50"></textarea>
+          <!-- image upload button -->
+          <label for="post-image" aria-label="add image" class="mx-2 mb-2 w-fit cursor-pointer">
+            <input
+              type="file"
+              name="postImage"
+              id="post-image"
+              accept=".jpeg,.jpg,.png,.bmp,.webp,.heic"
+              class="hidden" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-7 hover:scale-90">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+            </svg>
+          </label>
+        </form>
+        <!-- form submit button -->
+        <button type="submit" class="primary-btn w-fit px-6">Publish</button>
+        <!-- bottom border -->
+        <div
+          aria-hidden="true"
+          class="w-full mt-2 border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10"></div>
+      </section>
+      <!-- Feed -->
+      <section class="px-3 mt-4">
+        <!-- post -->
+        <div id="feed-posts" class="flex flex-col mt-4 max-w-xl mx-auto">
+          <div class="flex flex-col gap-4">
+            <a href="#" class="flex gap-2 items-center w-fit -mb-2">
+              <img
+                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
+                alt="Profile image" />
+              <div class="flex flex-col">
+                <p class="text-sm">Jane Smith</p>
+                <p class="text-xs font-light opacity-80" aria-label="When content was posted">1h ago</p>
+              </div>
+            </a>
+            <div class="flex max-h-48 xs:max-h-60 sm:max-h-72 md:max-h-80 lg:max-h-96">
+              <img
+                class="object-cover rounded-lg"
+                src="../src/assets/images/profile/christopher-campbell-rDEOVtE7vOs-unsplash.webp"
+                alt="lorem ipsum" />
+            </div>
+            <p class="text-sm max-w-prose">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae culpa, saepe deserunt iure
+              similique quo, ipsum est voluptates amet, pariatur illum? Quas voluptates nihil molestias,
+              temporibus incidunt ullam quidem dolorum!
+            </p>
+            <div class="flex gap-4">
+              <div>
+                <input
+                  type="checkbox"
+                  id="like"
+                  class="peer absolute size-6 icon-states opacity-0 cursor-pointer" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 icon-states peer-checked:fill-rose-600 peer-checked:stroke-rose-600 peer-hover:stroke-2 peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-black peer-focus-visible:rounded-sm">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                </svg>
+              </div>
+              <button type="button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 icon-states">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!-- border bottom -->
+          <div
+            aria-hidden="true"
+            class="w-full border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10 pt-4"></div>
+        </div>
+        <!-- post -->
+        <div id="feed-posts" class="flex flex-col mt-4 max-w-xl mx-auto">
+          <div class="flex flex-col gap-4">
+            <a href="#" class="flex gap-2 items-center w-fit -mb-2">
+              <img
+                class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+                src="../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp"
+                alt="Profile image" />
+              <div class="flex flex-col">
+                <p class="text-sm">Jane Smith</p>
+                <p class="text-xs font-light opacity-80" aria-label="When content was posted">1h ago</p>
+              </div>
+            </a>
+            <div class="flex max-h-48 xs:max-h-60 sm:max-h-72 md:max-h-80 lg:max-h-96">
+              <img
+                class="object-cover rounded-lg"
+                src="../src/assets/images/profile/christopher-campbell-rDEOVtE7vOs-unsplash.webp"
+                alt="lorem ipsum" />
+            </div>
+            <p class="text-sm max-w-prose">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae culpa, saepe deserunt iure
+              similique quo, ipsum est voluptates amet, pariatur illum? Quas voluptates nihil molestias,
+              temporibus incidunt ullam quidem dolorum!
+            </p>
+            <div class="flex gap-4">
+              <div>
+                <input
+                  type="checkbox"
+                  id="like"
+                  class="peer absolute size-6 icon-states opacity-0 cursor-pointer" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 icon-states peer-checked:fill-rose-600 peer-checked:stroke-rose-600 peer-hover:stroke-2 peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-black peer-focus-visible:rounded-sm">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                </svg>
+              </div>
+              <button type="button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 icon-states">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="w-full border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10 pt-4"></div>
+        </div>
+      </section>
+    </main>
     <footer class="sticky bottom-0 rounded-t-lg bg-darkGray text-white mt-auto">
       <nav class="flex justify-evenly items-center px-3 py-1 lg:hidden">
         <!-- Feed -->
