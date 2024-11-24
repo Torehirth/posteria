@@ -1,70 +1,80 @@
-# Your project title
+# Posteria
 
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
+<div align="left">
+  <img src="https://github.com/user-attachments/assets/6846cc91-4ec3-42f8-8acc-91982dc1d3be" alt="mobile" width="200">
+</div>
 
-A simple overview of the use/purpose of the project.
+Posteria is a social media platform for posting content and connecting with others. It aims to provide an intuitive, responsive, and visually appealing interface for users to share their thoughts and interact with their networks.
+
+- [Live website](https://torehirth.github.io/posteria/)
 
 ## Description
 
-Add a more detailed description of what your project entails and set out to do.
+Posteria offers the following features to enhance user experience:
 
-You can add some bullet points if you'd like to:
+- Create and share posts with others.
+- Follow other users to stay updated with their activity.
+- Sleek and responsive design using Tailwind CSS.
+- Dark and light mode for optimal user accessibility.
+- Prototyped with user-centric design principles using Figma.
 
-- List item 1
-- List item 2
-- List item 3
+This project is built with simplicity and scalability in mind, utilizing modern web development tools and techniques.
 
 ## Built With
 
-You can list a the tech stack that you've used over here
+The project utilizes the following technologies:
 
-- [React.js](https://reactjs.org/)
-- [Bootstrap](https://getbootstrap.com)
+- HTML
+- Tailwind CSS
+- JavaScript
+- Figma
+
 
 ## Getting Started
 
 ### Installing
 
-This is where you list how to get the project started. It typically just includes telling a person to clone the repo and then to install the dependencies e.g.
+To get started with Posteria, follow these steps:
 
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
+git clone https://github.com/torehirth/posteria.git
 ```
 
-2. Install the dependencies:
+2. Navigate to the project directory:
 
+```bash
+cd posteria
 ```
+3. Install the dependencies using NPM:
+
+```bash
 npm install
 ```
 
 ### Running
 
-Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
-
-To run the app, run the following commands:
+To run the project in development mode with Tailwind CSS:
 
 ```bash
-npm run start
+npm run dev
 ```
+
+To build the project for production:
+
+```bash
+npm run build
+```
+
+To view the website locally, you can just open the index.html file in your preferred browser after running the build process.
 
 ## Contributing
 
-Here you can detail any information you want to provide regarding contributing to the project. For big projects you will usually have a separate `CONTRIBUTING.md` and link to it, but for smaller projects you can simply include instructions here. These instructions can simply detail the process you want a person to take, such as to make sure to open a pull request so code can be reviewed.
+Contributions are welcome! If you’d like to contribute to Posteria, please fork the repository, make changes, and submit a pull request. Feedback and suggestions are also appreciated—feel free to open an issue with your ideas.
 
 ## Contact
 
-This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
+Feel free to reach out with any questions or feedback:
 
-[My Twitter page](www.twitter.com)
-
-[My LinkedIn page](www.linkedin.com)
-
-## License
-
-You can link to your license file here if you're using one, or mention what license the codebase falls under. If you're unsure then you can simply delete this section.
-
-## Acknowledgments
-
-This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.
+[My LinkedIn page](https://www.linkedin.com/in/torehirth/)
