@@ -107,20 +107,21 @@
           <a
             href="#"
             aria-label="Profile button"
-            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-1 xl:gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:bg-gray-300 dark:xl:bg-darkGray cursor-default"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-7 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
+              class="size-7 dark:stroke-eden-500 cursor-default">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
             </svg>
             <span class="hidden xl:block">Profile</span>
+            <span class="ml-2 w-2 h-2 border-4 border-eden-400 rounded-full"></span>
           </a>
           <!-- Theme toggle -->
           <button
@@ -259,6 +260,7 @@
           </svg>
         </button>
       </div>
+      <!-- Banner image -->
       <div class="w-full h-32 xs:h-36 sm:h-44 md:h-52">
         <img
           class="w-full h-full object-cover"
@@ -321,7 +323,7 @@
           <!-- ---------------------- -->
           <!-- post -->
           <!-- ---------------------- -->
-          <div id="posts" class="flex flex-col">
+          <div id="post" class="flex flex-col">
             <div class="flex flex-col gap-4">
               <a href="#" class="flex gap-2 items-center -mb-2 w-fit">
                 <img
@@ -386,7 +388,7 @@
           <!-- ---------------------- -->
           <!-- post -->
           <!-- ---------------------- -->
-          <div id="posts" class="flex flex-col">
+          <div id="post-2" class="flex flex-col">
             <div class="flex flex-col gap-4">
               <a href="#" class="flex gap-2 items-center -mb-2 w-fit">
                 <img
@@ -824,7 +826,7 @@
       </div>
     </main>
     <footer class="sticky bottom-0 rounded-t-lg bg-darkGray text-white mt-auto">
-      <nav class="flex justify-evenly items-center px-3 py-1 lg:hidden">
+      <nav class="flex justify-around items-center px-3 py-1 lg:hidden">
         <!-- Feed -->
         <a href="../feed/index.html" aria-label="Feed/home button"
           ><svg
