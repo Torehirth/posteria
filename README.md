@@ -1,6 +1,8 @@
 # Posteria
 
-<img align="center" src="https://github.com/user-attachments/assets/6846cc91-4ec3-42f8-8acc-91982dc1d3be" alt="mobile" width="200">
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/6846cc91-4ec3-42f8-8acc-91982dc1d3be" alt="mobile" width="200">
+</div>
 
 
 Posteria is a social media platform for posting content and connecting with others. It aims to provide an intuitive, responsive, and visually appealing interface for users to share their thoughts and interact with their networks.
