@@ -1761,6 +1761,10 @@ input:-webkit-autofill,
   --tw-bg-opacity: 0.2;
 }
 
+.dark\:hover\:stroke-eden-400:hover:where(.dark, .dark *) {
+  stroke: #2AD7B2;
+}
+
 @media (min-width: 768px) {
   .dark\:lg\:hover\:stroke-eden-400:hover:where(.dark, .dark *) {
     stroke: #2AD7B2;
