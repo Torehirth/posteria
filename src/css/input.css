@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Open-Sans";
+    font-style: normal;
+    font-weight: 100 900;
+    font-stretch: 25% 151%;
+    font-display: swap;
+    src: url(../assets/fonts/OpenSans-VariableFont_wdth_wght.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Open-Sans";
+    font-style: italic;
+    font-weight: 100 900;
+    font-stretch: 25% 151%;
+    font-display: swap;
+    src: url(../assets/fonts/OpenSans-Italic-VariableFont_wdth_wght.ttf) format("truetype");
+  }
+}
+
+@layer components {
+  .primary-btn {
+    @apply flex justify-center items-center py-1 px-5 bg-eden-400 text-black font-semibold rounded-md shadow-md hover:bg-eden-500 transition 
+    focus:outline-none focus:ring-2 focus:ring-eden-500;
+  }
+  .secondary-btn {
+    @apply flex justify-center items-center py-1 px-5 border-2 border-eden-400 text-black font-semibold rounded-md shadow-md hover:border-eden-500 transition focus:outline-none focus:ring-2 focus:ring-eden-500 dark:text-white;
+  }
+  .icon-states {
+    @apply transition-all hover:stroke-2 hover:text-black dark:hover:text-eden-400 active:stroke-1 active:text-black;
+  }
+  .icon-states-off {
+    @apply transition-all hover:stroke-2;
+  }
+  .pt-active {
+    @apply border-b-2 border-eden-400 transition-all; /* profile tab active */
+  }
+}
+
+@layer utilities {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #f9f9f9;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000000s ease-in-out 0s;
+  }
+}
