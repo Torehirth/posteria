@@ -1,4 +1,3 @@
-// Theme mode
 import { applySystemTheme, toggleColourTheme } from "../handlers/themeHandlers.mjs";
 import {
   toggleAsideSearchbar,
