@@ -14,13 +14,13 @@
       content="Posteria, Social media, platform, application, CSS, Frameworks, Assignment, Tore Hirth, Tore M. Hirth" />
     <meta name="author" content="Tore M. Hirth" />
     <!-- Styles/CSS -->
-    <link rel="stylesheet" href="./src/css/styles.css" />
+    <link rel="stylesheet" href="../src/css/styles.css" />
     <!-- JavaScript/Script -->
-    <script type="module" src="./src/js/views/login.mjs"></script>
+    <script type="module" src="../src/js/views/register.mjs"></script>
     <!-- favicon -->
     <link rel="icon" href="./src/assets/logo/favicon.ico" type="image/x-icon" />
     <!-- Page title -->
-    <title>Log in | Posteria</title>
+    <title>Register | Posteria</title>
   </head>
   <body class="bg-white text-black dark:bg-black dark:text-white w-screen h-screen px-3">
     <aside class="hidden lg:hidden sticky top-0 z-50 bg-transparent">
@@ -228,9 +228,27 @@
               class="fill-current dark:text-eden-300" />
           </svg>
         </div>
-        <h1 class="text-2xl font-semibold">Log in to your account</h1>
+        <h1 class="text-2xl font-semibold">Create new account</h1>
       </div>
       <form id="login-form" class="flex flex-col gap-4 w-full" action="./profile">
+        <div class="flex flex-col gap-2">
+          <label for="">User name *</label>
+          <input
+            type="text"
+            class="bg-gray-200 dark:bg-darkGray py-2 px-4 rounded-md placeholder:text-black placeholder:opacity-60 dark:placeholder:text-white" />
+        </div>
+        <div class="flex flex-col gap-2">
+          <label for="">First name *</label>
+          <input
+            type="text"
+            class="bg-gray-200 dark:bg-darkGray py-2 px-4 rounded-md placeholder:text-black placeholder:opacity-60 dark:placeholder:text-white" />
+        </div>
+        <div class="flex flex-col gap-2">
+          <label for="">Sure name *</label>
+          <input
+            type="text"
+            class="bg-gray-200 dark:bg-darkGray py-2 px-4 rounded-md placeholder:text-black placeholder:opacity-60 dark:placeholder:text-white" />
+        </div>
         <div class="flex flex-col gap-2">
           <label for="email">Email *</label>
           <input
@@ -239,6 +257,8 @@
             id="email"
             name="email"
             placeholder="Email"
+            pattern="^[a-zA-Z0-9._%+-]+@(noroff\.no|stud\.noroff\.no)$"
+            title="Only @noroff.no or @stud.noroff.no email addresses are allowed"
             required />
         </div>
         <div class="flex flex-col gap-2">
@@ -250,23 +270,22 @@
             name="password"
             placeholder="Password"
             minlength="8"
+            title="Password must be at least 8 characters long"
             required />
         </div>
         <button
-          aria-label="Sign in button"
+          aria-label="register button"
           type="submit"
           class="py-2 px-5 bg-eden-400 text-black font-semibold rounded-md shadow-md hover:bg-eden-300 transition focus:outline-offset-2 focus:ring focus:ring-eden-500 focus:ring-opacity-75">
-          Sign in
+          Create account
         </button>
       </form>
       <div>
         <p class="text-center mt-4">
-          Don't have an account?
-          <a href="./register/index.html" class="text-primary font-semibold underline dark:text-eden-400"
-            >Sign up</a
-          >
+          Already have an account?
+          <a href="../index.html" class="text-primary font-semibold underline dark:text-eden-400">Log in</a>
         </p>
-      </div> 
+      </div>
     </main>
   </body>
 </html>
