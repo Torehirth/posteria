@@ -232,51 +232,23 @@
       </div>
       <section class="w-full flex flex-col gap-4">
         <h1 class="text-2xl font-semibold text-center">Create new account</h1>
-        <form id="login-form" class="flex flex-col gap-4 w-full" action="../profile">
+        <form id="register-form" class="flex flex-col gap-4 w-full">
           <fieldset class="flex flex-col gap-4">
             <legend class="text-center text-sm pb-4">Fill in your details to register a new account</legend>
             <div class="flex flex-col gap-1">
               <label for="user-name" class="text-sm">User name *</label>
               <input
                 type="text"
-                id="username"
-                name="username"
-                placeholder="User name"
-                pattern="^[A-Za-z0-9_]+$"
+                id="name"
+                name="name"
+                placeholder="Name"
+                maxlength="32"
+                pattern="[A-Za-z0-9_]+"
                 title="Only letters, numbers, and underscores are allowed."
                 aria-describedby="username-desc"
-                class="bg-gray-200 dark:bg-darkGray py-2 px-4 rounded-md placeholder:text-black placeholder:opacity-60 dark:placeholder:text-white" />
+                class="bg-gray-200 dark:bg-darkGray py-2 px-4 rounded-md placeholder:text-black placeholder:opacity-60 dark:placeholder:text-white"
+                required />
               <p id="username-desc" class="hidden">Only letters, numbers, and underscores (_) are allowed.</p>
-            </div>
-            <div class="flex flex-col gap-1">
-              <label for="first-name" class="text-sm">First name *</label>
-              <input
-                type="text"
-                id="first-name"
-                name="first-name"
-                placeholder="First name"
-                pattern="^[A-Za-z0-9_]+$"
-                title="Only letters, numbers, and underscores are allowed."
-                aria-describedby="first-name-desc"
-                class="bg-gray-200 dark:bg-darkGray py-2 px-4 rounded-md placeholder:text-black placeholder:opacity-60 dark:placeholder:text-white" />
-              <p id="first-name-desc" class="hidden">
-                Only letters, numbers, and underscores (_) are allowed.
-              </p>
-            </div>
-            <div class="flex flex-col gap-1">
-              <label for="sure-name" class="text-sm">Sure name *</label>
-              <input
-                type="text"
-                id="sure-name"
-                name="sure-name"
-                placeholder="Sure name"
-                pattern="^[A-Za-z0-9_]+$"
-                title="Only letters, numbers, and underscores are allowed."
-                aria-describedby="sure-name-desc"
-                class="bg-gray-200 dark:bg-darkGray py-2 px-4 rounded-md placeholder:text-black placeholder:opacity-60 dark:placeholder:text-white" />
-              <p id="sure-name-desc" class="hidden">
-                Only letters, numbers, and underscores (_) are allowed.
-              </p>
             </div>
             <div class="flex flex-col gap-1">
               <label for="email" class="text-sm">Email *</label>
@@ -286,12 +258,12 @@
                 id="email"
                 name="email"
                 placeholder="Email"
-                pattern="^[a-zA-Z0-9._%+-]+@(noroff\.no|stud\.noroff\.no)$"
-                title="Only @noroff.no or @stud.noroff.no email addresses are allowed"
+                pattern="^[^@]+@(stud\.|)(noroff\.no)$"
+                title="Please enter a valid Noroff email address (ending with @noroff.no or @stud.noroff.no)."
                 aria-describedby="email-desc"
                 required />
               <p id="email-desc" class="hidden">
-                Only @noroff.no or @stud.noroff.no email addresses are allowed
+                Please enter a valid Noroff email address (ending with @noroff.no or @stud.noroff.no).
               </p>
             </div>
             <div class="flex flex-col gap-1">
