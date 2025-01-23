@@ -14,6 +14,7 @@ import {
   closeSortDropdownByEscKey,
   toggleSortDropdownMenu,
 } from "./handlers/sortDropdownMenuHandlers.mjs";
+import { registerFormHandler } from "./events/auth/registerFormHandler.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -23,7 +24,6 @@ const router = () => {
   switch (pathname) {
     case "/":
     case "/index.html":
-      console.log("#LOG IN PAGE");
       // -- Theme --
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
@@ -31,15 +31,15 @@ const router = () => {
 
     case "/register":
     case "/register/index.html":
-      console.log("REGISTER PAGE");
       // -- Theme --
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
+      // -- Register --
+      registerFormHandler();
       break;
 
     case "/feed":
     case "/feed/index.html":
-      console.log("FEED PAGE");
       // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
@@ -56,7 +56,6 @@ const router = () => {
 
     case "/profile":
     case "/profile/index.html":
-      console.log("PROFILE PAGE");
       // -- Posts/followers/follow section --
       displayPostsSection();
       displayFollowersSection();
