@@ -16,8 +16,8 @@
     <!-- Styles/CSS -->
     <link rel="stylesheet" href="../src/css/styles.css" />
     <!-- JavaScript/Script -->
-    <script type="module" src="../src/js/views/register.mjs"></script>
-    <!-- <script type="module" src="../src/js/app.mjs"></script> -->
+    <!-- <script type="module" src="../src/js/views/register.mjs"></script> -->
+    <script type="module" src="../src/js/app.mjs"></script>
     <!-- favicon -->
     <link rel="icon" href="../src/assets/logo/favicon.ico" type="image/x-icon" />
     <!-- Page title -->
@@ -239,10 +239,14 @@
               <label for="user-name" class="text-sm">User name *</label>
               <input
                 type="text"
-                id="user-name"
-                name="user-name"
+                id="username"
+                name="username"
                 placeholder="User name"
+                pattern="^[A-Za-z0-9_]+$"
+                title="Only letters, numbers, and underscores are allowed."
+                aria-describedby="username-desc"
                 class="bg-gray-200 dark:bg-darkGray py-2 px-4 rounded-md placeholder:text-black placeholder:opacity-60 dark:placeholder:text-white" />
+              <p id="username-desc" class="hidden">Only letters, numbers, and underscores (_) are allowed.</p>
             </div>
             <div class="flex flex-col gap-1">
               <label for="first-name" class="text-sm">First name *</label>
@@ -251,7 +255,13 @@
                 id="first-name"
                 name="first-name"
                 placeholder="First name"
+                pattern="^[A-Za-z0-9_]+$"
+                title="Only letters, numbers, and underscores are allowed."
+                aria-describedby="first-name-desc"
                 class="bg-gray-200 dark:bg-darkGray py-2 px-4 rounded-md placeholder:text-black placeholder:opacity-60 dark:placeholder:text-white" />
+              <p id="first-name-desc" class="hidden">
+                Only letters, numbers, and underscores (_) are allowed.
+              </p>
             </div>
             <div class="flex flex-col gap-1">
               <label for="sure-name" class="text-sm">Sure name *</label>
@@ -260,7 +270,13 @@
                 id="sure-name"
                 name="sure-name"
                 placeholder="Sure name"
+                pattern="^[A-Za-z0-9_]+$"
+                title="Only letters, numbers, and underscores are allowed."
+                aria-describedby="sure-name-desc"
                 class="bg-gray-200 dark:bg-darkGray py-2 px-4 rounded-md placeholder:text-black placeholder:opacity-60 dark:placeholder:text-white" />
+              <p id="sure-name-desc" class="hidden">
+                Only letters, numbers, and underscores (_) are allowed.
+              </p>
             </div>
             <div class="flex flex-col gap-1">
               <label for="email" class="text-sm">Email *</label>
@@ -272,7 +288,11 @@
                 placeholder="Email"
                 pattern="^[a-zA-Z0-9._%+-]+@(noroff\.no|stud\.noroff\.no)$"
                 title="Only @noroff.no or @stud.noroff.no email addresses are allowed"
+                aria-describedby="email-desc"
                 required />
+              <p id="email-desc" class="hidden">
+                Only @noroff.no or @stud.noroff.no email addresses are allowed
+              </p>
             </div>
             <div class="flex flex-col gap-1">
               <label for="password" class="text-sm">Password *</label>
@@ -284,7 +304,9 @@
                 placeholder="Password"
                 minlength="8"
                 title="Password must be at least 8 characters long"
+                aria-describedby="password-desc"
                 required />
+              <p id="password-desc" class="hidden">Password must be at least 8 characters long</p>
             </div>
             <button
               aria-label="register button"
