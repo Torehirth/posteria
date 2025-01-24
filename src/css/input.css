@@ -38,6 +38,18 @@
   .pt-active {
     @apply border-b-2 border-eden-400 transition-all; /* profile tab active */
   }
+  .message {
+    @apply text-sm text-center;
+  }
+  .error {
+    @apply border-2 border-red-600 rounded text-red-300 p-2;
+  }
+  .success {
+    @apply border-2 border-green-600 rounded text-green-300 p-2;
+  }
+  .warning {
+    @apply border-2 border-yellow-600 rounded text-yellow-300 p-2;
+  }
 }
 
 @layer utilities {

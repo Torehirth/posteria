@@ -1,20 +1,20 @@
-import { applySystemTheme, toggleColourTheme } from "./handlers/themeHandlers.mjs";
 import {
   displayFollowersSection,
   displayPostsSection,
   displayFollowingSection,
-} from "./handlers/profileTabHandlers.mjs";
+} from "./ui/common/handlers/profileTabHandlers.mjs";
 import {
   toggleAsideSearchbar,
   closeSearchBarOnKeypress,
   closeSearchbarOnClick,
-} from "./handlers/searchbarHandlers.mjs";
+} from "./ui/common/handlers/searchbarHandlers.mjs";
 import {
   closeSortDropDownByClickOutside,
   closeSortDropdownByEscKey,
   toggleSortDropdownMenu,
-} from "./handlers/sortDropdownMenuHandlers.mjs";
+} from "./ui/common/handlers/sortDropdownMenuHandlers.mjs";
 import { registerFormHandler } from "./events/auth/registerFormHandler.mjs";
+import { applySystemTheme, toggleColourTheme } from "./ui/common/handlers/themeHandlers.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
