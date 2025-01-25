@@ -8,15 +8,12 @@
     <!-- SEO meta tags -->
     <meta
       name="description"
-      content="Posteria is a social media platform for connecting with people and posting whatever is on your mind" />
-    <meta
-      name="keywords"
-      content="Posteria, Social media, platform, application, CSS, Frameworks, Assignment, Tore Hirth, Tore M. Hirth" />
+      content="Register your account at Posteria to connect with others and post whatever is on your mind" />
+    <meta name="keywords" content="posteria, social media, platform, application, register, user" />
     <meta name="author" content="Tore M. Hirth" />
     <!-- Styles/CSS -->
     <link rel="stylesheet" href="../src/css/styles.css" />
     <!-- JavaScript/Script -->
-    <!-- <script type="module" src="../src/js/views/register.mjs"></script> -->
     <script type="module" src="../src/js/app.mjs"></script>
     <!-- favicon -->
     <link rel="icon" href="../src/assets/logo/favicon.ico" type="image/x-icon" />
@@ -232,7 +229,7 @@
       </div>
       <section class="w-full flex flex-col gap-4">
         <h1 class="text-2xl font-semibold text-center">Create new account</h1>
-        <div id="info-message" class="message"></div>
+        <div id="info-message"></div>
         <form id="register-form" class="flex flex-col gap-4 w-full">
           <fieldset class="flex flex-col gap-4">
             <legend class="text-center text-sm pb-4">Fill in your details to register a new account</legend>
@@ -243,7 +240,7 @@
                 id="name"
                 name="name"
                 placeholder="Name"
-                maxlength="32"
+                maxlength="20"
                 pattern="[A-Za-z0-9_]+"
                 title="Only letters, numbers, and underscores are allowed."
                 aria-describedby="username-desc"

@@ -33,8 +33,8 @@ export const registerUser = async (user) => {
     return json;
   } catch (error) {
     console.error(`Registration failed, ${error.message}`);
+    // Catches the error further up and displays only the message
     displayMessage("#info-message", "warning", error.message);
     form.reset();
-    throw error;
   }
 };

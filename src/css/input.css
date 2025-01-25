@@ -36,23 +36,25 @@
     @apply transition-all hover:stroke-2;
   }
   .pt-active {
-    @apply border-b-2 border-eden-400 transition-all; /* profile tab active */
-  }
-  .message {
-    @apply text-sm text-center;
+    /* profile tab active */
+    @apply border-b-2 border-eden-400 transition-all;
   }
   .error {
-    @apply border-2 border-red-600 rounded text-red-300 p-2;
+    /* Error message */
+    @apply text-sm text-center border-2 border-red-600 rounded text-red-300 p-2;
   }
   .success {
-    @apply border-2 border-green-600 rounded text-green-300 p-2;
+    /* Success message */
+    @apply text-sm text-center border-2 border-green-600 rounded text-green-300 p-2;
   }
   .warning {
-    @apply border-2 border-yellow-600 rounded text-yellow-300 p-2;
+    /* Warning message */
+    @apply text-sm text-center border-2 border-yellow-600 rounded text-yellow-300 p-2;
   }
 }
 
 @layer utilities {
+  /* Special form field styling */
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
