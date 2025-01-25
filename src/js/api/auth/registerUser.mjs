@@ -25,7 +25,7 @@ export const registerUser = async (user) => {
 
     // Throw error if response is not ok.
     if (!response.ok) {
-      throw new Error(json.errors?.[0]?.message || "Registration failed");
+      throw new Error(json.errors?.[0]?.message || "Registration failed. Please try again later.");
     }
 
     // Redirect on successful registration
@@ -35,10 +35,10 @@ export const registerUser = async (user) => {
     }, 500);
 
     return json;
-  } catch (error) {
-    console.error(`Registration failed, ${error.message}`);
+  } catch (err) {
+    console.error(err.message);
     // Catches the error further up and displays only the message
-    displayMessage("#info-message", "warning", error.message);
+    displayMessage("#info-message", "warning", err.message);
     form.reset();
   } finally {
     // Enable fieldset/form after calling the API
