@@ -36,4 +36,5 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: ["warning", "error", "success"],
 };
