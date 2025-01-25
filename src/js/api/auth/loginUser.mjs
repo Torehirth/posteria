@@ -1,9 +1,10 @@
-import { API_BASE_URL, API_AUTH_ENDPOINT, API_REGISTER_ENDPOINT } from "../../constants/api.mjs";
+import { API_BASE_URL, API_AUTH_ENDPOINT, API_LOGIN_ENDPOINT } from "../../constants/api.mjs";
 import { displayMessage } from "../../ui/common/displayMessage.mjs";
 
-export const registerUser = async (user) => {
-  const registerURL = `${API_BASE_URL}${API_AUTH_ENDPOINT}${API_REGISTER_ENDPOINT}`;
-  const form = document.querySelector("#register-form");
+export const loginUser = async (user) => {
+  const loginURL = `${API_BASE_URL}${API_AUTH_ENDPOINT}${API_LOGIN_ENDPOINT}`;
+
+  const form = document.querySelector("#login-form");
   const fieldset = document.querySelector("fieldset");
 
   const options = {
@@ -19,13 +20,14 @@ export const registerUser = async (user) => {
     fieldset.disabled = true;
     fieldset.style.opacity = 0.5;
     // Fetch API
-    const response = await fetch(registerURL, options);
+    const response = await fetch(loginURL, options);
     // Access response message
     const json = await response.json();
+    console.log(response);
 
     // Throw error if response is not ok.
     if (!response.ok) {
-      throw new Error(json.errors?.[0]?.message || "Registration failed. Please try again later.");
+      throw new Error(json.errors?.[0]?.message || "Login failed. Please try again later.");
     }
 
     // Display success message after successful registration and redirect

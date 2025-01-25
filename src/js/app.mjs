@@ -15,6 +15,7 @@ import {
 } from "./ui/common/handlers/sortDropdownMenuHandlers.mjs";
 import { registerFormHandler } from "./events/auth/registerFormHandler.mjs";
 import { applySystemTheme, toggleColourTheme } from "./ui/common/handlers/themeHandlers.mjs";
+import { loginFormHandler } from "./events/auth/loginFormHandler.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -27,6 +28,8 @@ const router = () => {
       // -- Theme --
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
+      // Login
+      loginFormHandler();
       break;
 
     case "/register":
