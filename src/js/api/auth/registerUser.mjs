@@ -1,7 +1,7 @@
 import { API_BASE_URL, API_AUTH_ENDPOINT, API_REGISTER_ENDPOINT } from "../../constants/api.mjs";
 import { displayMessage } from "../../ui/common/displayMessage.mjs";
 
-export const registerUser = async (user) => {
+export const registerUser = async (data) => {
   const registerURL = `${API_BASE_URL}${API_AUTH_ENDPOINT}${API_REGISTER_ENDPOINT}`;
   const form = document.querySelector("#register-form");
   const fieldset = document.querySelector("fieldset");
@@ -11,7 +11,7 @@ export const registerUser = async (user) => {
     headers: {
       "content-type": "application/json",
     },
-    body: JSON.stringify(user),
+    body: JSON.stringify(data),
   };
 
   try {
@@ -23,12 +23,11 @@ export const registerUser = async (user) => {
     // Access response message
     const json = await response.json();
 
-    // Throw error if response is not ok.
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Registration failed. Please try again later.");
     }
 
-    // Display success message after successful registration and redirect
+    // Display success message after successful registration and redirect right after
     displayMessage("#info-message", "success", "Login successful 🎉");
     setTimeout(() => {
       window.location.href = "/profile/index.html";
