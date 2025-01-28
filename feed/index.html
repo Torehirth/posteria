@@ -326,17 +326,30 @@
       <!-- create post  -->
       <section class="px-3">
         <div class="flex flex-col gap-4 mt-4 max-w-xl mx-auto">
-          <h2 class="text-center text-lg font-semibold">Create new post</h2>
+          <label for="post-title" class="text-center text-lg font-semibold">Create new post</label>
+          <div id="info-message"></div>
           <!-- Form -->
           <form id="create-post-form" enctype="multipart/form-data" class="flex flex-col gap-4 h-full">
             <!-- Fieldset -->
             <fieldset class="flex flex-col gap-4">
               <div class="border border-black dark:border-white rounded-lg focus-within:border-eden-400">
+                <input
+                  type="text"
+                  name="title"
+                  id="post-title"
+                  placeholder="Title"
+                  required
+                  minlength="3"
+                  class="appearance-none outline-none pt-3 px-3 bg-transparent w-full h-10 placeholder:text-gray-600 dark:placeholder:text-gray-400" />
+                <!-- Bottom Border -->
+                <div
+                  aria-hidden="true"
+                  class="w-full mt-2 border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10"></div>
                 <textarea
-                  name="post-content"
-                  id="create-post"
+                  name="body"
+                  id="post-body"
                   placeholder="What's on your mind?"
-                  class="appearance-none outline-none pt-3 px-3 bg-transparent w-full h-24 placeholder:text-gray-600 dark:placeholder:text-gray-400"></textarea>
+                  class="appearance-none outline-none pt-3 px-3 bg-transparent w-full h-20 placeholder:text-gray-600 dark:placeholder:text-gray-400 focus-within:h-64 sm:focus-within:h-44 lg:focus-within:h-20"></textarea>
                 <!-- Image Upload Button -->
                 <label
                   for="post-image"
@@ -344,7 +357,7 @@
                   class="inline-block w-fit h-fit cursor-pointer">
                   <input
                     type="file"
-                    name="postImage"
+                    name="media"
                     id="post-image"
                     accept=".jpeg,.jpg,.png,.bmp,.webp,.heic"
                     class="hidden" />

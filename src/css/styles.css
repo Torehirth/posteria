@@ -984,6 +984,14 @@ video {
   height: 100vh;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
+.h-10 {
+  height: 2.5rem;
+}
+
 .max-h-48 {
   max-height: 12rem;
 }
@@ -1478,6 +1486,14 @@ input:-webkit-autofill,
   opacity: 0;
 }
 
+.focus-within\:h-44:focus-within {
+  height: 11rem;
+}
+
+.focus-within\:h-64:focus-within {
+  height: 16rem;
+}
+
 .focus-within\:border-eden-400:focus-within {
   --tw-border-opacity: 1;
   border-color: rgb(42 215 178 / var(--tw-border-opacity));
@@ -1620,6 +1636,10 @@ input:-webkit-autofill,
   .xs\:max-w-xl {
     max-width: 36rem;
   }
+
+  .xs\:focus-within\:h-44:focus-within {
+    height: 11rem;
+  }
 }
 
 @media (min-width: 550px) {
@@ -1653,6 +1673,14 @@ input:-webkit-autofill,
 
   .sm\:w-40 {
     width: 10rem;
+  }
+
+  .sm\:focus-within\:h-64:focus-within {
+    height: 16rem;
+  }
+
+  .sm\:focus-within\:h-44:focus-within {
+    height: 11rem;
   }
 }
 
@@ -1696,6 +1724,10 @@ input:-webkit-autofill,
     height: 1.75rem;
   }
 
+  .lg\:h-24 {
+    height: 6rem;
+  }
+
   .lg\:max-h-96 {
     max-height: 24rem;
   }
@@ -1703,6 +1735,14 @@ input:-webkit-autofill,
   .lg\:w-fit {
     width: -moz-fit-content;
     width: fit-content;
+  }
+
+  .lg\:focus-within\:h-24:focus-within {
+    height: 6rem;
+  }
+
+  .lg\:focus-within\:h-20:focus-within {
+    height: 5rem;
   }
 
   .lg\:hover\:stroke-2:hover {
