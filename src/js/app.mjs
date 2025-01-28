@@ -16,7 +16,6 @@ import {
 import { registerFormHandler } from "./events/auth/registerFormHandler.mjs";
 import { applySystemTheme, toggleColourTheme } from "./ui/common/handlers/themeHandlers.mjs";
 import { loginFormHandler } from "./events/auth/loginFormHandler.mjs";
-import { getFromStorage } from "./events/common/utils/getFromStorage.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
