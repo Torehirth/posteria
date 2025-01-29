@@ -17,8 +17,8 @@ import { registerFormHandler } from "./events/auth/registerFormHandler.mjs";
 import { applySystemTheme, toggleColourTheme } from "./ui/common/handlers/themeHandlers.mjs";
 import { loginFormHandler } from "./events/auth/loginFormHandler.mjs";
 import { createPostHandler } from "./api/posts/handlers/createPostHandler.mjs";
-import { getPosts } from "./api/posts/getPosts.mjs";
 import { getPostsHandler } from "./api/posts/handlers/getPostsHandler.mjs";
+import { logOut } from "./ui/common/handlers/logoutHandler.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -61,6 +61,8 @@ const router = () => {
       // Posts
       createPostHandler();
       getPostsHandler();
+      // Log out
+      logOut();
       break;
 
     case "/profile":
@@ -72,6 +74,8 @@ const router = () => {
       // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
+      // Log out
+      logOut();
       break;
   }
 };

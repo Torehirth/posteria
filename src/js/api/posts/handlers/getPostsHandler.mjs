@@ -1,3 +1,4 @@
+import { displayMessage } from "../../../ui/common/displayMessage.mjs";
 import { getPosts } from "../getPosts.mjs";
 
 export const getPostsHandler = async () => {
@@ -7,5 +8,6 @@ export const getPostsHandler = async () => {
     console.log(posts);
   } catch (err) {
     console.error(err);
+    displayMessage(container, "error", "Failed to display posts. Try again later..");
   }
 };
