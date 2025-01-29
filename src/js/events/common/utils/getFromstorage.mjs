@@ -6,7 +6,7 @@
  *
  * @example
  * // Retrieve the object in local storage by the key (ex: user).
- * getFromStorage("User");
+ * getFromStorage("user");
  *
  * // Destructure the properties within the object (ex: name)
  * const { name } = userData;

@@ -1,6 +1,6 @@
 import { loginUser } from "../../api/auth/loginUser.mjs";
 
-export const loginFormHandler = (userData) => {
+export const loginFormHandler = () => {
   const loginForm = document.querySelector("#login-form");
 
   if (loginForm) {
@@ -10,10 +10,8 @@ export const loginFormHandler = (userData) => {
 
 const handleLoginFormSubmit = (e) => {
   e.preventDefault();
-
   const form = e.target;
   const formData = new FormData(form);
   const userData = Object.fromEntries(formData);
-
   loginUser(userData);
 };
