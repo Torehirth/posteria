@@ -9,8 +9,6 @@ export const getPosts = async () => {
   const messageContainer = document.querySelector("#info-message");
 
   try {
-    // Disable fieldset/form when calling the API
-    isFieldsetDisabled(true, 0.7, "Publishing..");
     // Create API request header
     const options = createAPIRequestHeader("GET");
     // Fetch API
@@ -25,8 +23,5 @@ export const getPosts = async () => {
   } catch (err) {
     console.error(err.message);
     displayMessage(messageContainer, "error", err.message);
-  } finally {
-    // Enable fieldset/form after calling the API
-    isFieldsetDisabled(false, 1, "Publish");
   }
 };
