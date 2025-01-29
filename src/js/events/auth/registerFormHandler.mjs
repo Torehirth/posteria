@@ -15,5 +15,9 @@ const handleRegisterFormSubmit = (e) => {
   const formData = new FormData(form);
   const userData = Object.fromEntries(formData);
 
+  userData.avatar.url = 
+
   registerUser(userData);
+  console.log(userData.name);
+  
 };

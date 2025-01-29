@@ -1,7 +1,7 @@
 import { getFromStorage } from "../../events/common/utils/getFromStorage.mjs";
 import { API_KEY } from "../../constants/api.mjs";
 
-export const createAPIRequestHeader = (method, formData) => {
+export const createAPIRequestHeader = (method = "GET", formData) => {
   const userData = getFromStorage("user");
   const { accessToken } = userData;
 
@@ -10,7 +10,7 @@ export const createAPIRequestHeader = (method, formData) => {
     headers: {
       Authorization: `Bearer ${accessToken}`,
       "X-Noroff-API-Key": API_KEY,
-      "Content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(formData),
   };

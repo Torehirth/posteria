@@ -16,7 +16,9 @@ import {
 import { registerFormHandler } from "./events/auth/registerFormHandler.mjs";
 import { applySystemTheme, toggleColourTheme } from "./ui/common/handlers/themeHandlers.mjs";
 import { loginFormHandler } from "./events/auth/loginFormHandler.mjs";
-import { createPostHandler, fetchPosts } from "./api/posts/createPost.mjs";
+import { createPostHandler } from "./api/posts/handlers/createPostHandler.mjs";
+import { getPosts } from "./api/posts/getPosts.mjs";
+import { getPostsHandler } from "./api/posts/handlers/getPostsHandler.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -56,9 +58,9 @@ const router = () => {
       toggleSortDropdownMenu();
       closeSortDropDownByClickOutside();
       closeSortDropdownByEscKey();
-      // Create post
+      // Posts
       createPostHandler();
-      fetchPosts();
+      getPostsHandler();
       break;
 
     case "/profile":
