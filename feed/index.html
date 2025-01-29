@@ -184,6 +184,7 @@
           </button>
           <!-- Log out button -->
           <a
+            id="log-out-btn"
             href="../index.html"
             aria-label="Notifications button"
             class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400">
@@ -292,6 +293,7 @@
         </button>
         <!-- Log out button -->
         <a
+          id="log-out-btn-mobile"
           href="../index.html"
           aria-label="Log out"
           class="flex text-sm justify-end items-center w-fit my-2 rounded-lg transition">
@@ -326,47 +328,66 @@
       <!-- create post  -->
       <section class="px-3">
         <div class="flex flex-col gap-4 mt-4 max-w-xl mx-auto">
-          <h1 class="text-center text-lg font-semibold">Create new post</h1>
-          <form
-            id="create-post-form"
-            enctype="multipart/form-data"
-            class="flex flex-col gap-4 h-full border border-black dark:border-white rounded-lg focus-within:border-eden-400">
-            <!-- text content area -->
-            <textarea
-              name="post-content"
-              id="create-post"
-              placeholder="What's on your mind?"
-              class="appearance-none outline-none pt-3 pl-3 bg-transparent h-20 placeholder:text-gray-600 dark:placeholder:text-gray-400"></textarea>
-            <!-- image upload button -->
-            <label for="post-image" aria-label="add image" class="mx-2 mb-2 w-fit cursor-pointer">
-              <input
-                type="file"
-                name="postImage"
-                id="post-image"
-                accept=".jpeg,.jpg,.png,.bmp,.webp,.heic"
-                class="hidden" />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-7 hover:scale-90">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-              </svg>
-            </label>
+          <label for="post-title" class="text-center text-lg font-semibold">Create new post</label>
+          <div id="info-message"></div>
+          <!-- Form -->
+          <form id="create-post-form" enctype="multipart/form-data" class="flex flex-col gap-4 h-full">
+            <!-- Fieldset -->
+            <fieldset class="flex flex-col gap-4">
+              <div class="border border-black dark:border-white rounded-lg focus-within:border-eden-400">
+                <input
+                  type="text"
+                  name="title"
+                  id="post-title"
+                  placeholder="Title"
+                  required
+                  minlength="3"
+                  class="appearance-none outline-none pt-3 px-3 bg-transparent w-full h-10 placeholder:text-gray-600 dark:placeholder:text-gray-400" />
+                <!-- Bottom Border -->
+                <div
+                  aria-hidden="true"
+                  class="w-full mt-2 border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10"></div>
+                <textarea
+                  name="body"
+                  id="post-body"
+                  placeholder="What's on your mind?"
+                  class="appearance-none outline-none pt-3 px-3 bg-transparent w-full h-20 placeholder:text-gray-600 dark:placeholder:text-gray-400 focus-within:h-64 sm:focus-within:h-44 lg:focus-within:h-20"></textarea>
+                <!-- Image Upload Button -->
+                <label
+                  for="post-image"
+                  aria-label="add image"
+                  class="inline-block w-fit h-fit cursor-pointer">
+                  <input
+                    type="file"
+                    name="media"
+                    id="post-image"
+                    accept=".jpeg,.jpg,.png,.bmp,.webp,.heic"
+                    class="hidden" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-7 mx-2 my-2 w-fit cursor-pointer hover:scale-90">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                  </svg>
+                </label>
+              </div>
+              <!-- Submit Button -->
+              <button type="submit" class="primary-btn w-fit px-6">Publish</button>
+            </fieldset>
           </form>
-          <!-- form submit button -->
-          <button type="submit" class="primary-btn w-fit px-6">Publish</button>
-          <!-- bottom border -->
+          <!-- Bottom Border -->
           <div
             aria-hidden="true"
             class="w-full mt-2 border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10"></div>
         </div>
       </section>
+
       <!-- Sort/filter container -->
       <div class="px-3 mt-4">
         <div class="flex flex-col justify-end max-w-xl mx-auto">
