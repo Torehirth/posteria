@@ -5,3 +5,5 @@ export const API_LOGIN_ENDPOINT = "/login";
 export const API_SOCIAL_ENDPOINT = "/social";
 export const API_POSTS_ENDPOINT = "/posts";
 export const API_KEY = "75b5c809-1e1b-4ea0-8942-da0c692f881f";
+
+export const personalTag = "numerouno";

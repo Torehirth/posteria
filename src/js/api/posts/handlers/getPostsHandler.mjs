@@ -12,14 +12,14 @@ const sortParam = "created";
 let sortOrder = "desc";
 
 // Fetch and display posts
-export const getPostsHandler = async (currentPage = 1) => {
+export const getPostsHandler = async () => {
+  // setting currentPage = 1 as default parameter to prevent sorting function to increment page number.
   try {
     const data = await fetchPosts(
       `${usersParam}&limit=${limit}&page=${currentPage}&sort=${sortParam}&sortOrder=${sortOrder}`
     );
 
     const posts = data?.data || [];
-    console.log(posts);
 
     if (posts.length === 0) {
       observer.disconnect();
@@ -28,7 +28,6 @@ export const getPostsHandler = async (currentPage = 1) => {
       return;
     }
 
-    // Render new posts
     renderPosts(posts);
     sortPostsByDate();
     currentPage++;
@@ -54,13 +53,13 @@ export const renderPosts = (posts) => {
   });
 };
 
-// Set up IntersectionObserver for infinite scroll
+// IntersectionObserver for infinite scroll
 export const setupInfiniteScroll = () => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Load more posts when loader is in view
+          // Load more posts when loader is in view (also loads posts initially..).
           getPostsHandler();
         }
       });
@@ -68,7 +67,7 @@ export const setupInfiniteScroll = () => {
     { rootMargin: "75px" } // Trigger loading 100px before reaching the loader
   );
 
-  observer.observe(loader); // Observe the loader element
+  observer.observe(loader); // Observe the loader element (loader must be in DOM).
 };
 
 const sortPostsByDate = () => {
