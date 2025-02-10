@@ -13,7 +13,6 @@ let sortOrder = "desc";
 
 // Fetch and display posts
 export const getPostsHandler = async () => {
-  // setting currentPage = 1 as default parameter to prevent sorting function to increment page number.
   try {
     const data = await fetchPosts(
       `${usersParam}&limit=${limit}&page=${currentPage}&sort=${sortParam}&sortOrder=${sortOrder}`
@@ -76,12 +75,16 @@ const sortPostsByDate = () => {
       document.querySelector("#descending-icon").classList.remove("opacity-0");
       document.querySelector("#ascending-icon").classList.add("opacity-0");
       document.querySelector("#feed-posts").innerHTML = "";
+
       sortOrder = "desc";
     } else if (e.target.closest("#ascending")) {
       document.querySelector("#ascending-icon").classList.remove("opacity-0");
       document.querySelector("#descending-icon").classList.add("opacity-0");
       document.querySelector("#feed-posts").innerHTML = "";
+
       sortOrder = "asc";
     }
+    // setting currentPage = 1 to prevent sorting function to increment page number.
+    currentPage = 1;
   });
 };
