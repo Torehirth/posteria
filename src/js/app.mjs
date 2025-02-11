@@ -65,8 +65,6 @@ const router = () => {
       setupInfiniteScroll();
       // Log out
       logOut();
-      console.log("Router function on feed page is initialized");
-
       break;
 
     case "/profile/index.html":
@@ -80,8 +78,6 @@ const router = () => {
       applySystemTheme();
       // Log out
       logOut();
-      console.log("Router function on profile page is initialized");
-
       break;
   }
 };

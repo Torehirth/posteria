@@ -17,17 +17,13 @@ export const getPostsHandler = async () => {
     const data = await fetchPosts(
       `${usersParam}&limit=${limit}&page=${currentPage}&sort=${sortParam}&sortOrder=${sortOrder}`
     );
-
     const posts = data?.data || [];
-
     if (posts.length === 0) {
       observer.disconnect();
       loader.style.display = "none";
       displayMessage(messageContainer, "info", "No more posts to load.");
       return;
     }
-    console.log(posts);
-
     renderPosts(posts);
     sortPostsByDate();
     currentPage++;
