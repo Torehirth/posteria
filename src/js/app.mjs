@@ -38,7 +38,7 @@ const router = () => {
       break;
 
     case "/register/index.html":
-    case "/register":
+    case "/register/":
       // -- Theme --
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
@@ -47,7 +47,7 @@ const router = () => {
       break;
 
     case "/feed/index.html":
-    // case "/feed":
+    case "/feed/":
       // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
@@ -70,7 +70,7 @@ const router = () => {
       break;
 
     case "/profile/index.html":
-    // case "/profile":
+    case "/profile/":
       // -- Posts/followers/follow section --
       displayPostsSection();
       displayFollowersSection();
