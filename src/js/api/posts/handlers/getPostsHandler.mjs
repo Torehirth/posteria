@@ -27,7 +27,6 @@ export const getPostsHandler = async () => {
       return;
     }
     console.log(posts);
-    
 
     renderPosts(posts);
     sortPostsByDate();

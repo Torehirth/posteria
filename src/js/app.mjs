@@ -24,6 +24,8 @@ const router = () => {
   const pathname = window.location.pathname;
   const headerThemeToggleBtn = document.querySelector("#header-theme-toggle-btn");
   const themeToggleBtn = document.querySelector("#theme-toggle-btn");
+  console.log(pathname);
+  console.log(window.location.href);
 
   switch (pathname) {
     case "/":
