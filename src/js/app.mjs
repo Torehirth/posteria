@@ -61,6 +61,7 @@ const router = () => {
       // Posts
       createPostHandler();
       setupInfiniteScroll();
+      getPostsHandler();
       // Log out
       logOut();
       break;
