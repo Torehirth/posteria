@@ -24,8 +24,6 @@ const router = () => {
   const pathname = window.location.pathname;
   const headerThemeToggleBtn = document.querySelector("#header-theme-toggle-btn");
   const themeToggleBtn = document.querySelector("#theme-toggle-btn");
-  console.log(pathname);
-  console.log(window.location.href);
 
   switch (pathname) {
     case "/index.html":
@@ -36,7 +34,6 @@ const router = () => {
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
       break;
-
     case "/register/index.html":
     case "/register/":
       // -- Theme --
@@ -45,7 +42,6 @@ const router = () => {
       // -- Register --
       registerFormHandler();
       break;
-
     case "/feed/index.html":
     case "/feed/":
       // -- Theme --
@@ -66,7 +62,6 @@ const router = () => {
       // Log out
       logOut();
       break;
-
     case "/profile/index.html":
     case "/profile/":
       // -- Posts/followers/follow section --
