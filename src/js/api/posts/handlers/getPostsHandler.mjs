@@ -26,6 +26,8 @@ export const getPostsHandler = async () => {
       displayMessage(messageContainer, "info", "No more posts to load.");
       return;
     }
+    console.log(posts);
+    
 
     renderPosts(posts);
     sortPostsByDate();
