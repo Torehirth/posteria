@@ -66,6 +66,8 @@ const router = () => {
       getPostsHandler();
       // Log out
       logOut();
+      console.log("Router function on feed page is initialized");
+
       break;
 
     case "/profile":
@@ -79,6 +81,8 @@ const router = () => {
       applySystemTheme();
       // Log out
       logOut();
+      console.log("Router function on profile page is initialized");
+
       break;
   }
 };
