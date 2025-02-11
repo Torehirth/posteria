@@ -28,8 +28,8 @@ const router = () => {
   console.log(window.location.href);
 
   switch (pathname) {
-    // case "/":
-    case "/index.html":
+    case "/":
+      // case "/index.html":
       // Login page
       loginFormHandler();
       // -- Theme --
@@ -37,8 +37,8 @@ const router = () => {
       applySystemTheme();
       break;
 
-    // case "/register":
-    case "/register/index.html":
+    case "/register":
+      // case "/register/index.html":
       // -- Theme --
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
@@ -46,8 +46,8 @@ const router = () => {
       registerFormHandler();
       break;
 
-    // case "/feed":
-    case "/feed/index.html":
+    case "/feed":
+      // case "/feed/index.html":
       // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
@@ -68,8 +68,8 @@ const router = () => {
       logOut();
       break;
 
-    // case "/profile":
-    case "/profile/index.html":
+    case "/profile":
+      // case "/profile/index.html":
       // -- Posts/followers/follow section --
       displayPostsSection();
       displayFollowersSection();
