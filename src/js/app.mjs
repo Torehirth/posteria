@@ -28,8 +28,8 @@ const router = () => {
   console.log(window.location.href);
 
   switch (pathname) {
-    case "/":
     case "/index.html":
+    case "/":
       // Login page
       loginFormHandler();
       // -- Theme --
@@ -37,8 +37,8 @@ const router = () => {
       applySystemTheme();
       break;
 
-    case "/register":
     case "/register/index.html":
+    case "/register":
       // -- Theme --
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
@@ -46,8 +46,8 @@ const router = () => {
       registerFormHandler();
       break;
 
-    case "/feed":
     case "/feed/index.html":
+    case "/feed":
       // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
@@ -63,15 +63,14 @@ const router = () => {
       // Posts
       createPostHandler();
       setupInfiniteScroll();
-      getPostsHandler();
       // Log out
       logOut();
       console.log("Router function on feed page is initialized");
 
       break;
 
-    case "/profile":
     case "/profile/index.html":
+    case "/profile":
       // -- Posts/followers/follow section --
       displayPostsSection();
       displayFollowersSection();
