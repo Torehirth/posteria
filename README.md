@@ -6,7 +6,7 @@
 
 Posteria is a social media platform for posting content and connecting with others. It aims to provide an intuitive, responsive, and visually appealing interface for users to share their thoughts and interact with their networks.
 
-- [Live website](https://torehirth.github.io/posteria/)
+- [Live website](https://js2-posteria.netlify.app)
 
 ## Description
 
@@ -29,7 +29,6 @@ The project utilizes the following technologies:
 - JavaScript
 - Figma
 
-
 ## Getting Started
 
 ### Installing
@@ -47,6 +46,7 @@ git clone https://github.com/torehirth/posteria.git
 ```bash
 cd posteria
 ```
+
 3. Install the dependencies using NPM:
 
 ```bash
