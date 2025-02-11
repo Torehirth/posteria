@@ -17,7 +17,7 @@ import { registerFormHandler } from "./events/auth/registerFormHandler.mjs";
 import { applySystemTheme, toggleColourTheme } from "./ui/common/handlers/themeHandlers.mjs";
 import { loginFormHandler } from "./events/auth/loginFormHandler.mjs";
 import { createPostHandler } from "./api/posts/handlers/createPostHandler.mjs";
-import { getPostsHandler } from "./api/posts/handlers/getPostsHandler.mjs";
+import { getPostsHandler, setupInfiniteScroll } from "./api/posts/handlers/getPostsHandler.mjs";
 import { logOut } from "./ui/common/handlers/logoutHandler.mjs";
 
 const router = () => {
@@ -60,7 +60,7 @@ const router = () => {
       closeSortDropdownByEscKey();
       // Posts
       createPostHandler();
-      getPostsHandler();
+      setupInfiniteScroll();
       // Log out
       logOut();
       break;

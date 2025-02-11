@@ -4,7 +4,7 @@ import { isFieldsetDisabled } from "../../ui/common/utils/isFieldsetDisabled.mjs
 import { createAPIRequestHeader } from "../utils/createAPIRequestHeader.mjs";
 
 export const createPost = async (post) => {
-  const createPostURL = `${API_BASE_URL}${API_SOCIAL_ENDPOINT}${API_POSTS_ENDPOINT}`;
+  const postsURL = `${API_BASE_URL}${API_SOCIAL_ENDPOINT}${API_POSTS_ENDPOINT}`;
   const form = document.querySelector("#create-post-form");
   const messageContainer = document.querySelector("#info-message");
 
@@ -13,8 +13,7 @@ export const createPost = async (post) => {
     isFieldsetDisabled(true, 0.7, "Publishing..");
     // Create API request header
     const options = createAPIRequestHeader("POST", post);
-    // Fetch API
-    const response = await fetch(createPostURL, options);
+    const response = await fetch(postsURL, options);
     const json = await response.json();
 
     if (!response.ok) {
