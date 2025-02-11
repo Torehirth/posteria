@@ -13,6 +13,7 @@ export const toggleAsideSearchbar = () => {
 const closeSearchbar = () => {
   searchInputContainer.classList.add("hidden");
   searchInput.classList.add("hidden");
+  searchInput.value = "";
 };
 
 export const closeSearchBarOnKeypress = () => {

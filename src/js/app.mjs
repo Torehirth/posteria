@@ -19,6 +19,7 @@ import { loginFormHandler } from "./events/auth/loginFormHandler.mjs";
 import { createPostHandler } from "./api/posts/handlers/createPostHandler.mjs";
 import { setupInfiniteScroll } from "./api/posts/handlers/getPostsHandler.mjs";
 import { logOut } from "./ui/common/handlers/logoutHandler.mjs";
+import { searchInputEventListener } from "./api/posts/handlers/searchPosts.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -59,6 +60,8 @@ const router = () => {
       // Posts
       createPostHandler();
       setupInfiniteScroll();
+      // Search
+      searchInputEventListener();
       // Log out
       logOut();
       break;

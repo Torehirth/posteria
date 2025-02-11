@@ -72,13 +72,11 @@ const sortPostsByDate = () => {
       document.querySelector("#descending-icon").classList.remove("opacity-0");
       document.querySelector("#ascending-icon").classList.add("opacity-0");
       document.querySelector("#feed-posts").innerHTML = "";
-
       sortOrder = "desc";
     } else if (e.target.closest("#ascending")) {
       document.querySelector("#ascending-icon").classList.remove("opacity-0");
       document.querySelector("#descending-icon").classList.add("opacity-0");
       document.querySelector("#feed-posts").innerHTML = "";
-
       sortOrder = "asc";
     }
     // setting currentPage = 1 to prevent sorting function to increment page number.

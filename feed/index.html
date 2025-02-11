@@ -253,6 +253,7 @@
           <input
             type="search"
             id="feed-search"
+            name="feed-search"
             class="w-full pl-4 appearance-none bg-transparent autofill:-black border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50 focus:py-1 transition-all"
             placeholder="Search" />
         </div>
@@ -317,12 +318,13 @@
       <div class="hidden lg:block">
         <div
           id="aside-feed-search-container"
-          class="hidden transition-all max-w-xl mx-auto mt-2 px-4 py-1 rounded-lg focus-within:bg-black focus-within:ring ring-eden-400 focus-within:bg-transparent">
+          class="hidden flex justify-center transition-all max-w-xl mx-auto mt-2 px-4 py-1 rounded-lg focus-within:bg-black focus-within:ring ring-eden-400 focus-within:bg-transparent">
           <input
             type="search"
             id="aside-feed-search"
             class="w-full pl-4 appearance-none bg-transparent border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50 focus:py-1 transition-all hidden"
             placeholder="Search" />
+          <div id="info-message" class="flex items-center justify-center mt-3 rounded-lg border-none"></div>
         </div>
       </div>
       <!-- create post  -->
