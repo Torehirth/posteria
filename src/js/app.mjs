@@ -20,6 +20,11 @@ import { createPostHandler } from "./api/posts/handlers/createPostHandler.mjs";
 import { setupInfiniteScroll } from "./api/posts/handlers/getPostsHandler.mjs";
 import { logOut } from "./ui/common/handlers/logoutHandler.mjs";
 import { searchInputEventListener } from "./api/posts/handlers/searchPosts.mjs";
+import {
+  setupNewPostButtonListeners,
+  applyNewPostStateFromURL,
+} from "./ui/common/handlers/newPostButtonHandlers.mjs";
+import { setupClickOutsideNewPostHandler } from "./ui/common/handlers/newPostStateHandlers.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -62,6 +67,10 @@ const router = () => {
       setupInfiniteScroll();
       // Search
       searchInputEventListener();
+      // new post click
+      setupNewPostButtonListeners();
+      applyNewPostStateFromURL();
+      setupClickOutsideNewPostHandler();
       // Log out
       logOut();
       break;
@@ -74,6 +83,8 @@ const router = () => {
       // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
+      // new post click
+      setupNewPostButtonListeners();
       // Log out
       logOut();
       break;

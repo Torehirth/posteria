@@ -23,14 +23,16 @@
     <title>Feed | Posteria</title>
   </head>
   <body class="flex flex-col min-h-full bg-white text-black dark:bg-black dark:text-white">
+    <!-- Desktop aside menu -->
     <aside class="hidden lg:flex sticky top-0 z-50 bg-transparent">
       <nav class="flex flex-col absolute">
         <div class="flex flex-col gap-3 items-start justify-center h-screen my-auto font-semibold pl-1">
           <!-- search button -->
           <button
+            id="aside-search-btn"
             class="w-full rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400">
             <label
-              id="aside-feed-button"
+              id="aside-search-button"
               for="aside-feed-search"
               class="cursor-pointer flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0">
               <span for="aside-feed-search"
@@ -54,14 +56,14 @@
           <a
             href="#"
             aria-label="Feed/home button"
-            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-1 xl:gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:bg-gray-300 dark:xl:bg-darkGray cursor-default">
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-1 xl:gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:bg-gray-300 dark:xl:bg-darkGray">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-7 dark:stroke-eden-500 cursor-default">
+              class="size-7 dark:stroke-eden-500">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -90,11 +92,11 @@
             <span class="hidden xl:block">Messages</span>
           </a>
           <!-- plus/new post button -->
-          <a
-            href="#"
+          <button
+            for="post-title"
             aria-label="New post button"
-            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
-            ><svg
+            class="new-post-btn new-post-btn flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400">
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -106,8 +108,11 @@
                 stroke-linejoin="round"
                 d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
-            <span class="hidden xl:block">New post</span>
-          </a>
+            <span class="hidden xl:block" for="post-title">New post</span>
+            <span
+              id="active-round-dot"
+              class="hidden -ml-1 w-2 h-2 border-4 border-eden-400 rounded-full"></span>
+          </button>
           <!-- notifications button -->
           <a
             href="#"
@@ -518,7 +523,7 @@
           </svg>
         </a>
         <!-- plus/new post -->
-        <a href="#" aria-label="New post button"
+        <a href="#" aria-label="New post button" class="new-post-btn"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

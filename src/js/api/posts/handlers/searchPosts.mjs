@@ -27,7 +27,7 @@ export const searchHandler = async (e) => {
 
     if (inputValue.length) {
       postsContainer.innerHTML = "";
-      loader.classList.add("hidden"); // Hides the loader to prevent observer to continue observing the loader, if else the getPostHandler function would be called and rest of posts would stack below
+      loader.classList.add("hidden"); // Hides the loader to prevent observer to continue observing the loader = getPostHandler function wouldn't be called initially or by scroll.
     }
 
     const filteredPosts = posts.filter((post) => {
