@@ -17,14 +17,14 @@ import { registerFormHandler } from "./events/auth/registerFormHandler.mjs";
 import { applySystemTheme, toggleColourTheme } from "./ui/common/handlers/themeHandlers.mjs";
 import { loginFormHandler } from "./events/auth/loginFormHandler.mjs";
 import { createPostHandler } from "./api/posts/handlers/createPostHandler.mjs";
-import { setupInfiniteScroll } from "./api/posts/handlers/getPostsHandler.mjs";
 import { logOut } from "./ui/common/handlers/logoutHandler.mjs";
-import { searchInputEventListener } from "./api/posts/handlers/searchPosts.mjs";
+import { searchInputEventListener } from "./api/posts/handlers/searchPostsHandler.mjs";
 import {
   setupNewPostButtonListeners,
   applyNewPostStateFromURL,
 } from "./ui/common/handlers/newPostButtonHandlers.mjs";
 import { setupClickOutsideNewPostHandler } from "./ui/common/handlers/newPostStateHandlers.mjs";
+import { setupInfiniteScroll } from "./ui/common/handlers/setUpInfiniteScroll.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;

@@ -1,12 +1,14 @@
 const searchButton = document.querySelector("#aside-search-btn");
 const searchInputContainer = document.querySelector("#aside-feed-search-container");
 const searchInputDesktop = document.querySelector("#aside-feed-search");
+const messageContainer = document.querySelector("#aside-feed-search-container #info-message");
 
 export const toggleAsideSearchbar = () => {
   searchButton.addEventListener("click", (e) => {
     e.stopPropagation();
     searchInputContainer.classList.toggle("hidden");
     searchInputDesktop.classList.toggle("hidden");
+    messageContainer.classList.remove("hidden");
   });
 };
 
@@ -14,6 +16,8 @@ const closeSearchbar = () => {
   searchInputContainer.classList.add("hidden");
   searchInputDesktop.classList.add("hidden");
   searchInputDesktop.value = "";
+  messageContainer.classList.add("hidden");
+  messageContainer.innerHTML = "";
 };
 
 export const closeSearchBarOnKeypress = () => {
