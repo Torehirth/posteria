@@ -1,6 +1,6 @@
-import { getTimeAgo } from "../../../events/posts/getTimeAgo.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
-import { createPostElements } from "../../../ui/posts/createPostElements.mjs";
+import { renderPosts } from "../../../ui/posts/renderPosts.mjs";
+import { sortPostsByDate } from "../../../ui/posts/sortPostsByDate.mjs";
 import { fetchPosts } from "../fetchPosts.mjs";
 
 const messageContainer = document.querySelector("#feed-info-message");
@@ -34,54 +34,10 @@ export const getPostsHandler = async () => {
   }
 };
 
-// Render posts to the container
-export const renderPosts = (posts) => {
-  posts.forEach((post) => {
-    const profileImage = post?.author?.avatar?.url || "";
-    const profileName = post?.author?.name || "";
-    const postTitle = post?.title || "New Post";
-    const postBody = post?.body || "";
-    const postImage = post?.media?.url || "";
-    const postAltText = postImage ? post?.media?.alt || postTitle : "";
-    const timeAgo = getTimeAgo(post?.created || "");
-
-    createPostElements(profileImage, profileName, postImage, postAltText, postTitle, postBody, timeAgo);
-  });
+// Setter functions to export the values from the variables
+export const setCurrentPage = (page) => {
+  currentPage = page;
 };
-
-// IntersectionObserver for infinite scroll
-export const setupInfiniteScroll = () => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Load more posts when loader is in view (also loads posts initially..).
-          getPostsHandler();
-        }
-      });
-    },
-    { rootMargin: "75px" } // Trigger loading 100px before reaching the loader
-  );
-
-  observer.observe(loader); // Observe the loader element (loader must be in DOM).
-};
-
-const sortPostsByDate = () => {
-  document.addEventListener("click", (e) => {
-    if (e.target.closest("#descending")) {
-      document.querySelector("#descending-icon").classList.remove("opacity-0");
-      document.querySelector("#ascending-icon").classList.add("opacity-0");
-      document.querySelector("#feed-posts").innerHTML = "";
-
-      sortOrder = "desc";
-    } else if (e.target.closest("#ascending")) {
-      document.querySelector("#ascending-icon").classList.remove("opacity-0");
-      document.querySelector("#descending-icon").classList.add("opacity-0");
-      document.querySelector("#feed-posts").innerHTML = "";
-
-      sortOrder = "asc";
-    }
-    // setting currentPage = 1 to prevent sorting function to increment page number.
-    currentPage = 1;
-  });
+export const setSortOrder = (order) => {
+  sortOrder = order;
 };
