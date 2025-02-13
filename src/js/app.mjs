@@ -25,6 +25,7 @@ import {
 } from "./ui/common/handlers/newPostButtonHandlers.mjs";
 import { setupClickOutsideNewPostHandler } from "./ui/common/handlers/newPostStateHandlers.mjs";
 import { setupInfiniteScroll } from "./ui/common/handlers/setUpInfiniteScroll.mjs";
+import { getUserPostsHandler } from "./api/posts/handlers/getUserPostsHandler.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -76,7 +77,7 @@ const router = () => {
       break;
     case "/profile/index.html":
     case "/profile/":
-      // -- Posts/followers/follow section --
+      // -- Posts/followers/follow sections
       displayPostsSection();
       displayFollowersSection();
       displayFollowingSection();
@@ -85,6 +86,8 @@ const router = () => {
       applySystemTheme();
       // new post click
       setupNewPostButtonListeners();
+      // Personal posts
+      getUserPostsHandler();
       // Log out
       logOut();
       break;

@@ -1,3 +1,4 @@
+import { API_POSTS_URL } from "../../../constants/api.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
 import { renderPosts } from "../../../ui/posts/renderPosts.mjs";
 import { sortPostsByDate } from "../../../ui/posts/sortPostsByDate.mjs";
@@ -13,10 +14,9 @@ let sortOrder = "desc";
 
 // Fetch and display posts
 export const getPostsHandler = async () => {
+  const URLparameters = `${usersParam}&limit=${limit}&page=${currentPage}&sort=${sortParam}&sortOrder=${sortOrder}`;
   try {
-    const data = await fetchPosts(
-      `${usersParam}&limit=${limit}&page=${currentPage}&sort=${sortParam}&sortOrder=${sortOrder}`
-    );
+    const data = await fetchPosts(`${API_POSTS_URL}?${URLparameters}`);
     const posts = data?.data || [];
     if (posts.length === 0) {
       observer.disconnect();
@@ -24,7 +24,7 @@ export const getPostsHandler = async () => {
       displayMessage(messageContainer, "info", "No more posts to load.");
       return;
     }
-    renderPosts(posts);
+    renderPosts(posts, "#feed-posts");
     sortPostsByDate();
     currentPage++;
   } catch (err) {

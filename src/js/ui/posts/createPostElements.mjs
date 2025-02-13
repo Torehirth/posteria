@@ -5,7 +5,8 @@ export const createPostElements = (
   altText,
   postTitle,
   postBody,
-  timeAgo
+  timeAgo,
+  postsContainerId
 ) => {
   // Create the main post container
   const postContainer = document.createElement("div");
@@ -124,7 +125,7 @@ export const createPostElements = (
     "w-full border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10 pt-4";
 
   // Append the post container and border bottom to the feed
-  const feedPosts = document.getElementById("feed-posts");
-  feedPosts.appendChild(postContainer);
-  feedPosts.appendChild(borderBottom);
+  const container = document.querySelector(postsContainerId);
+  container.appendChild(postContainer);
+  container.appendChild(borderBottom);
 };

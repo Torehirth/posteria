@@ -1,3 +1,4 @@
+import { API_POSTS_URL } from "../../../constants/api.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
 import { renderPosts } from "../../../ui/posts/renderPosts.mjs";
 import { fetchPosts } from "../fetchPosts.mjs";
@@ -16,7 +17,7 @@ export const searchInputEventListener = async () => {
       try {
         const regex = /[^a-zA-Z0-9s]+/g; // Removes all spaces and special characters
         const inputValue = e?.target?.value.toLowerCase().replace(regex, "") || "";
-        const data = await fetchPosts(usersParam);
+        const data = await fetchPosts(`${API_POSTS_URL}?${usersParam}`);
         const posts = data?.data || [];
 
         if (inputValue.length) {
@@ -42,7 +43,7 @@ export const searchInputEventListener = async () => {
           messageContainer.classList.remove("hidden");
         } else {
           postsContainer.innerHTML = "";
-          renderPosts(filteredPosts);
+          renderPosts(filteredPosts, "#feed-posts");
           messageContainer.classList.add("hidden");
         }
       } catch (err) {
