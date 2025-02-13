@@ -8,7 +8,6 @@ export const toggleAsideSearchbar = () => {
     e.stopPropagation();
     searchInputContainer.classList.toggle("hidden");
     searchInputDesktop.classList.toggle("hidden");
-    messageContainer.classList.remove("hidden");
   });
 };
 
