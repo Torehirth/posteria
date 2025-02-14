@@ -61,8 +61,17 @@ export const createPostElements = (
   postBodyElement.textContent = postBody;
 
   // Create the like and comment buttons section
-  const buttonsContainer = document.createElement("div");
-  buttonsContainer.className = "flex gap-4";
+  const buttonContainerFull = document.createElement("div");
+  buttonContainerFull.className = "flex justify-between";
+
+  const buttonsContainerLeft = document.createElement("div");
+  buttonsContainerLeft.className = "flex gap-6";
+
+  const buttonsContainerRight = document.createElement("div");
+  buttonsContainerRight.className = "flex gap-6";
+
+  buttonContainerFull.appendChild(buttonsContainerLeft);
+  buttonContainerFull.appendChild(buttonsContainerRight);
 
   const likeButton = document.createElement("div");
   const likeCheckbox = document.createElement("input");
@@ -145,17 +154,17 @@ export const createPostElements = (
 
   deleteButton.appendChild(deleteIcon);
 
-  buttonsContainer.appendChild(likeButton);
-  buttonsContainer.appendChild(commentButton);
-  buttonsContainer.appendChild(editButton);
-  buttonsContainer.appendChild(deleteButton);
+  buttonsContainerLeft.appendChild(likeButton);
+  buttonsContainerLeft.appendChild(commentButton);
+  buttonsContainerRight.appendChild(editButton);
+  buttonsContainerRight.appendChild(deleteButton);
 
   // Append all sections to the post container
   postContainer.appendChild(authorInfo);
   postContainer.appendChild(postImageContainer);
   postContainer.appendChild(postTitleElement);
   postContainer.appendChild(postBodyElement);
-  postContainer.appendChild(buttonsContainer);
+  postContainer.appendChild(buttonContainerFull);
 
   // Create the border bottom
   const borderBottom = document.createElement("div");
