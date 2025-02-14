@@ -6,6 +6,7 @@ export const createPostHandler = () => {
 
   if (createPostForm) {
     createPostForm.addEventListener("submit", handlePostFormEvent);
+    createPostForm.reset();
   }
 };
 
@@ -20,6 +21,9 @@ const handlePostFormEvent = (e) => {
       url: postData.media,
       alt: `Could be an image of ${postData.title} and/or ${postData.body}`,
     };
+  } else {
+    // If image URL isn't entered into form, delete media to not get 400 response from API
+    delete postData.media;
   }
   postData.tags = [personalTag];
   createPost(postData);

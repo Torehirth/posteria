@@ -25,6 +25,10 @@ import {
 } from "./ui/common/handlers/newPostButtonHandlers.mjs";
 import { setupClickOutsideNewPostHandler } from "./ui/common/handlers/newPostStateHandlers.mjs";
 import { setupInfiniteScroll } from "./ui/common/handlers/setUpInfiniteScroll.mjs";
+import { getUserPostsHandler } from "./api/posts/handlers/getUserPostsHandler.mjs";
+import { setUserProfileInfo } from "./ui/common/setUserProfileInfo.mjs";
+import { setUserProfileImages } from "./ui/common/setUserProfileImages.mjs";
+import { setUserProfileBannerImage } from "./ui/common/setUserProfileBannerImage.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -76,7 +80,11 @@ const router = () => {
       break;
     case "/profile/index.html":
     case "/profile/":
-      // -- Posts/followers/follow section --
+      setUserProfileInfo("name", "#profile-name", "your name");
+      setUserProfileInfo("bio", "#profile-bio");
+      setUserProfileImages("#profile-image");
+      setUserProfileBannerImage("#profile-banner");
+      // -- Posts/followers/follow sections
       displayPostsSection();
       displayFollowersSection();
       displayFollowingSection();
@@ -85,6 +93,8 @@ const router = () => {
       applySystemTheme();
       // new post click
       setupNewPostButtonListeners();
+      // Personal posts
+      getUserPostsHandler();
       // Log out
       logOut();
       break;
