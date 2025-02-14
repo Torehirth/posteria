@@ -13,8 +13,6 @@ export const getUserPostsHandler = async () => {
     const data = await fetchPosts(`${UserPostsURL}`);
     const userPosts = data?.data || [];
 
-    console.log(userPosts);
-
     if (!userPosts.length && data) {
       displayMessage("#info-message", "warning", "No posts available");
     }

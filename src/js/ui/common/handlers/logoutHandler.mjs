@@ -12,3 +12,5 @@ export const logOut = () => {
     logOutBtnMobile.addEventListener("click", () => removeFromStorage("user"));
   }
 };
+
+
