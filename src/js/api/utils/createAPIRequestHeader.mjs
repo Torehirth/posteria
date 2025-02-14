@@ -2,9 +2,7 @@ import { getFromStorage } from "../../events/common/utils/getFromStorage.mjs";
 import { API_KEY } from "../../constants/api.mjs";
 
 export const createAPIRequestHeader = (method = "GET", formData) => {
-  const userData = getFromStorage("user");
-  const { accessToken } = userData;
-
+  const { accessToken } = getFromStorage("user");
   const options = {
     method: method,
     headers: {

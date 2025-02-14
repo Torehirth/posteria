@@ -9,7 +9,7 @@
  * getFromStorage("user");
  *
  * // Destructure the properties within the object (ex: name)
- * const { name } = userData;
+ * const { name } = getFromStorage("user");
  * console.log(name); // Output would for example be "Ola"
  */
 

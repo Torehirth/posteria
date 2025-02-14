@@ -3,6 +3,7 @@ import { createAPIRequestHeader } from "../utils/createAPIRequestHeader.mjs";
 
 export const fetchPosts = async (URL) => {
   const messageContainer = document.querySelector("#info-message");
+  const loader = document.querySelector("#loader");
 
   try {
     // Create API request header
@@ -18,5 +19,8 @@ export const fetchPosts = async (URL) => {
   } catch (err) {
     console.error(err.message);
     displayMessage(messageContainer, "error", err.message);
+    if (loader) {
+      loader.classList.add("hidden");
+    }
   }
 };

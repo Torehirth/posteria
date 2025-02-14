@@ -6,18 +6,25 @@ import { fetchPosts } from "../fetchPosts.mjs";
 
 export const getUserPostsHandler = async () => {
   try {
+    // Get name property from destucturing the user object from local storage
     const { name } = getFromStorage("user");
-    console.log(name);
     const URLparams = "_author=true";
     const UserPostsURL = `${API_SOCIAL_URL}/profiles/${name}/posts?${URLparams}`;
-    const posts = await fetchPosts(`${UserPostsURL}`);
-    const userPosts = posts.data;
+    const data = await fetchPosts(`${UserPostsURL}`);
+    const userPosts = data?.data || [];
+
     console.log(userPosts);
+
+    if (!userPosts.length && data) {
+      displayMessage("#info-message", "warning", "No posts available");
+    }
+    // Disable loader when posts are loaded
     document.querySelector("#posts").innerHTML = "";
     renderPosts(userPosts, "#posts");
   } catch (err) {
     console.error(err);
-    displayMessage("#info-message", "error", "Having problem loading posts, try again later..");
+    displayMessage("#info-message", "error", error.message || "Failed to display posts. Try again later");
     document.querySelector("#loader").classList.add("hidden");
+    console.log("test");
   }
 };
