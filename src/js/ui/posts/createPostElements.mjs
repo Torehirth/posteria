@@ -122,7 +122,7 @@ export const createPostElements = (
   const borderBottom = document.createElement("div");
   borderBottom.setAttribute("aria-hidden", "true");
   borderBottom.className =
-    "w-full border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10 pt-4";
+    "w-full border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10 my-4";
 
   // Append the post container and border bottom to the feed
   const container = document.querySelector(postsContainerId);
