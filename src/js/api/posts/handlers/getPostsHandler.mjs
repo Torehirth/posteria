@@ -24,7 +24,7 @@ export const getPostsHandler = async () => {
       displayMessage(messageContainer, "info", "No more posts to load.");
       return;
     }
-    renderPosts(posts, "#feed-posts");
+    renderPosts(posts, "#feed-posts", "../post/index.html");
     sortPostsByDate();
     currentPage++;
   } catch (err) {

@@ -18,7 +18,7 @@ export const getUserPostsHandler = async () => {
     }
     // Disable loader when posts are loaded
     document.querySelector("#posts").innerHTML = "";
-    renderPosts(userPosts, "#posts");
+    renderPosts(userPosts, "#posts", "../post/index.html");
   } catch (err) {
     console.error(err);
     displayMessage("#info-message", "error", error.message || "Failed to display posts. Try again later");
