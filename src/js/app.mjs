@@ -29,6 +29,7 @@ import { getUserPostsHandler } from "./api/posts/handlers/getUserPostsHandler.mj
 import { setUserProfileInfo } from "./ui/common/setUserProfileInfo.mjs";
 import { setUserProfileImages } from "./ui/common/setUserProfileImages.mjs";
 import { setUserProfileBannerImage } from "./ui/common/setUserProfileBannerImage.mjs";
+import { renderSpecificPost } from "./ui/posts/renderSpecificPost.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -106,6 +107,8 @@ const router = () => {
       applySystemTheme();
       // new post click
       setupNewPostButtonListeners();
+      // Display post
+      renderSpecificPost();
       break;
   }
 };
