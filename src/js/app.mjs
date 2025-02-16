@@ -98,6 +98,15 @@ const router = () => {
       // Log out
       logOut();
       break;
+
+    case "/post/index.html":
+    case "/post/":
+      // -- Theme --
+      themeToggleBtn.addEventListener("click", toggleColourTheme);
+      applySystemTheme();
+      // new post click
+      setupNewPostButtonListeners();
+      break;
   }
 };
 

@@ -12,6 +12,16 @@ export const renderPosts = (posts, postsContainerId, postUrl) => {
     const postAltText = postImage ? post?.media?.alt || postTitle : "";
     const timeAgo = getTimeAgo(post?.created || "");
 
-    createPostElements(profileImage, profileName, postImage, postAltText, postTitle, postBody, timeAgo, postsContainerId, postUrl);
+    createPostElements(
+      profileImage,
+      profileName,
+      postImage,
+      postAltText,
+      postTitle,
+      postBody,
+      timeAgo,
+      postsContainerId,
+      postUrl
+    );
   });
 };
