@@ -1,5 +1,6 @@
+import { getFromStorage } from "../../events/common/utils/getFromStorage.mjs";
 import { getTimeAgo } from "../../events/posts/getTimeAgo.mjs";
-import { createSpecificPostElements } from "./createSpecificPostElements.mjs";
+import { addRightButtonContainer, createSpecificPostElements } from "./createSpecificPostElements.mjs";
 
 const postContainer = document.querySelector("#post-container");
 
@@ -15,6 +16,13 @@ export const renderSpecificPost = async (post) => {
   const postBodyText = post?.body || "Missing text";
   const postImgAlt = postImg ? post?.media?.alt || postBodyTitle : "";
 
+  // To add the edit and delete buttons on only the logged in users posts, it compares the email of the saved email to the email in the API response.
+  const { email } = getFromStorage("user");
+  let buttonGroup = document.createElement("div"); // Always creates an valid div(empty)
+  if (email === post?.author?.email) {
+    buttonGroup = addRightButtonContainer(); //
+  }
+
   createSpecificPostElements(
     profileName,
     profileImg,
@@ -23,6 +31,7 @@ export const renderSpecificPost = async (post) => {
     postImg,
     postImgAlt,
     postBodyTitle,
-    postBodyText
+    postBodyText,
+    buttonGroup
   );
 };
