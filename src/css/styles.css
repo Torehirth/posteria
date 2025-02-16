@@ -1066,6 +1066,10 @@ video {
   margin-left: auto;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -1935,6 +1939,10 @@ video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.self-center {
+  align-self: center;
 }
 
 .scroll-smooth {
@@ -25384,6 +25392,10 @@ video {
 
 .text-end {
   text-align: end;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .text-2xl {

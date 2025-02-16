@@ -2,7 +2,7 @@ import { getTimeAgo } from "../../events/posts/getTimeAgo.mjs";
 import { createPostElements } from "./createPostElements.mjs";
 
 // Render posts to the container
-export const renderPosts = (posts, postsContainerId, postUrl) => {
+export const renderPosts = (posts, postsContainerId) => {
   posts.forEach((post) => {
     const profileImage = post?.author?.avatar?.url || "";
     const profileName = post?.author?.name || "";
@@ -11,6 +11,7 @@ export const renderPosts = (posts, postsContainerId, postUrl) => {
     const postImage = post?.media?.url || "";
     const postAltText = postImage ? post?.media?.alt || postTitle : "";
     const timeAgo = getTimeAgo(post?.created || "");
+    const specificPostUrl = `/post/index.html?id=${post.id}`;
 
     createPostElements(
       profileImage,
@@ -21,7 +22,7 @@ export const renderPosts = (posts, postsContainerId, postUrl) => {
       postBody,
       timeAgo,
       postsContainerId,
-      postUrl
+      specificPostUrl
     );
   });
 };

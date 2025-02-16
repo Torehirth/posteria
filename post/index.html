@@ -108,21 +108,20 @@
           <a
             href="../profile/index.html"
             aria-label="Profile button"
-            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-1 xl:gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:bg-gray-300 dark:xl:bg-darkGray cursor-default"
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-7 dark:stroke-eden-500 cursor-default">
+              class="size-7 lg:hover:stroke-2 lg:active:stroke-1 dark:lg:hover:stroke-eden-400 dark:xl:hover:stroke-black">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
             </svg>
             <span class="hidden xl:block">Profile</span>
-            <span class="ml-2 w-2 h-2 border-4 border-eden-400 rounded-full"></span>
           </a>
           <!-- Theme toggle -->
           <button
@@ -188,7 +187,7 @@
       <!-- hidden header nav -->
       <div class="flex items-center justify-between gap-6 px-3 xs:max-w-xxl lg:hidden">
         <!-- logo -->
-        <a href="#" aria-label="to top button"
+        <a href="/feed/index.html" aria-label="to top button"
           ><svg
             aria-label="Posteria logo"
             width="41"
@@ -264,117 +263,32 @@
       </div>
     </header>
     <main class="flex flex-col justify-center px-3">
+      <!-- Info message -->
+      <div id="info-message" class="hidden mt-20 w-full max-w-2xl mx-auto"></div>
       <section
         id="post-container"
         class="flex flex-col mt-4 lg:mt-12 items-end ml-auto md:max-w-2xl lg:max-w-2xl xl:max-w-3xl xxl:max-w-5xl">
-        <!-- Main post container -->
-        <div class="flex flex-col gap-6">
-          <!-- Author info section -->
-          <a href="#" class="flex gap-2 items-center w-fit">
-            <img
-              class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
-              src="../src/assets/images/profile/ayo-ogunseinde-sibVwORYqs0-unsplash.webp"
-              alt="Profile image" />
-            <div class="flex flex-col">
-              <p class="text-sm">authorName</p>
-              <p class="text-xs font-light opacity-80" aria-label="When content was posted">1h ago</p>
-            </div>
-          </a>
-          <!-- Post content -->
-          <div class="flex flex-col gap-6 items-start">
-            <!-- Post image section -->
-            <!-- max-h-48 xs:max-h-60 sm:max-h-72 md:max-h-80 lg:max-h-screen lg:max-w-screen -->
-            <div
-              class="flex justify-center max-h-48 xs:max-h-60 sm:max-h-72 md:max-h-80 lg:max-h-screen lg:max-w-screen">
-              <img
-                class="object-cover rounded-lg"
-                src="../src/assets/images/profile/sylvain-mauroux-DbaQyj9Lxzw-unsplash.webp"
-                alt="Alt text" />
-            </div>
-            <article class="flex flex-col gap-4">
-              <!-- Post title section -->
-              <h1 class="text-xl max-w-prose">Having a blast making this site!</h1>
-              <!-- Post body section -->
-              <p class="text-sm lg:text-base max-w-prose">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate alias, saepe, repellat
-                ipsum voluptas incidunt illo, inventore molestias corporis possimus dolorum temporibus ad.
-                Laboriosam ad id, qui ut sit blanditiis! Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Nisi ea commodi eum, repudiandae placeat sit porro quod dolore maxime soluta aliquid
-                numquam sint dolor quae amet nam, dignissimos nostrum possimus.
-              </p>
-            </article>
-          </div>
-          <!-- Like and comment buttons section -->
-          <div class="flex justify-between">
-            <div class="flex gap-6">
-              <!-- Like button -->
-              <div>
-                <input
-                  type="checkbox"
-                  id="like"
-                  class="peer absolute size-6 icon-states opacity-0 cursor-pointer" />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6 icon-states peer-checked:fill-rose-600 peer-checked:stroke-rose-600 peer-hover:stroke-2 peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-black peer-focus-visible:rounded-sm">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                </svg>
-              </div>
-              <!-- Comment button -->
-              <button type="button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6 icon-states">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-                </svg>
-              </button>
-            </div>
-            <!-- Edit and delete buttons (commented out) -->
-            <div class="flex gap-6">
-              <button type="button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6 icon-states">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                </svg>
-              </button>
-              <button type="button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6 icon-states">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                </svg>
-              </button>
-            </div>
+        <!-- loader -->
+        <div id="loader" class="text-center mx-auto">
+          <div role="status">
+            <svg
+              aria-hidden="true"
+              class="inline w-20 h-20 text-eden-100 animate-spin dark:text-eden-100 fill-eden-400"
+              viewBox="0 0 100 101"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                fill="currentColor" />
+              <path
+                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                fill="currentFill" />
+            </svg>
+            <span class="sr-only">Loading...</span>
           </div>
         </div>
+        <!-- loader -->
+        <!-- Main post container dynamically displayed here -->
       </section>
     </main>
     <footer class="sticky bottom-0 rounded-t-lg bg-darkGray text-white mt-auto">
