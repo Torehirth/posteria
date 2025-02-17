@@ -29,8 +29,7 @@ import { getUserPostsHandler } from "./api/posts/handlers/getUserPostsHandler.mj
 import { setUserProfileInfo } from "./ui/common/setUserProfileInfo.mjs";
 import { setUserProfileImages } from "./ui/common/setUserProfileImages.mjs";
 import { setUserProfileBannerImage } from "./ui/common/setUserProfileBannerImage.mjs";
-import { getQueryParameter } from "./events/common/utils/getQueryParameter.mjs";
-import { getSpecificPostHandler } from "./api/posts/handlers/getPostHandler.mjs";
+import { specificPostHandler } from "./api/posts/handlers/specificPostHandler.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -109,7 +108,7 @@ const router = () => {
       // new post click
       setupNewPostButtonListeners();
       // Display post
-      getSpecificPostHandler();
+      specificPostHandler();
       break;
   }
 };

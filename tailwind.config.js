@@ -37,5 +37,5 @@ module.exports = {
   },
   plugins: [],
   // Tailwind removes unused CSS in production builds using PurgeCSS (built into Tailwind). If a class is not found in the HTML or JavaScript at build time, Tailwind won’t include it in the final CSS. The safelist ensures that specific classes are always included, even if they don’t appear in your code at build time.
-  safelist: [{ pattern: /^(bg|text|m|p|w|max)-.+$/ }, "warning", "error", "success"],
+  safelist: [{ pattern: /^(bg|text)-.+$/ }, "warning", "error", "success"],
 };

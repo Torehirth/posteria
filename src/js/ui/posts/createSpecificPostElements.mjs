@@ -9,9 +9,9 @@ export const createSpecificPostElements = (
   postBodyText,
   buttonGroup
 ) => {
-  const postContainer = document.createElement("section");
-  postContainer.id = "post-container";
-  postContainer.className =
+  const postWrapper = document.createElement("section");
+  postWrapper.id = "post-wrapper";
+  postWrapper.className =
     "flex flex-col mt-4 lg:mt-12 items-end ml-auto md:max-w-2xl lg:max-w-2xl xl:max-w-3xl xxl:max-w-5xl";
 
   const mainContainer = document.createElement("div");
@@ -96,17 +96,14 @@ export const createSpecificPostElements = (
   buttonGroupLeft.appendChild(commentButton);
 
   actionContainer.appendChild(buttonGroupLeft);
-  // const buttonGroupRight = buttonGroup;
-  actionContainer.appendChild(buttonGroup);
-  // console.log(buttonGroupRight);
-  
+  actionContainer.appendChild(buttonGroup); // Gets added from render function
 
   mainContainer.appendChild(authorLink);
   mainContainer.appendChild(postContent);
   mainContainer.appendChild(actionContainer);
-  postContainer.appendChild(mainContainer);
+  postWrapper.appendChild(mainContainer);
 
-  document.querySelector("main").appendChild(postContainer);
+  document.querySelector("main").appendChild(postWrapper);
 };
 
 export const addRightButtonContainer = () => {
@@ -130,6 +127,7 @@ export const addRightButtonContainer = () => {
 
   const deleteButton = document.createElement("button");
   deleteButton.type = "button";
+  deleteButton.id = "delete-button";
   deleteButton.innerHTML = `<svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

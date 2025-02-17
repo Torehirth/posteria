@@ -1,16 +1,9 @@
-import { API_POSTS_URL } from "../../constants/api.mjs";
-import { getQueryParameter } from "../../events/common/utils/getQueryParameter.mjs";
+import { displayMessage } from "../../ui/common/displayMessage.mjs";
 import { createAPIRequestHeader } from "../utils/createAPIRequestHeader.mjs";
 
-export const fetchPost = async (requestType) => {
+export const fetchPost = async (Url, requestType) => {
   const messageContainer = document.querySelector("#info-message");
   const loader = document.querySelector("#loader");
-  const id = getQueryParameter("id");
-  const Url = `${API_POSTS_URL}/${id}?_author=true`;
-
-  if (!id) {
-    throw new Error("Could not find the ID of the post");
-  }
 
   try {
     const options = createAPIRequestHeader(requestType);
@@ -23,7 +16,7 @@ export const fetchPost = async (requestType) => {
     return post;
   } catch (err) {
     console.error(err.message);
-    displayMessage(messageContainer, "error", err.message);
+    displayMessage("#info-message", "error", err.message);
     if (loader) {
       loader.classList.add("hidden");
     }

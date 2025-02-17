@@ -11,7 +11,7 @@ export const renderSpecificPost = async (post) => {
   const profileImg = post?.author?.avatar?.url || "../../src/assets/images/profile/default-avatar.webp";
   const profileImgAlt = post?.author?.avatar?.alt || "Profile image";
   const timeAgo = getTimeAgo(post?.created || "");
-  const postImg = post?.media?.url || "";
+  const postImg = post?.media?.url || "../../src/assets/images/profile/placeholder-no-image.webp";
   const postBodyTitle = post?.title || "Missing title";
   const postBodyText = post?.body || "Missing text";
   const postImgAlt = postImg ? post?.media?.alt || postBodyTitle : "";
