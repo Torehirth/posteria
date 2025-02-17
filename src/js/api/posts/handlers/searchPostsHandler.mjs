@@ -43,7 +43,7 @@ export const searchInputEventListener = async () => {
           messageContainer.classList.remove("hidden");
         } else {
           postsContainer.innerHTML = "";
-          renderPosts(filteredPosts, "#feed-posts");
+          renderPosts(filteredPosts, "#feed-posts", "../post/index.html");
           messageContainer.classList.add("hidden");
         }
       } catch (err) {

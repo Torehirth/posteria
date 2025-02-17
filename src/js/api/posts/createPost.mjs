@@ -19,6 +19,10 @@ export const createPost = async (post) => {
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Publishing the post failed. Please try again later..");
     }
+    if (response.ok) {
+      location.reload();
+    }
+
     form.reset();
   } catch (err) {
     console.error(err.message);

@@ -29,6 +29,9 @@ import { getUserPostsHandler } from "./api/posts/handlers/getUserPostsHandler.mj
 import { setUserProfileInfo } from "./ui/common/setUserProfileInfo.mjs";
 import { setUserProfileImages } from "./ui/common/setUserProfileImages.mjs";
 import { setUserProfileBannerImage } from "./ui/common/setUserProfileBannerImage.mjs";
+import { specificPostHandler } from "./api/posts/handlers/specificPostHandler.mjs";
+import { saveToSessionStorage } from "./events/common/utils/saveToSessionStorage.mjs";
+import { getFromSessionStorage } from "./events/common/utils/getFromSessionStorage.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -54,6 +57,8 @@ const router = () => {
       break;
     case "/feed/index.html":
     case "/feed/":
+      // Save page to session storage for navigating purposes
+      saveToSessionStorage("previousPage", window.location.href);
       // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
@@ -80,6 +85,9 @@ const router = () => {
       break;
     case "/profile/index.html":
     case "/profile/":
+      // Save page to session storage for navigating purposes
+      saveToSessionStorage("previousPage", window.location.href);
+      // Display logged in user UI
       setUserProfileInfo("name", "#profile-name", "your name");
       setUserProfileInfo("bio", "#profile-bio");
       setUserProfileImages("#profile-image");
@@ -97,6 +105,17 @@ const router = () => {
       getUserPostsHandler();
       // Log out
       logOut();
+      break;
+
+    case "/post/index.html":
+    case "/post/":
+      // -- Theme --
+      themeToggleBtn.addEventListener("click", toggleColourTheme);
+      applySystemTheme();
+      // new post click
+      setupNewPostButtonListeners();
+      // Display post
+      specificPostHandler();
       break;
   }
 };
