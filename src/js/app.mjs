@@ -59,9 +59,6 @@ const router = () => {
     case "/feed/":
       // Save page to session storage for navigating purposes
       saveToSessionStorage("previousPage", window.location.href);
-      const previousPage = getFromSessionStorage("previousPage");
-      console.log(previousPage);
-
       // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
@@ -90,9 +87,6 @@ const router = () => {
     case "/profile/":
       // Save page to session storage for navigating purposes
       saveToSessionStorage("previousPage", window.location.href);
-      const previousPag = getFromSessionStorage("previousPage");
-      console.log(previousPag);
-
       // Display logged in user UI
       setUserProfileInfo("name", "#profile-name", "your name");
       setUserProfileInfo("bio", "#profile-bio");
