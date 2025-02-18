@@ -5,6 +5,7 @@ import { displayMessage } from "../../../ui/common/displayMessage.mjs";
 import { renderSpecificPost } from "../../../ui/posts/renderSpecificPost.mjs";
 import { fetchPost } from "../fetchPost.mjs";
 import { deletePostListener } from "../deletePost.mjs";
+import { updatePostListener } from "../updatePost.mjs";
 
 export const specificPostHandler = async () => {
   const messageContainer = document.querySelector("#info-message");
@@ -18,7 +19,7 @@ export const specificPostHandler = async () => {
   }
   try {
     const data = await fetchPost(Url, "GET");
-    const post = data?.data || [];
+    const post = data?.data || {};
 
     if (!post) {
       window.location.href = "../feed/index.html";
@@ -26,6 +27,7 @@ export const specificPostHandler = async () => {
     updatePageTitleWithPostTitle(post);
     renderSpecificPost(post);
     deletePostListener();
+    updatePostListener();
   } catch (err) {
     console.error(err);
     displayMessage(messageContainer, "error", "Failed to load posts. Try again later.");
