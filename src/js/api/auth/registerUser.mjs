@@ -7,7 +7,6 @@ import { loginUser } from "../auth/loginUser.mjs";
 export const registerUser = async (dataFromForm) => {
   const registerURL = `${API_BASE_URL}${API_AUTH_ENDPOINT}${API_REGISTER_ENDPOINT}`;
   const form = document.querySelector("#register-form");
-
   const options = createAPIRequestHeader("POST", dataFromForm);
 
   try {
@@ -25,7 +24,7 @@ export const registerUser = async (dataFromForm) => {
     displayMessage("#info-message", "success", "Login successful 🎉");
 
     // User then gets logged in and automatically redirected to profile page by calling the loginUser function, with credentials from the object from handleLoginFormSubmit
-    await loginUser({ email: dataFromForm.email, password: dataFromForm.name });
+    await loginUser({ email: dataFromForm.email, password: dataFromForm.password });
   } catch (err) {
     console.error(err.message);
     // Catches the error further up and displays only the message
