@@ -886,10 +886,6 @@ video {
   margin-left: 0.5rem;
 }
 
-.ml-auto {
-  margin-left: auto;
-}
-
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -904,10 +900,6 @@ video {
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
 }
 
 .mt-3 {
@@ -1061,10 +1053,6 @@ video {
   max-width: 36rem;
 }
 
-.max-w-full {
-  max-width: 100%;
-}
-
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -1147,10 +1135,6 @@ video {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.self-center {
-  align-self: center;
 }
 
 .scroll-smooth {
@@ -24460,10 +24444,6 @@ video {
 
 .text-end {
   text-align: end;
-}
-
-.align-middle {
-  vertical-align: middle;
 }
 
 .text-2xl {
@@ -47820,19 +47800,11 @@ input:-webkit-autofill,
   .md\:h-52 {
     height: 13rem;
   }
-
-  .md\:max-w-2xl {
-    max-width: 42rem;
-  }
 }
 
 @media (min-width: 768px) {
   .lg\:ml-5 {
     margin-left: 1.25rem;
-  }
-
-  .lg\:mt-12 {
-    margin-top: 3rem;
   }
 
   .lg\:mt-4 {
@@ -47865,10 +47837,6 @@ input:-webkit-autofill,
     width: fit-content;
   }
 
-  .lg\:max-w-2xl {
-    max-width: 42rem;
-  }
-
   .lg\:focus-within\:h-20:focus-within {
     height: 5rem;
   }
@@ -47897,10 +47865,6 @@ input:-webkit-autofill,
 
   .xl\:w-full {
     width: 100%;
-  }
-
-  .xl\:max-w-3xl {
-    max-width: 48rem;
   }
 
   .xl\:gap-4 {
@@ -47937,12 +47901,6 @@ input:-webkit-autofill,
     --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
     --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  }
-}
-
-@media (min-width: 1280px) {
-  .xxl\:max-w-5xl {
-    max-width: 64rem;
   }
 }
 

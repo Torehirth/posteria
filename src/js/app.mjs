@@ -26,12 +26,9 @@ import {
 import { setupClickOutsideNewPostHandler } from "./ui/common/handlers/newPostStateHandlers.mjs";
 import { setupInfiniteScroll } from "./ui/common/handlers/setUpInfiniteScroll.mjs";
 import { getUserPostsHandler } from "./api/posts/handlers/getUserPostsHandler.mjs";
-import { setUserProfileInfo } from "./ui/common/setUserProfileInfo.mjs";
-import { setUserProfileImages } from "./ui/common/setUserProfileImages.mjs";
-import { setUserProfileBannerImage } from "./ui/common/setUserProfileBannerImage.mjs";
 import { specificPostHandler } from "./api/posts/handlers/specificPostHandler.mjs";
 import { saveToSessionStorage } from "./events/common/utils/saveToSessionStorage.mjs";
-import { getFromSessionStorage } from "./events/common/utils/getFromSessionStorage.mjs";
+import { handleProfileUI } from "./ui/common/handlers/handleProfileUI.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -87,15 +84,8 @@ const router = () => {
     case "/profile/":
       // Save page to session storage for navigating purposes
       saveToSessionStorage("previousPage", window.location.href);
-      // Display logged in user UI
-      setUserProfileInfo("name", "#profile-name", "your name");
-      setUserProfileInfo("bio", "#profile-bio");
-      setUserProfileImages("#profile-image");
-      setUserProfileBannerImage("#profile-banner");
-      // -- Posts/followers/follow sections
-      displayPostsSection();
-      displayFollowersSection();
-      displayFollowingSection();
+      // Display Profile UI
+      handleProfileUI();
       // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();

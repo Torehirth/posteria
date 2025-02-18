@@ -1,5 +1,5 @@
 import { API_POSTS_URL } from "../../../constants/api.mjs";
-import { updatePageTitle } from "../../../events/common/updatePageTitle.mjs";
+import { updatePageTitleWithPostTitle } from "../../../events/common/updatePageTitleWithPostTitle.mjs";
 import { getQueryParameter } from "../../../events/common/utils/getQueryParameter.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
 import { renderSpecificPost } from "../../../ui/posts/renderSpecificPost.mjs";
@@ -23,7 +23,7 @@ export const specificPostHandler = async () => {
     if (!post) {
       window.location.href = "../feed/index.html";
     }
-    updatePageTitle(post);
+    updatePageTitleWithPostTitle(post);
     renderSpecificPost(post);
     deletePostListener();
   } catch (err) {
