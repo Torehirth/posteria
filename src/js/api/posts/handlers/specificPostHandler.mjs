@@ -5,7 +5,7 @@ import { displayMessage } from "../../../ui/common/displayMessage.mjs";
 import { renderSpecificPost } from "../../../ui/posts/renderSpecificPost.mjs";
 import { fetchPost } from "../fetchPost.mjs";
 import { deletePostListener } from "../deletePost.mjs";
-import { updatePostListener } from "../updatePost.mjs";
+import { initUpdatePost } from "./initUpdatePost.mjs";
 
 export const specificPostHandler = async () => {
   const messageContainer = document.querySelector("#info-message");
@@ -27,7 +27,7 @@ export const specificPostHandler = async () => {
     updatePageTitleWithPostTitle(post);
     renderSpecificPost(post);
     deletePostListener();
-    updatePostListener();
+    initUpdatePost();
   } catch (err) {
     console.error(err);
     displayMessage(messageContainer, "error", "Failed to load posts. Try again later.");

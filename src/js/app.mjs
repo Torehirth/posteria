@@ -29,6 +29,7 @@ import { getUserPostsHandler } from "./api/posts/handlers/getUserPostsHandler.mj
 import { specificPostHandler } from "./api/posts/handlers/specificPostHandler.mjs";
 import { saveToSessionStorage } from "./events/common/utils/saveToSessionStorage.mjs";
 import { handleProfileUI } from "./ui/common/handlers/handleProfileUI.mjs";
+import { displayUpdateModalListener } from "./ui/common/handlers/displayUpdateModalListener.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -106,6 +107,8 @@ const router = () => {
       setupNewPostButtonListeners();
       // Display post
       specificPostHandler();
+      displayUpdateModalListener();
+
       break;
   }
 };
