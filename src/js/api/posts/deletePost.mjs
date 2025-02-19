@@ -6,7 +6,11 @@ import { displayMessage } from "../../ui/common/displayMessage.mjs";
 import { fetchPost } from "./fetchPost.mjs";
 
 export const deletePostListener = () => {
-  document.addEventListener("click", deletePost);
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("#delete-button")) {
+      deletePost(e);
+    }
+  });
 };
 
 const deletePost = async (e) => {
@@ -34,7 +38,7 @@ const deletePost = async (e) => {
     displayMessage("#info-message", "success", "Post deleted successfully!");
   } catch (err) {
     console.error(err);
-    displayMessage("#info-message", "error", err.message || "Could delete post");
+    displayMessage("#info-message", "error", err.message || "Could not delete post");
   }
 };
 

@@ -14,7 +14,7 @@ export const getUserPostsHandler = async () => {
     const userPosts = data?.data || [];
 
     if (!userPosts.length && data) {
-      displayMessage("#info-message", "warning", "No posts available");
+      displayMessage("#info-message", "success", "No posts available");
     }
     // Disable loader when posts are loaded
     document.querySelector("#posts").innerHTML = "";

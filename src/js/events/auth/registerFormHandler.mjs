@@ -10,10 +10,15 @@ export const registerFormHandler = () => {
 
 const handleRegisterFormSubmit = (e) => {
   e.preventDefault();
-
   const form = e.target;
   const formData = new FormData(form);
   const userData = Object.fromEntries(formData);
 
+  if (userData.name) {
+    userData.name = userData.name.toLowerCase();
+  }
+  if (userData.email) {
+    userData.email = userData.email.toLowerCase();
+  }
   registerUser(userData);
 };

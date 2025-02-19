@@ -2,7 +2,6 @@ import { displayMessage } from "../../ui/common/displayMessage.mjs";
 import { createAPIRequestHeader } from "../utils/createAPIRequestHeader.mjs";
 
 export const fetchPost = async (Url, requestType) => {
-  const messageContainer = document.querySelector("#info-message");
   const loader = document.querySelector("#loader");
 
   try {

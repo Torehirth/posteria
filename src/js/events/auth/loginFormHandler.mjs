@@ -14,5 +14,8 @@ export const handleLoginFormSubmit = (e) => {
   const formData = new FormData(form);
   const userData = Object.fromEntries(formData);
 
+  if (userData.email) {
+    userData.email = userData.email.toLowerCase();
+  }
   loginUser(userData);
 };
