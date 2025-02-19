@@ -15,8 +15,6 @@ export const addPostDataToForm = async () => {
 
   postTitleInput.value = post?.title;
   postBodyTextarea.value = post?.body;
-  if (postImageURLInput.value) {
-    // If no image URL provided the value in the input would be undefined
-    postImageURLInput.value = post?.media?.url;
-  }
+  // If image URL is missing from post, add an empty string to the form image URL
+  postImageURLInput.value = post?.media?.url || "";
 };
