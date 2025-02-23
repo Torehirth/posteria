@@ -1,21 +1,19 @@
-import { setCurrentPage, setSortOrder } from "../../api/posts/handlers/getPostsHandler.mjs";
+export const sortPostsByDate = (posts, sortOrder = "desc") => {
+  if (!Array.isArray(posts) || posts.length === 0) {
+    return [];
+  }
 
-export const sortPostsByDate = () => {
-  document.addEventListener("click", (e) => {
-    if (e.target.closest("#descending")) {
-      document.querySelector("#descending-icon").classList.remove("opacity-0");
-      document.querySelector("#ascending-icon").classList.add("opacity-0");
-      document.querySelector("#feed-posts").innerHTML = "";
-      // Using setter function to set sortOrder = "desc"
-      setSortOrder("desc");
-    } else if (e.target.closest("#ascending")) {
-      document.querySelector("#ascending-icon").classList.remove("opacity-0");
-      document.querySelector("#descending-icon").classList.add("opacity-0");
-      document.querySelector("#feed-posts").innerHTML = "";
-      // Using setter function to set sortOrder = "asc"
-      setSortOrder("asc");
+  posts.sort((a, b) => {
+    let dateA = new Date(a.created);
+    let dateB = new Date(b.created);
+    if (sortOrder === "desc") {
+      // Sort from newest to oldest (descending)
+      return dateB - dateA;
+    } else {
+      // Sort from oldest to newest (ascending)
+      return dateA - dateB;
     }
-    // Using setter function to set currentPage = 1 to prevent sorting function to increment page number.
-    setCurrentPage(1);
   });
+
+  return posts;
 };

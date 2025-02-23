@@ -7,7 +7,7 @@ export const createPostElements = (
   postBody,
   timeAgo,
   postsContainerId,
-  specificPostUrl // For navigating to specific post
+  specificPostUrl
 ) => {
   // Create the main post container
   const postContainer = document.createElement("div");

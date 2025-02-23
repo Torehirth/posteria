@@ -1,9 +1,4 @@
 import {
-  displayFollowersSection,
-  displayPostsSection,
-  displayFollowingSection,
-} from "./ui/common/handlers/profileTabHandlers.mjs";
-import {
   toggleAsideSearchbar,
   closeSearchBarOnKeypress,
   closeSearchbarOnClick,
@@ -30,6 +25,8 @@ import { specificPostHandler } from "./api/posts/handlers/specificPostHandler.mj
 import { saveToSessionStorage } from "./events/common/utils/saveToSessionStorage.mjs";
 import { handleProfileUI } from "./ui/common/handlers/handleProfileUI.mjs";
 import { displayUpdateModalListener } from "./ui/common/handlers/displayUpdateModalListener.mjs";
+import { initializeFilterPostsByTag } from "./api/posts/handlers/filterPostByTagHandler.mjs";
+import { sortPostsByDateListener } from "./ui/posts/sortPostsByDateListener.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -80,6 +77,9 @@ const router = () => {
       setupClickOutsideNewPostHandler();
       // Log out
       logOut();
+      initializeFilterPostsByTag();
+      sortPostsByDateListener();
+
       break;
     case "/profile/index.html":
     case "/profile/":
