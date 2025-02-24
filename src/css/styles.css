@@ -48377,6 +48377,10 @@ input:-webkit-autofill,
     height: 18rem;
   }
 
+  .xs\:max-h-72 {
+    max-height: 18rem;
+  }
+
   .xs\:max-w-xl {
     max-width: 36rem;
   }
@@ -48407,6 +48411,10 @@ input:-webkit-autofill,
     height: 20rem;
   }
 
+  .sm\:max-h-80 {
+    max-height: 20rem;
+  }
+
   .sm\:w-10 {
     width: 2.5rem;
   }
@@ -48427,6 +48435,10 @@ input:-webkit-autofill,
 
   .md\:h-96 {
     height: 24rem;
+  }
+
+  .md\:max-h-96 {
+    max-height: 24rem;
   }
 }
 
@@ -48458,6 +48470,10 @@ input:-webkit-autofill,
   .lg\:size-7 {
     width: 1.75rem;
     height: 1.75rem;
+  }
+
+  .lg\:h-auto {
+    height: auto;
   }
 
   .lg\:w-fit {

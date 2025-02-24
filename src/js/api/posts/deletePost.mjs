@@ -3,7 +3,7 @@ import { getFromSessionStorage } from "../../events/common/utils/getFromSessionS
 import { getQueryParameter } from "../../events/common/utils/getQueryParameter.mjs";
 import { resetURLWithoutRefresh } from "../../events/common/utils/resetURLWithoutRefresh.mjs";
 import { displayMessage } from "../../ui/common/displayMessage.mjs";
-import { fetchAPI } from "./fetchAPI.mjs";
+import { fetchAPI } from "../utils/fetchAPI.mjs";
 
 export const deletePostListener = () => {
   document.addEventListener("click", (e) => {

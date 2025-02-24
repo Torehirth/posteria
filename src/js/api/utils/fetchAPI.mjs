@@ -1,5 +1,5 @@
 import { displayMessage } from "../../ui/common/displayMessage.mjs";
-import { createAPIRequestHeader } from "../utils/createAPIRequestHeader.mjs";
+import { createAPIRequestHeader } from "./createAPIRequestHeader.mjs";
 
 /**
  * Fetches data from the given API URL with the specified request type.

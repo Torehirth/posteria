@@ -1,4 +1,4 @@
-import { fetchAPI } from "../../api/posts/fetchAPI.mjs";
+import { fetchAPI } from "../../api/utils/fetchAPI.mjs";
 import { API_POSTS_URL } from "../../constants/api.mjs";
 import { getQueryParameter } from "../common/utils/getQueryParameter.mjs";
 

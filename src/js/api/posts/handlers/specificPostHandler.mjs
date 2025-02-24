@@ -5,7 +5,7 @@ import { displayMessage } from "../../../ui/common/displayMessage.mjs";
 import { deletePostListener } from "../deletePost.mjs";
 import { initUpdatePost } from "./initUpdatePost.mjs";
 import { renderSpecificPost } from "../../../events/posts/renderSpecificPost.mjs";
-import { fetchAPI } from "../fetchAPI.mjs";
+import { fetchAPI } from "../../utils/fetchAPI.mjs";
 
 export const specificPostHandler = async () => {
   const messageContainer = document.querySelector("#info-message");

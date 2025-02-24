@@ -2,7 +2,7 @@ import { API_POSTS_URL } from "../../../constants/api.mjs";
 import { filterPosts } from "../../../events/posts/filterPosts.mjs";
 import { renderPosts } from "../../../events/posts/renderPosts.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
-import { fetchAPI } from "../fetchAPI.mjs";
+import { fetchAPI } from "../../utils/fetchAPI.mjs";
 
 const searchInputDesktop = document.querySelector("#aside-feed-search");
 const searchInputMobile = document.querySelector("#feed-search");

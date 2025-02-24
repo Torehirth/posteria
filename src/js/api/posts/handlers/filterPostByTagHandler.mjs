@@ -2,7 +2,7 @@ import { API_POSTS_URL, personalTag } from "../../../constants/api.mjs";
 import { renderPosts } from "../../../events/posts/renderPosts.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
 import { sortPostsByDate } from "../../../ui/posts/sortPostsByDate.mjs";
-import { fetchAPI } from "../fetchAPI.mjs";
+import { fetchAPI } from "../../utils/fetchAPI.mjs";
 import { setCurrentPage } from "./getPostsHandler.mjs";
 
 const loader = document.querySelector("#loader");

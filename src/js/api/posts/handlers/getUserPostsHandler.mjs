@@ -3,7 +3,7 @@ import { getFromStorage } from "../../../events/common/utils/getFromStorage.mjs"
 import { renderPosts } from "../../../events/posts/renderPosts.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
 import { updateNumberOfPosts } from "../../../ui/common/handlers/updateNumberPostsProfile.mjs";
-import { fetchAPI } from "../fetchAPI.mjs";
+import { fetchAPI } from "../../utils/fetchAPI.mjs";
 
 export const getUserPostsHandler = async () => {
   try {
