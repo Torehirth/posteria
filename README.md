@@ -28,12 +28,6 @@ The project utilizes the following technologies:
 - JavaScript
 - Figma
 
-- [Tailwind CSS](https://tailwindcss.com)
-- [Figma](https://www.figma.com)
-- [Unsplash](https://unsplash.com)
-- [Heroicons](https://heroicons.com)
-- [Feather Icons](https://feathericons.com)
-
 ## Getting Started
 
 ### Installing
