@@ -31,11 +31,11 @@ const deletePost = async (e) => {
     // Resets the URL Without the ID as query parameter.
     resetURLWithoutRefresh();
 
+    displayMessage("#info-message", "success", "Post deleted successfully!");
+
     setTimeout(() => {
       navigateBackOnDelete();
     }, 1500);
-
-    displayMessage("#info-message", "success", "Post deleted successfully!");
   } catch (err) {
     console.error(err);
     displayMessage("#info-message", "error", err.message || "Could not delete post");
