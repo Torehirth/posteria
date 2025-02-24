@@ -12,7 +12,6 @@ export const getUserPostsHandler = async () => {
     const UserPostsURL = `${API_SOCIAL_URL}/profiles/${name}/posts?${URLparams}`;
     const data = await fetchPosts(`${UserPostsURL}`);
     const userPosts = data?.data || {};
-    console.log("userPosts");
 
     if (!userPosts.length && data) {
       displayMessage("#info-message", "success", "No posts available");
@@ -20,7 +19,7 @@ export const getUserPostsHandler = async () => {
     // Disable loader when posts are loaded
     document.querySelector("#posts").innerHTML = "";
     renderPosts(userPosts, "#posts", "../post/index.html");
-    updateNumberOfPosts(userPosts);
+    updateNumberOfPosts("userPosts");
   } catch (err) {
     console.error(err);
     displayMessage("#info-message", "error", error.message || "Failed to display posts. Try again later");
