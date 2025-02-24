@@ -77,5 +77,3 @@ Contributions are welcome! If you’d like to contribute to Posteria, please for
 Feel free to reach out with any questions or feedback:
 
 [My LinkedIn page](https://www.linkedin.com/in/torehirth/)
-
-// can you update the README.md file with the following content? I have made some changes to the project description and added a new section for the project's features. Let me know if you have any questions or need further information. Thanks!
