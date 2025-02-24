@@ -51,10 +51,10 @@ export const createSpecificPostElements = (
 
   const postImageContainer = document.createElement("div");
   postImageContainer.className =
-    "flex justify-center  xs:max-h-60 sm:max-h-72 md:max-h-80 lg:max-h-500 lg:max-w-screen";
+    "flex justify-center max-h-screen lg:max-w-screen";
 
   const postImage = document.createElement("img");
-  postImage.className = "object-cover rounded-lg max-h-screen";
+  postImage.className = "object-cover rounded-lg";
   postImage.src = postImg;
   postImage.alt = postImgAlt;
 

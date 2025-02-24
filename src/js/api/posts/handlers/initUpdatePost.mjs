@@ -34,8 +34,9 @@ const updatePostHandler = async (e) => {
       throw new Error(json.errors?.[0]?.message || "Publishing the post failed. Please try again later..");
     }
 
-    const editLabel = document.querySelector("#edit-label");
-    editLabel.innerHTML = "";
+    document.querySelector("#edit-label").innerHTML = "";
+    document.querySelector("#post-wrapper").innerHTML = "";
+
     displayMessage("#info-message", "success", "Post edited successfully!");
 
     if (response.ok) {
