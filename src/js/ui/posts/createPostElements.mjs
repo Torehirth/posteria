@@ -47,7 +47,7 @@ export const createPostElements = (
 
   // Create the post image section
   const postImageContainer = document.createElement("div");
-  postImageContainer.className = "flex max-h-48 xs:max-h-60 sm:max-h-72 md:max-h-80 lg:max-h-96";
+  postImageContainer.className = "flex h-60 xs:h-72 sm:h-80 md:h-96";
 
   const postImageElement = document.createElement("img");
   postImageElement.className = "object-cover rounded-lg";

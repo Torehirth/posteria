@@ -36,12 +36,12 @@ const updatePostHandler = async (e) => {
 
     const editLabel = document.querySelector("#edit-label");
     editLabel.innerHTML = "";
-    displayMessage("#edit-post-form", "success", "Post edited successfully!");
+    displayMessage("#info-message", "success", "Post edited successfully!");
 
     if (response.ok) {
       setTimeout(() => {
         location.reload();
-      }, 2000);
+      }, 1500);
     }
   } catch (err) {
     console.error(err);
