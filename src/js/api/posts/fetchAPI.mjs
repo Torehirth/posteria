@@ -2,20 +2,22 @@ import { displayMessage } from "../../ui/common/displayMessage.mjs";
 import { createAPIRequestHeader } from "../utils/createAPIRequestHeader.mjs";
 
 /**
- * Fetches posts from the given URL.
+ * Fetches data from the given API URL with the specified request type.
  *
- * @param {string} URL - The URL to fetch posts from.
- * @returns {Promise<Object[]>} A promise that resolves to an array of post objects.
- * @throws {Error} Throws an error if the fetch operation fails.
+ * @param {string} URL - The URL of the API endpoint to fetch data from.
+ * @param {string} requestType - The type of request to make (e.g., 'GET', 'POST').
+ * @returns {Promise<Object>} - A promise that resolves to the fetched data.
+ * @throws {Error} - Throws an error if the fetch operation fails.
  *
  * @example
  * const URL = 'https://api.example.com/posts';
- * fetchPosts(URL)
- *   .then(posts => {
- *     console.log(posts);
+ * const requestType = 'GET';
+ * fetchAPI(URL, requestType)
+ *   .then(data => {
+ *     console.log(data);
  *   })
  *   .catch(error => {
- *     console.error('Error fetching posts:', error);
+ *     console.error('Error fetching data:', error);
  *   });
  */
 export const fetchAPI = async (URL, requestType) => {
