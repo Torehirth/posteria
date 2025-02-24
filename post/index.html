@@ -24,7 +24,7 @@
   </head>
   <body class="flex flex-col min-h-full bg-white text-black dark:bg-black dark:text-white">
     <!-- Side navigation -->
-    <aside class="hidden lg:flex sticky top-0 z-50 bg-transparent">
+    <aside class="hidden lg:hidden sticky top-0 z-50 bg-transparent">
       <nav class="flex flex-col absolute">
         <div class="flex flex-col gap-3 items-start justify-center h-screen my-auto font-semibold pl-1">
           <!-- Feed -->
@@ -201,7 +201,6 @@
               fill="currentColor" />
           </svg>
         </a>
-
         <div class="flex items-center gap-6">
           <!-- Theme toggle -->
           <button
@@ -259,6 +258,19 @@
             <span class="hidden xl:block">Log out</span>
           </a>
         </div>
+      </div>
+      <!-- Back button -->
+      <div id="back-btn-wrapper" class="flex lg:flex w-fit items-center px-3 py-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+        </svg>
+        <button class="py-1 px-3">Back</button>
       </div>
     </header>
     <main class="flex flex-col justify-center px-3">

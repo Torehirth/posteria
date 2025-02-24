@@ -27,6 +27,7 @@ import { handleProfileUI } from "./ui/common/handlers/handleProfileUI.mjs";
 import { displayUpdateModalListener } from "./ui/common/handlers/displayUpdateModalListener.mjs";
 import { initializeFilterPostsByTag } from "./api/posts/handlers/filterPostByTagHandler.mjs";
 import { sortPostsByDateListener } from "./ui/posts/sortPostsByDateListener.mjs";
+import { navigateBack } from "./ui/common/handlers/navigateBack.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -108,6 +109,7 @@ const router = () => {
       // Display post
       specificPostHandler();
       displayUpdateModalListener();
+      navigateBack();
 
       break;
   }
