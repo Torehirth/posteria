@@ -51,6 +51,7 @@ const router = () => {
       // -- Register --
       registerFormHandler();
       break;
+
     case "/feed/index.html":
     case "/feed/":
       // Save page to session storage for navigating purposes
@@ -80,7 +81,6 @@ const router = () => {
       logOut();
       initializeFilterPostsByTag();
       sortPostsByDateListener();
-
       break;
     case "/profile/index.html":
     case "/profile/":
@@ -110,7 +110,6 @@ const router = () => {
       specificPostHandler();
       displayUpdateModalListener();
       navigateBack();
-
       break;
   }
 };
