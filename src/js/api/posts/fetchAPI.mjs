@@ -12,14 +12,14 @@ import { createAPIRequestHeader } from "../utils/createAPIRequestHeader.mjs";
  * @example
  * const URL = 'https://api.example.com/posts';
  * const requestType = 'GET';
- * fetchAPI(URL, requestType)
- *   .then(data => {
- *     console.log(data);
- *   })
- *   .catch(error => {
- *     console.error('Error fetching data:', error);
- *   });
+ * try {
+ *   const data = await fetchAPI(URL, requestType);
+ *   console.log(data);
+ * } catch (error) {
+ *   console.error('Error fetching data:', error);
+ * }
  */
+
 export const fetchAPI = async (URL, requestType) => {
   const messageContainer = document.querySelector("#info-message");
   const loader = document.querySelector("#loader");
