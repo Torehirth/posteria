@@ -3,14 +3,14 @@ import { getFromStorage } from "../../../events/common/utils/getFromStorage.mjs"
 import { renderPosts } from "../../../events/posts/renderPosts.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
 import { updateNumberOfPosts } from "../../../ui/common/handlers/updateNumberPostsProfile.mjs";
-import { fetchPosts } from "../fetchPosts.mjs";
+import { fetchAPI } from "../fetchAPI.mjs";
 
 export const getUserPostsHandler = async () => {
   try {
     const { name } = getFromStorage("user");
     const URLparams = "_author=true";
     const UserPostsURL = `${API_SOCIAL_URL}/profiles/${name}/posts?${URLparams}`;
-    const data = await fetchPosts(`${UserPostsURL}`);
+    const data = await fetchAPI(`${UserPostsURL}`, "GET");
     const userPosts = data?.data || {};
 
     if (!userPosts.length && data) {

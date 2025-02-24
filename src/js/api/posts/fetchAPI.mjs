@@ -18,19 +18,19 @@ import { createAPIRequestHeader } from "../utils/createAPIRequestHeader.mjs";
  *     console.error('Error fetching posts:', error);
  *   });
  */
-export const fetchPosts = async (URL) => {
+export const fetchAPI = async (URL, requestType) => {
   const messageContainer = document.querySelector("#info-message");
   const loader = document.querySelector("#loader");
 
   try {
     // Create API request header
-    const options = createAPIRequestHeader("GET");
+    const options = createAPIRequestHeader(requestType);
     // Fetch API
     const response = await fetch(URL, options);
     const posts = await response.json();
 
     if (!response.ok) {
-      throw new Error(posts.errors?.[0]?.message || "Failed to get posts. Please try again later..");
+      throw new Error(posts.errors?.[0]?.message || "Failed to get the data. Please try again later..");
     }
     return posts;
   } catch (err) {
@@ -41,4 +41,3 @@ export const fetchPosts = async (URL) => {
     }
   }
 };
-

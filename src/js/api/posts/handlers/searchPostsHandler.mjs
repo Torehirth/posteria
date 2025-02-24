@@ -2,7 +2,7 @@ import { API_POSTS_URL } from "../../../constants/api.mjs";
 import { filterPosts } from "../../../events/posts/filterPosts.mjs";
 import { renderPosts } from "../../../events/posts/renderPosts.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
-import { fetchPosts } from "../fetchPosts.mjs";
+import { fetchAPI } from "../fetchAPI.mjs";
 
 const searchInputDesktop = document.querySelector("#aside-feed-search");
 const searchInputMobile = document.querySelector("#feed-search");
@@ -18,7 +18,7 @@ export const searchInputEventListener = async () => {
       try {
         const regex = /[^a-zA-Z0-9s]+/g; // Removes all spaces and special characters
         const inputValue = e?.target?.value.toLowerCase().replace(regex, "") || "";
-        const data = await fetchPosts(`${API_POSTS_URL}?${usersParam}`);
+        const data = await fetchAPI(`${API_POSTS_URL}?${usersParam}`, "GET");
         const posts = data?.data || [];
 
         if (inputValue.length) {

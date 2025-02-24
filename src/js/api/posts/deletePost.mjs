@@ -3,7 +3,7 @@ import { getFromSessionStorage } from "../../events/common/utils/getFromSessionS
 import { getQueryParameter } from "../../events/common/utils/getQueryParameter.mjs";
 import { resetURLWithoutRefresh } from "../../events/common/utils/resetURLWithoutRefresh.mjs";
 import { displayMessage } from "../../ui/common/displayMessage.mjs";
-import { fetchPost } from "./fetchPost.mjs";
+import { fetchAPI } from "./fetchAPI.mjs";
 
 export const deletePostListener = () => {
   document.addEventListener("click", (e) => {
@@ -25,7 +25,7 @@ const deletePost = async (e) => {
   if (!deleteButton) return;
 
   try {
-    await fetchPost(Url, "DELETE");
+    await fetchAPI(Url, "DELETE");
     // Removes the post from the page
     document.querySelector("#post-wrapper").remove();
     // Resets the URL Without the ID as query parameter.

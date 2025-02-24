@@ -2,10 +2,10 @@ import { API_POSTS_URL } from "../../../constants/api.mjs";
 import { updatePageTitleWithPostTitle } from "../../../events/common/updatePageTitleWithPostTitle.mjs";
 import { getQueryParameter } from "../../../events/common/utils/getQueryParameter.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
-import { fetchPost } from "../fetchPost.mjs";
 import { deletePostListener } from "../deletePost.mjs";
 import { initUpdatePost } from "./initUpdatePost.mjs";
 import { renderSpecificPost } from "../../../events/posts/renderSpecificPost.mjs";
+import { fetchAPI } from "../fetchAPI.mjs";
 
 export const specificPostHandler = async () => {
   const messageContainer = document.querySelector("#info-message");
@@ -18,7 +18,7 @@ export const specificPostHandler = async () => {
     console.error("Could not find the ID of the post");
   }
   try {
-    const data = await fetchPost(Url, "GET");
+    const data = await fetchAPI(Url, "GET");
     const post = data?.data || {};
 
     if (!post) {

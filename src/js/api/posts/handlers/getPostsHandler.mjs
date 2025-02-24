@@ -2,7 +2,7 @@ import { API_POSTS_URL } from "../../../constants/api.mjs";
 import { renderPosts } from "../../../events/posts/renderPosts.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
 import { sortPostsByDate } from "../../../ui/posts/sortPostsByDate.mjs";
-import { fetchPosts } from "../fetchPosts.mjs";
+import { fetchAPI } from "../fetchAPI.mjs";
 
 const messageContainer = document.querySelector("#feed-info-message");
 const loader = document.querySelector("#loader");
@@ -16,7 +16,7 @@ let sortOrder = "desc";
 export const getPostsHandler = async () => {
   const URLparameters = `${usersParam}&limit=${limit}&page=${currentPage}&sort=${sortParam}&sortOrder=${sortOrder}`;
   try {
-    const data = await fetchPosts(`${API_POSTS_URL}?${URLparameters}`);
+    const data = await fetchAPI(`${API_POSTS_URL}?${URLparameters}`, "GET");
     let posts = data?.data || [];
 
     if (posts.length === 0) {

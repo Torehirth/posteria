@@ -1,4 +1,4 @@
-import { fetchPost } from "../../api/posts/fetchPost.mjs";
+import { fetchAPI } from "../../api/posts/fetchAPI.mjs";
 import { API_POSTS_URL } from "../../constants/api.mjs";
 import { getQueryParameter } from "../common/utils/getQueryParameter.mjs";
 
@@ -10,7 +10,7 @@ export const addPostDataToForm = async () => {
 
   const idQueryParameter = getQueryParameter("id");
   const Url = `${API_POSTS_URL}/${idQueryParameter}`;
-  const data = await fetchPost(Url, "GET");
+  const data = await fetchAPI(Url, "GET");
   const post = data?.data || {};
 
   postTitleInput.value = post?.title;

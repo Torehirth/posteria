@@ -2,7 +2,7 @@ import { API_POSTS_URL, personalTag } from "../../../constants/api.mjs";
 import { renderPosts } from "../../../events/posts/renderPosts.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
 import { sortPostsByDate } from "../../../ui/posts/sortPostsByDate.mjs";
-import { fetchPosts } from "../fetchPosts.mjs";
+import { fetchAPI } from "../fetchAPI.mjs";
 import { setCurrentPage } from "./getPostsHandler.mjs";
 
 const loader = document.querySelector("#loader");
@@ -16,7 +16,7 @@ export const filterPostByTagHandler = async () => {
   isFiltering = true;
   const Url = `${API_POSTS_URL}?_tag=${personalTag}&_author=true&limit=${limit}&page=${currentPage}&sort=${sortParam}&sortOrder=${sortOrder}`;
   try {
-    const data = await fetchPosts(Url);
+    const data = await fetchAPI(Url, "GET");
     let filteredPostsByTag = data?.data || [];
 
     // Stops the infinite scroll observer
