@@ -1,6 +1,6 @@
 import { API_POSTS_URL } from "../../../constants/api.mjs";
+import { renderPosts } from "../../../events/posts/renderPosts.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
-import { renderPosts } from "../../../ui/posts/renderPosts.mjs";
 import { sortPostsByDate } from "../../../ui/posts/sortPostsByDate.mjs";
 import { fetchPosts } from "../fetchPosts.mjs";
 
@@ -17,15 +17,19 @@ export const getPostsHandler = async () => {
   const URLparameters = `${usersParam}&limit=${limit}&page=${currentPage}&sort=${sortParam}&sortOrder=${sortOrder}`;
   try {
     const data = await fetchPosts(`${API_POSTS_URL}?${URLparameters}`);
-    const posts = data?.data || [];
+    let posts = data?.data || [];
+
     if (posts.length === 0) {
       observer.disconnect();
       loader.style.display = "none";
       displayMessage(messageContainer, "info", "No more posts to load.");
       return;
     }
-    renderPosts(posts, "#feed-posts", "../post/index.html");
-    sortPostsByDate();
+
+    posts = sortPostsByDate(posts, sortOrder);
+
+    renderPosts(posts, "#feed-posts");
+
     currentPage++;
   } catch (err) {
     console.error(err);

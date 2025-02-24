@@ -13,7 +13,6 @@ Posteria is a social media platform for posting content and connecting with othe
 Posteria offers the following features to enhance user experience:
 
 - Create and share posts with others.
-- Follow other users to stay updated with their activity.
 - Sleek and responsive design using Tailwind CSS.
 - Dark and light mode for optimal user accessibility.
 - Prototyped with user-centric design principles using Figma.
@@ -28,6 +27,12 @@ The project utilizes the following technologies:
 - Tailwind CSS
 - JavaScript
 - Figma
+
+- [Tailwind CSS](https://tailwindcss.com)
+- [Figma](https://www.figma.com)
+- [Unsplash](https://unsplash.com)
+- [Heroicons](https://heroicons.com)
+- [Feather Icons](https://feathericons.com)
 
 ## Getting Started
 
@@ -78,3 +83,5 @@ Contributions are welcome! If you’d like to contribute to Posteria, please for
 Feel free to reach out with any questions or feedback:
 
 [My LinkedIn page](https://www.linkedin.com/in/torehirth/)
+
+// can you update the README.md file with the following content? I have made some changes to the project description and added a new section for the project's features. Let me know if you have any questions or need further information. Thanks!

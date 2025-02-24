@@ -47718,6 +47718,10 @@ input:-webkit-autofill,
   color: rgb(24 26 28 / var(--tw-text-opacity));
 }
 
+.hover\:opacity-70:hover {
+  opacity: 0.7;
+}
+
 .focus\:py-1:focus {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;

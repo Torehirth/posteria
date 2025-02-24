@@ -2,10 +2,10 @@ import { API_POSTS_URL } from "../../../constants/api.mjs";
 import { updatePageTitleWithPostTitle } from "../../../events/common/updatePageTitleWithPostTitle.mjs";
 import { getQueryParameter } from "../../../events/common/utils/getQueryParameter.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
-import { renderSpecificPost } from "../../../ui/posts/renderSpecificPost.mjs";
 import { fetchPost } from "../fetchPost.mjs";
 import { deletePostListener } from "../deletePost.mjs";
 import { initUpdatePost } from "./initUpdatePost.mjs";
+import { renderSpecificPost } from "../../../events/posts/renderSpecificPost.mjs";
 
 export const specificPostHandler = async () => {
   const messageContainer = document.querySelector("#info-message");

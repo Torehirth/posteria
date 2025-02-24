@@ -1,6 +1,9 @@
 import { getFromStorage } from "../../events/common/utils/getFromStorage.mjs";
 import { getTimeAgo } from "../../events/posts/getTimeAgo.mjs";
-import { addRightButtonContainer, createSpecificPostElements } from "./createSpecificPostElements.mjs";
+import {
+  addRightButtonContainer,
+  createSpecificPostElements,
+} from "../../ui/posts/createSpecificPostElements.mjs";
 
 const postContainer = document.querySelector("#post-container");
 

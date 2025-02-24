@@ -1,6 +1,7 @@
 import { API_POSTS_URL } from "../../../constants/api.mjs";
+import { filterPosts } from "../../../events/posts/filterPosts.mjs";
+import { renderPosts } from "../../../events/posts/renderPosts.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
-import { renderPosts } from "../../../ui/posts/renderPosts.mjs";
 import { fetchPosts } from "../fetchPosts.mjs";
 
 const searchInputDesktop = document.querySelector("#aside-feed-search");
@@ -25,18 +26,7 @@ export const searchInputEventListener = async () => {
           loader.classList.add("hidden"); // Hides the loader to prevent observer to continue observing the loader = getPostHandler function wouldn't be called initially or by scroll.
         }
 
-        const filteredPosts = posts.filter((post) => {
-          return (
-            // search for title, body, tags, name
-            post?.body?.toLowerCase().trim().includes(inputValue) ||
-            post?.title?.toLowerCase().trim().includes(inputValue) ||
-            // Uses some() to loop through tags array and return posts if one element is true.
-            post?.tags?.some((tag) => {
-              return tag?.toLowerCase().trim().includes(inputValue);
-            }) ||
-            post?.author?.name?.toLowerCase().trim().includes(inputValue)
-          );
-        });
+        const filteredPosts = filterPosts(posts, inputValue);
 
         if (!filteredPosts.length) {
           displayMessage("#info-message", "warning", "No posts matches search criteria..");
