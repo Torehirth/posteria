@@ -12,8 +12,12 @@ export const renderPosts = (posts, postsContainerId) => {
     const postAltText = postImage ? post?.media?.alt || postTitle : "";
     const timeAgo = getTimeAgo(post?.created || "");
     const specificPostUrl = `/post/index.html?id=${post.id}`;
-    // const userLink = `/user/index.html?$name={user?.name}`
 
+    const userLink = `/user/index.html?name=${post?.author?.name}`;
+
+    // if (profileName === user.name) {
+    //   const userLink = `/user/index.html?$name=${post?.author?.name}`;
+    // }
     createPostElements(
       profileImage,
       profileName,
@@ -23,8 +27,8 @@ export const renderPosts = (posts, postsContainerId) => {
       postBody,
       timeAgo,
       postsContainerId,
-      specificPostUrl
-      // userLink
+      specificPostUrl,
+      userLink
     );
   });
 };

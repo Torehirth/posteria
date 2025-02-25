@@ -24,6 +24,5 @@ export const getUserPostsHandler = async () => {
     console.error(err);
     displayMessage("#info-message", "error", err.message || "Failed to display posts. Try again later");
     document.querySelector("#loader").classList.add("hidden");
-    console.log("test");
   }
 };

@@ -29,6 +29,7 @@ import { initializeFilterPostsByTag } from "./api/posts/handlers/filterPostByTag
 import { sortPostsByDateListener } from "./ui/posts/sortPostsByDateListener.mjs";
 import { navigateBack } from "./ui/common/handlers/navigateBack.mjs";
 import { getProfiles } from "./api/profiles/getProfiles.mjs";
+import { getClickedUserPosts } from "./api/posts/getClickedUserPosts.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -114,6 +115,18 @@ const router = () => {
       displayUpdateModalListener();
       navigateBack();
       break;
+
+    case "/user/index.html":
+    case "/user/":
+      // -- Theme --
+      themeToggleBtn.addEventListener("click", toggleColourTheme);
+      applySystemTheme();
+      // new post click
+      setupNewPostButtonListeners();
+      // User posts
+      getClickedUserPosts();
+      // Log out
+      logOut();
   }
 };
 

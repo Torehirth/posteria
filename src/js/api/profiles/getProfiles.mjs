@@ -7,7 +7,7 @@ export const getProfiles = async () => {
   const url = `${API_SOCIAL_URL}/profiles${queryParam}`;
   try {
     const profiles = await fetchAPI(url, "GET");
-    console.log(profiles);
+    // console.log(profiles);
 
     return profiles;
   } catch (err) {
