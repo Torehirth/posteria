@@ -874,10 +874,6 @@ video {
   margin-top: -3.5rem;
 }
 
-.-mt-2 {
-  margin-top: -0.5rem;
-}
-
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -1083,10 +1079,6 @@ video {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-}
-
-.flex-row-reverse {
-  flex-direction: row-reverse;
 }
 
 .flex-col {
@@ -1407,18 +1399,6 @@ video {
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.outline {
-  outline-style: solid;
-}
-
-.outline-1 {
-  outline-width: 1px;
-}
-
-.outline-2 {
-  outline-width: 2px;
 }
 
 .ring-eden-400 {
