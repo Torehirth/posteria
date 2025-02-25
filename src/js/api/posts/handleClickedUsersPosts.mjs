@@ -7,7 +7,7 @@ import { updateClickedUserProfileName } from "../../ui/common/handlers/updateCli
 import { updateNumberOfPosts } from "../../ui/common/handlers/updateNumberPostsProfile.mjs";
 import { fetchAPI } from "../utils/fetchAPI.mjs";
 
-export const handleClickedUsers = async () => {
+export const handleClickedUsersPosts = async () => {
   const userName = getUserNameQueryParameter("name");
   const url = `${API_SOCIAL_URL}/profiles/${userName}/posts?_author=true`;
 
@@ -15,9 +15,8 @@ export const handleClickedUsers = async () => {
     const data = await fetchAPI(url, "GET");
     const userPosts = data?.data || [];
     document.querySelector("#posts").innerHTML = "";
-    updateNumberOfPosts(userPosts);
-    updateClickedUserProfilePageTitle(userName);
-    updateClickedUserProfileName(userName);
+    // updateNumberOfPosts(userPosts);
+
     renderPosts(userPosts, "#posts");
   } catch (err) {
     console.error(err);
