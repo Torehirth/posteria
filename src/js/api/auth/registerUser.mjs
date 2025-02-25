@@ -1,18 +1,13 @@
 import { API_BASE_URL, API_AUTH_ENDPOINT, API_REGISTER_ENDPOINT } from "../../constants/api.mjs";
 import { displayMessage } from "../../ui/common/displayMessage.mjs";
 import { isFieldsetDisabled } from "../../ui/common/utils/isFieldsetDisabled.mjs";
+import { createAPIRequestHeader } from "../utils/createAPIRequestHeader.mjs";
+import { loginUser } from "../auth/loginUser.mjs";
 
-export const registerUser = async (data) => {
+export const registerUser = async (dataFromForm) => {
   const registerURL = `${API_BASE_URL}${API_AUTH_ENDPOINT}${API_REGISTER_ENDPOINT}`;
   const form = document.querySelector("#register-form");
-
-  const options = {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(data),
-  };
+  const options = createAPIRequestHeader("POST", dataFromForm);
 
   try {
     // Disable fieldset/form when calling the API
@@ -27,9 +22,9 @@ export const registerUser = async (data) => {
     }
     // Display success message after successful registration and redirect right after
     displayMessage("#info-message", "success", "Login successful 🎉");
-    setTimeout(() => {
-      window.location.href = "/profile/index.html";
-    }, 500);
+
+    // User then gets logged in and automatically redirected to profile page by calling the loginUser function, with credentials from the object from handleLoginFormSubmit
+    await loginUser({ email: dataFromForm.email, password: dataFromForm.password });
   } catch (err) {
     console.error(err.message);
     // Catches the error further up and displays only the message

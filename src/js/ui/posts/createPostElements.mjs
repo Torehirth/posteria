@@ -5,7 +5,9 @@ export const createPostElements = (
   altText,
   postTitle,
   postBody,
-  timeAgo
+  timeAgo,
+  postsContainerId,
+  specificPostUrl
 ) => {
   // Create the main post container
   const postContainer = document.createElement("div");
@@ -14,7 +16,7 @@ export const createPostElements = (
   // Create the author info section
   const authorInfo = document.createElement("a");
   authorInfo.href = "#";
-  authorInfo.className = "flex gap-2 items-center w-fit -mb-2";
+  authorInfo.className = "-mb-2 flex gap-2 items-center w-fit";
 
   const authorImage = document.createElement("img");
   authorImage.className = "w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover";
@@ -25,7 +27,7 @@ export const createPostElements = (
   authorDetails.className = "flex flex-col";
 
   const authorNameElement = document.createElement("p");
-  authorNameElement.className = "text-sm";
+  authorNameElement.className = "text-sm capitalize";
   authorNameElement.textContent = authorName;
 
   const timeAgoElement = document.createElement("p");
@@ -38,9 +40,14 @@ export const createPostElements = (
   authorInfo.appendChild(authorImage);
   authorInfo.appendChild(authorDetails);
 
+  // Wrap post image, title, and body in an anchor tag
+  const postLink = document.createElement("a");
+  postLink.href = specificPostUrl; // For navigating to specific post
+  postLink.className = "flex flex-col gap-2";
+
   // Create the post image section
   const postImageContainer = document.createElement("div");
-  postImageContainer.className = "flex max-h-48 xs:max-h-60 sm:max-h-72 md:max-h-80 lg:max-h-96";
+  postImageContainer.className = "flex h-60 xs:h-72 sm:h-80 md:h-96";
 
   const postImageElement = document.createElement("img");
   postImageElement.className = "object-cover rounded-lg";
@@ -51,7 +58,7 @@ export const createPostElements = (
 
   // Create the post title section
   const postTitleElement = document.createElement("h2");
-  postTitleElement.className = "max-w-prose";
+  postTitleElement.className = "max-w-prose font-bold text-lg";
   postTitleElement.textContent = postTitle;
 
   // Create the post body section
@@ -59,10 +66,25 @@ export const createPostElements = (
   postBodyElement.className = "text-sm max-w-prose -mt-2";
   postBodyElement.textContent = postBody;
 
-  // Create the like and comment buttons section
-  const buttonsContainer = document.createElement("div");
-  buttonsContainer.className = "flex gap-4";
+  // Append image, title, and body into the anchor element
+  postLink.appendChild(postImageContainer);
+  postLink.appendChild(postTitleElement);
+  postLink.appendChild(postBodyElement);
 
+  // Create the like and comment buttons section
+  const buttonContainerFull = document.createElement("div");
+  buttonContainerFull.className = "flex justify-between";
+
+  const buttonsContainerLeft = document.createElement("div");
+  buttonsContainerLeft.className = "flex gap-6";
+
+  const buttonsContainerRight = document.createElement("div");
+  buttonsContainerRight.className = "flex gap-6";
+
+  buttonContainerFull.appendChild(buttonsContainerLeft);
+  buttonContainerFull.appendChild(buttonsContainerRight);
+
+  // Like button
   const likeButton = document.createElement("div");
   const likeCheckbox = document.createElement("input");
   likeCheckbox.type = "checkbox";
@@ -92,6 +114,7 @@ export const createPostElements = (
   likeButton.appendChild(likeCheckbox);
   likeButton.appendChild(likeIcon);
 
+  // Comment button
   const commentButton = document.createElement("button");
   commentButton.type = "button";
 
@@ -107,24 +130,22 @@ export const createPostElements = (
 
   commentButton.appendChild(commentIcon);
 
-  buttonsContainer.appendChild(likeButton);
-  buttonsContainer.appendChild(commentButton);
-
-  // Append all sections to the post container
-  postContainer.appendChild(authorInfo);
-  postContainer.appendChild(postImageContainer);
-  postContainer.appendChild(postTitleElement);
-  postContainer.appendChild(postBodyElement);
-  postContainer.appendChild(buttonsContainer);
+  buttonsContainerLeft.appendChild(likeButton);
+  buttonsContainerLeft.appendChild(commentButton);
 
   // Create the border bottom
   const borderBottom = document.createElement("div");
   borderBottom.setAttribute("aria-hidden", "true");
   borderBottom.className =
-    "w-full border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10 pt-4";
+    "w-full border-b border-black border-opacity-10 dark:border-white dark:border-opacity-10 my-4";
 
-  // Append the post container and border bottom to the feed
-  const feedPosts = document.getElementById("feed-posts");
-  feedPosts.appendChild(postContainer);
-  feedPosts.appendChild(borderBottom);
+  // Append all sections to the post container
+  postContainer.appendChild(authorInfo);
+  postContainer.appendChild(postLink); // The anchor wraps the main post content
+  postContainer.appendChild(buttonContainerFull);
+
+  // Append post container to the feed
+  const container = document.querySelector(postsContainerId);
+  container.appendChild(postContainer);
+  container.appendChild(borderBottom);
 };

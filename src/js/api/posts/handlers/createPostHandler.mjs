@@ -6,6 +6,7 @@ export const createPostHandler = () => {
 
   if (createPostForm) {
     createPostForm.addEventListener("submit", handlePostFormEvent);
+    createPostForm.reset();
   }
 };
 
@@ -13,18 +14,17 @@ const handlePostFormEvent = (e) => {
   e.preventDefault();
   const createPostForm = e.target;
   const formData = new FormData(createPostForm);
-  console.log(formData);
   const postData = Object.fromEntries(formData);
-  console.log(postData);
 
   if (postData.media) {
     postData.media = {
       url: postData.media,
-      alt: postData.alt || postData.title,
+      alt: `Could be an image of ${postData.title} and/or ${postData.body}`,
     };
+  } else {
+    // If image URL isn't entered into form, delete media to not get 400 response from API
+    delete postData.media;
   }
-
   postData.tags = [personalTag];
-
   createPost(postData);
 };

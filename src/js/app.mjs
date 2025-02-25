@@ -1,9 +1,4 @@
 import {
-  displayFollowersSection,
-  displayPostsSection,
-  displayFollowingSection,
-} from "./ui/common/handlers/profileTabHandlers.mjs";
-import {
   toggleAsideSearchbar,
   closeSearchBarOnKeypress,
   closeSearchbarOnClick,
@@ -17,15 +12,27 @@ import { registerFormHandler } from "./events/auth/registerFormHandler.mjs";
 import { applySystemTheme, toggleColourTheme } from "./ui/common/handlers/themeHandlers.mjs";
 import { loginFormHandler } from "./events/auth/loginFormHandler.mjs";
 import { createPostHandler } from "./api/posts/handlers/createPostHandler.mjs";
-import { setupInfiniteScroll } from "./api/posts/handlers/getPostsHandler.mjs";
 import { logOut } from "./ui/common/handlers/logoutHandler.mjs";
+import { searchInputEventListener } from "./api/posts/handlers/searchPostsHandler.mjs";
+import {
+  setupNewPostButtonListeners,
+  applyNewPostStateFromURL,
+} from "./ui/common/handlers/newPostButtonHandlers.mjs";
+import { setupClickOutsideNewPostHandler } from "./ui/common/handlers/newPostStateHandlers.mjs";
+import { setupInfiniteScroll } from "./ui/common/handlers/setUpInfiniteScroll.mjs";
+import { getUserPostsHandler } from "./api/posts/handlers/getUserPostsHandler.mjs";
+import { specificPostHandler } from "./api/posts/handlers/specificPostHandler.mjs";
+import { saveToSessionStorage } from "./events/common/utils/saveToSessionStorage.mjs";
+import { handleProfileUI } from "./ui/common/handlers/handleProfileUI.mjs";
+import { displayUpdateModalListener } from "./ui/common/handlers/displayUpdateModalListener.mjs";
+import { initializeFilterPostsByTag } from "./api/posts/handlers/filterPostByTagHandler.mjs";
+import { sortPostsByDateListener } from "./ui/posts/sortPostsByDateListener.mjs";
+import { navigateBack } from "./ui/common/handlers/navigateBack.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
   const headerThemeToggleBtn = document.querySelector("#header-theme-toggle-btn");
   const themeToggleBtn = document.querySelector("#theme-toggle-btn");
-  console.log(pathname);
-  console.log(window.location.href);
 
   switch (pathname) {
     case "/index.html":
@@ -36,7 +43,6 @@ const router = () => {
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
       break;
-
     case "/register/index.html":
     case "/register/":
       // -- Theme --
@@ -48,6 +54,8 @@ const router = () => {
 
     case "/feed/index.html":
     case "/feed/":
+      // Save page to session storage for navigating purposes
+      saveToSessionStorage("previousPage", window.location.href);
       // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
@@ -63,21 +71,45 @@ const router = () => {
       // Posts
       createPostHandler();
       setupInfiniteScroll();
+      // Search
+      searchInputEventListener();
+      // new post click
+      setupNewPostButtonListeners();
+      applyNewPostStateFromURL();
+      setupClickOutsideNewPostHandler();
+      // Log out
+      logOut();
+      initializeFilterPostsByTag();
+      sortPostsByDateListener();
+      break;
+    case "/profile/index.html":
+    case "/profile/":
+      // Save page to session storage for navigating purposes
+      saveToSessionStorage("previousPage", window.location.href);
+      // Display Profile UI
+      handleProfileUI();
+      // -- Theme --
+      themeToggleBtn.addEventListener("click", toggleColourTheme);
+      applySystemTheme();
+      // new post click
+      setupNewPostButtonListeners();
+      // Personal posts
+      getUserPostsHandler();
       // Log out
       logOut();
       break;
 
-    case "/profile/index.html":
-    case "/profile/":
-      // -- Posts/followers/follow section --
-      displayPostsSection();
-      displayFollowersSection();
-      displayFollowingSection();
+    case "/post/index.html":
+    case "/post/":
       // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
-      // Log out
-      logOut();
+      // new post click
+      setupNewPostButtonListeners();
+      // Display post
+      specificPostHandler();
+      displayUpdateModalListener();
+      navigateBack();
       break;
   }
 };

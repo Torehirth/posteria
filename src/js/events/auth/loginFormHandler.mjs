@@ -8,10 +8,14 @@ export const loginFormHandler = () => {
   }
 };
 
-const handleLoginFormSubmit = (e) => {
+export const handleLoginFormSubmit = (e) => {
   e.preventDefault();
   const form = e.target;
   const formData = new FormData(form);
   const userData = Object.fromEntries(formData);
+
+  if (userData.email) {
+    userData.email = userData.email.toLowerCase();
+  }
   loginUser(userData);
 };
