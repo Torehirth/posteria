@@ -9,13 +9,11 @@ import { fetchAPI } from "../utils/fetchAPI.mjs";
 
 export const handleClickedUsers = async () => {
   const userName = getUserNameQueryParameter("name");
-  console.log(userName);
   const url = `${API_SOCIAL_URL}/profiles/${userName}/posts?_author=true`;
 
   try {
     const data = await fetchAPI(url, "GET");
     const userPosts = data?.data || [];
-    console.log(userPosts);
     document.querySelector("#posts").innerHTML = "";
     updateNumberOfPosts(userPosts);
     updateClickedUserProfilePageTitle(userName);

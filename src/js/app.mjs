@@ -28,7 +28,7 @@ import { displayUpdateModalListener } from "./ui/common/handlers/displayUpdateMo
 import { initializeFilterPostsByTag } from "./api/posts/handlers/filterPostByTagHandler.mjs";
 import { sortPostsByDateListener } from "./ui/posts/sortPostsByDateListener.mjs";
 import { navigateBack } from "./ui/common/handlers/navigateBack.mjs";
-import { getProfiles } from "./api/profiles/getProfiles.mjs";
+import { handleUserProfileInfo } from "./api/profiles/handlers/handleUserProfileInfo.mjs";
 import { handleClickedUsers } from "./api/posts/handleClickedUsers.mjs";
 
 const router = () => {
@@ -99,8 +99,6 @@ const router = () => {
       getUserPostsHandler();
       // Log out
       logOut();
-      // Profiles
-      getProfiles();
       break;
 
     case "/post/index.html":
@@ -123,8 +121,10 @@ const router = () => {
       applySystemTheme();
       // new post click
       setupNewPostButtonListeners();
-      // User posts
+      // Other users
       handleClickedUsers();
+      handleUserProfileInfo();
+
       // Log out
       logOut();
   }
