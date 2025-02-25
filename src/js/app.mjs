@@ -29,7 +29,7 @@ import { initializeFilterPostsByTag } from "./api/posts/handlers/filterPostByTag
 import { sortPostsByDateListener } from "./ui/posts/sortPostsByDateListener.mjs";
 import { navigateBack } from "./ui/common/handlers/navigateBack.mjs";
 import { getProfiles } from "./api/profiles/getProfiles.mjs";
-import { getClickedUserPosts } from "./api/posts/getClickedUserPosts.mjs";
+import { handleClickedUsers } from "./api/posts/handleClickedUsers.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -124,7 +124,7 @@ const router = () => {
       // new post click
       setupNewPostButtonListeners();
       // User posts
-      getClickedUserPosts();
+      handleClickedUsers();
       // Log out
       logOut();
   }
