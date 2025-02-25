@@ -18,7 +18,7 @@ export const getUserPostsHandler = async () => {
     }
     // Disable loader when posts are loaded
     document.querySelector("#posts").innerHTML = "";
-    renderPosts(userPosts, "#posts", "../post/index.html");
+    renderPosts(userPosts, "#posts");
     updateNumberOfPosts(userPosts);
   } catch (err) {
     console.error(err);

@@ -8,6 +8,7 @@ export const createPostElements = (
   timeAgo,
   postsContainerId,
   specificPostUrl
+  // userLink
 ) => {
   // Create the main post container
   const postContainer = document.createElement("div");
@@ -16,6 +17,7 @@ export const createPostElements = (
   // Create the author info section
   const authorInfo = document.createElement("a");
   authorInfo.href = "#";
+  // authorInfo.href = userLink;
   authorInfo.className = "-mb-2 flex gap-2 items-center w-fit";
 
   const authorImage = document.createElement("img");

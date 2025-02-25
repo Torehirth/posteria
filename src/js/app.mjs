@@ -28,6 +28,7 @@ import { displayUpdateModalListener } from "./ui/common/handlers/displayUpdateMo
 import { initializeFilterPostsByTag } from "./api/posts/handlers/filterPostByTagHandler.mjs";
 import { sortPostsByDateListener } from "./ui/posts/sortPostsByDateListener.mjs";
 import { navigateBack } from "./ui/common/handlers/navigateBack.mjs";
+import { getProfiles } from "./api/profiles/getProfiles.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -97,6 +98,8 @@ const router = () => {
       getUserPostsHandler();
       // Log out
       logOut();
+      // Profiles
+      getProfiles();
       break;
 
     case "/post/index.html":

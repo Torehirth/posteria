@@ -12,7 +12,7 @@ export const createSpecificPostElements = (
   const postWrapper = document.createElement("section");
   postWrapper.id = "post-wrapper";
   postWrapper.className =
-    "flex flex-col mt-4 lg:mt-12 items-center md:max-w-2xl lg:max-w-2xl xl:max-w-3xl xxl:max-w-5xl";
+    "flex flex-col mb-4 mt-4 lg:mt-12 items-center md:max-w-2xl lg:max-w-2xl xl:max-w-3xl xxl:max-w-5xl";
 
   const mainContainer = document.createElement("div");
   mainContainer.className = "flex flex-col gap-6";
@@ -50,8 +50,7 @@ export const createSpecificPostElements = (
   postContent.className = "flex flex-col gap-6 items-start";
 
   const postImageContainer = document.createElement("div");
-  postImageContainer.className =
-    "flex justify-center max-h-screen lg:max-w-screen";
+  postImageContainer.className = "flex justify-center max-h-screen lg:max-w-screen";
 
   const postImage = document.createElement("img");
   postImage.className = "object-cover rounded-lg";

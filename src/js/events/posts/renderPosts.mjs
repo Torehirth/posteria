@@ -12,6 +12,7 @@ export const renderPosts = (posts, postsContainerId) => {
     const postAltText = postImage ? post?.media?.alt || postTitle : "";
     const timeAgo = getTimeAgo(post?.created || "");
     const specificPostUrl = `/post/index.html?id=${post.id}`;
+    // const userLink = `/user/index.html?$name={user?.name}`
 
     createPostElements(
       profileImage,
@@ -23,6 +24,7 @@ export const renderPosts = (posts, postsContainerId) => {
       timeAgo,
       postsContainerId,
       specificPostUrl
+      // userLink
     );
   });
 };
