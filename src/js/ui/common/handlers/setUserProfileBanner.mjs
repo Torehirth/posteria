@@ -1,4 +1,4 @@
-export const setClickedUserProfileBanner = (
+export const setUserProfileBanner = (
   userProfile,
   element,
   fallBackImgURL = "../../../src/assets/images/banner/steve-doig-tOgc0Gjj_8E-unsplash.webp",

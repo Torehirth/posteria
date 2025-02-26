@@ -1,29 +1,28 @@
 import { API_SOCIAL_URL } from "../../../constants/api.mjs";
 import { getUserNameQueryParameter } from "../../../events/common/getUserNameQueryParameter.mjs";
-import { updateClickedUserProfilePageTitle } from "../../../events/common/updateClickedUserProfilePageTitle.mjs";
+import { updateUserProfilePageTitle } from "../../../events/common/updateUserProfilePageTitle.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
-import { setClickedUserBio } from "../../../ui/common/handlers/setClickedUserBio.mjs";
-import { setClickedUserProfileBanner } from "../../../ui/common/handlers/setClickedUserProfileBanner.mjs";
-import { setClickedUserProfileImage } from "../../../ui/common/handlers/setClickedUserProfileImage.mjs";
-import { updateClickedUserProfileName } from "../../../ui/common/handlers/updateClickedUserProfileName.mjs";
+import { setUserBio } from "../../../ui/common/handlers/setUserBio.mjs";
+import { setUserProfileBanner } from "../../../ui/common/handlers/setUserProfileBanner.mjs";
+import { setUserProfileImage } from "../../../ui/common/handlers/setUserProfileImage.mjs";
+import { updateUserProfileName } from "../../../ui/common/handlers/updateUserProfileName.mjs";
 import { updateUserNumberStats } from "../../../ui/common/utils/updateUserNumberStats.mjs";
 import { fetchAPI } from "../../utils/fetchAPI.mjs";
 
-export const handleUserProfileInfo = async () => {
+export const handleClickedUserUI = async () => {
   const userName = getUserNameQueryParameter("name");
   const queryParam = "_followers=true&_following=true&_posts=true";
   const url = `${API_SOCIAL_URL}/profiles/${userName}?${queryParam}`;
-  console.log(userName);
 
   try {
     const data = await fetchAPI(url, "GET");
     const profile = data?.data || [];
-    console.log(profile);
-    setClickedUserProfileBanner(profile, "#profile-banner");
-    setClickedUserBio(profile, "#profile-bio");
-    setClickedUserProfileImage(profile, "#profile-image");
-    updateClickedUserProfilePageTitle(profile);
-    updateClickedUserProfileName(profile);
+
+    setUserProfileBanner(profile, "#profile-banner");
+    setUserBio(profile, "#profile-bio");
+    setUserProfileImage(profile, "#profile-image");
+    updateUserProfilePageTitle(profile);
+    updateUserProfileName(profile);
     updateUserNumberStats(profile, "posts", "#number-posts");
     updateUserNumberStats(profile, "followers", "#number-followers");
     updateUserNumberStats(profile, "following", "#number-following");

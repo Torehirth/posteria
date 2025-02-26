@@ -1,7 +1,6 @@
 export const updateUserNumberStats = (profile, dataKey, element) => {
   const htmlElement = document.querySelector(element);
   const { _count } = profile;
-  console.log(_count);
   const numberStats = _count?.[dataKey] ?? "NaN";
 
   if (typeof numberStats !== "number") {

@@ -1,4 +1,4 @@
-export const setClickedUserProfileImage = (
+export const setUserProfileImage = (
   profile,
   element,
   fallBackImgURL = "../../../src/assets/images/profile/autumn-goodman-vTL_qy03D1I-unsplash.webp",
