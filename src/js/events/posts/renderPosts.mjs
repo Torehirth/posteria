@@ -1,7 +1,6 @@
 import { getTimeAgo } from "../../events/posts/getTimeAgo.mjs";
 import { createPostElements } from "../../ui/posts/createPostElements.mjs";
 
-// Render posts to the container
 export const renderPosts = (posts, postsContainerId) => {
   posts.forEach((post) => {
     const profileImage = post?.author?.avatar?.url || "";

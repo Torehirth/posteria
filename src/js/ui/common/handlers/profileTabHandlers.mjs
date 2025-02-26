@@ -9,7 +9,7 @@ const postsTabBtn = document.querySelector("#posts-tab-btn");
 const followersTabBtn = document.querySelector("#followers-tab-btn");
 const followingTabBtn = document.querySelector("#following-tab-btn");
 
-export const displayPostsSection = () => {
+const displayPostsSection = () => {
   postsTabBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -24,7 +24,7 @@ export const displayPostsSection = () => {
   });
 };
 
-export const displayFollowersSection = () => {
+const displayFollowersSection = () => {
   followersTabBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -39,7 +39,7 @@ export const displayFollowersSection = () => {
   });
 };
 
-export const displayFollowingSection = () => {
+const displayFollowingSection = () => {
   followingTabBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -52,4 +52,10 @@ export const displayFollowingSection = () => {
       followingSection.scrollIntoView();
     });
   });
+};
+
+export const displayProfileTabs = () => {
+  displayPostsSection();
+  displayFollowersSection();
+  displayFollowingSection();
 };

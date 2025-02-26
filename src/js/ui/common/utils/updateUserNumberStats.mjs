@@ -7,7 +7,5 @@ export const updateUserNumberStats = (profile, dataKey, element) => {
   if (typeof numberStats !== "number") {
     console.error("Number of posts is not a number");
   }
-  console.log(numberStats);
-  
   htmlElement.textContent = numberStats;
 };

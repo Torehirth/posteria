@@ -6,7 +6,6 @@ import { setClickedUserBio } from "../../../ui/common/handlers/setClickedUserBio
 import { setClickedUserProfileBanner } from "../../../ui/common/handlers/setClickedUserProfileBanner.mjs";
 import { setClickedUserProfileImage } from "../../../ui/common/handlers/setClickedUserProfileImage.mjs";
 import { updateClickedUserProfileName } from "../../../ui/common/handlers/updateClickedUserProfileName.mjs";
-import { updateNumberOfPosts } from "../../../ui/common/handlers/updateNumberPostsProfile.mjs";
 import { updateUserNumberStats } from "../../../ui/common/utils/updateUserNumberStats.mjs";
 import { fetchAPI } from "../../utils/fetchAPI.mjs";
 

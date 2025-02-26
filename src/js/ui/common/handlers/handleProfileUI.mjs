@@ -2,11 +2,7 @@ import { updatePageTitleWithUser } from "../../../events/common/updatePageTitleW
 import { setUserProfileBannerImage } from "../setUserProfileBannerImage.mjs";
 import { setUserProfileImages } from "../setUserProfileImages.mjs";
 import { setUserProfileInfo } from "../setUserProfileInfo.mjs";
-import {
-  displayFollowersSection,
-  displayFollowingSection,
-  displayPostsSection,
-} from "./profileTabHandlers.mjs";
+import { displayProfileTabs } from "./profileTabHandlers.mjs";
 
 export const handleProfileUI = () => {
   // Display logged in user UI
@@ -17,7 +13,5 @@ export const handleProfileUI = () => {
   setUserProfileBannerImage("#profile-banner");
 
   // -- Posts/followers/follow sections
-  displayPostsSection();
-  displayFollowersSection();
-  displayFollowingSection();
+  displayProfileTabs();
 };

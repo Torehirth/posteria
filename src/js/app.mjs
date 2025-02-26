@@ -30,6 +30,7 @@ import { sortPostsByDateListener } from "./ui/posts/sortPostsByDateListener.mjs"
 import { navigateBack } from "./ui/common/handlers/navigateBack.mjs";
 import { handleUserProfileInfo } from "./api/profiles/handlers/handleUserProfileInfo.mjs";
 import { handleClickedUsersPosts } from "./api/posts/handleClickedUsersPosts.mjs";
+import { displayProfileTabs } from "./ui/common/handlers/profileTabHandlers.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -121,7 +122,8 @@ const router = () => {
       applySystemTheme();
       // new post click
       setupNewPostButtonListeners();
-      // Other users
+      // Profile UI
+      displayProfileTabs();
       handleClickedUsersPosts();
       handleUserProfileInfo();
 
