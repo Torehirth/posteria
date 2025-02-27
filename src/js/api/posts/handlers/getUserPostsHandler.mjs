@@ -18,12 +18,11 @@ export const getUserPostsHandler = async () => {
     }
     // Disable loader when posts are loaded
     document.querySelector("#posts").innerHTML = "";
-    renderPosts(userPosts, "#posts", "../post/index.html");
+    renderPosts(userPosts, "#posts");
     updateNumberOfPosts(userPosts);
   } catch (err) {
     console.error(err);
     displayMessage("#info-message", "error", err.message || "Failed to display posts. Try again later");
     document.querySelector("#loader").classList.add("hidden");
-    console.log("test");
   }
 };

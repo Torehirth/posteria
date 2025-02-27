@@ -23,11 +23,14 @@ import { setupInfiniteScroll } from "./ui/common/handlers/setUpInfiniteScroll.mj
 import { getUserPostsHandler } from "./api/posts/handlers/getUserPostsHandler.mjs";
 import { specificPostHandler } from "./api/posts/handlers/specificPostHandler.mjs";
 import { saveToSessionStorage } from "./events/common/utils/saveToSessionStorage.mjs";
-import { handleProfileUI } from "./ui/common/handlers/handleProfileUI.mjs";
 import { displayUpdateModalListener } from "./ui/common/handlers/displayUpdateModalListener.mjs";
 import { initializeFilterPostsByTag } from "./api/posts/handlers/filterPostByTagHandler.mjs";
 import { sortPostsByDateListener } from "./ui/posts/sortPostsByDateListener.mjs";
 import { navigateBack } from "./ui/common/handlers/navigateBack.mjs";
+import { handleClickedUserUI } from "./api/profiles/handlers/handleClickedUserUI.mjs";
+import { handleClickedUsersPosts } from "./api/posts/handleClickedUsersPosts.mjs";
+import { handleLoggedInUserUI } from "./api/profiles/handlers/handleLoggedInUserUI.mjs";
+import { displayProfileTabs } from "./ui/common/handlers/displayProfileTabs.mjs";
 
 const router = () => {
   const pathname = window.location.pathname;
@@ -87,7 +90,8 @@ const router = () => {
       // Save page to session storage for navigating purposes
       saveToSessionStorage("previousPage", window.location.href);
       // Display Profile UI
-      handleProfileUI();
+      displayProfileTabs();
+      handleLoggedInUserUI();
       // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
@@ -111,6 +115,21 @@ const router = () => {
       displayUpdateModalListener();
       navigateBack();
       break;
+
+    case "/user/index.html":
+    case "/user/":
+      // -- Theme --
+      themeToggleBtn.addEventListener("click", toggleColourTheme);
+      applySystemTheme();
+      // new post click
+      setupNewPostButtonListeners();
+      // Profile UI
+      displayProfileTabs();
+      handleClickedUsersPosts();
+      handleClickedUserUI();
+
+      // Log out
+      logOut();
   }
 };
 

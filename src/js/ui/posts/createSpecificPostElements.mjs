@@ -50,8 +50,7 @@ export const createSpecificPostElements = (
   postContent.className = "flex flex-col gap-6 items-start";
 
   const postImageContainer = document.createElement("div");
-  postImageContainer.className =
-    "flex justify-center max-h-screen lg:max-w-screen";
+  postImageContainer.className = "flex justify-center max-h-screen lg:max-w-screen";
 
   const postImage = document.createElement("img");
   postImage.className = "object-cover rounded-lg";
