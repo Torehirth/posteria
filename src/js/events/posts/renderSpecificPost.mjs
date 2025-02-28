@@ -26,6 +26,15 @@ export const renderSpecificPost = async (post) => {
     buttonGroup = addRightButtonContainer(); //
   }
 
+  // If the logged in user is not the same as the clicked user profile, navigate to user profile, else navigate to profile page
+  const { name } = getFromStorage("user");
+  let userLink = "";
+  if (profileName !== name) {
+    userLink = `/user/index.html?name=${post?.author?.name}`;
+  } else {
+    userLink = `/profile/index.html`;
+  }
+
   createSpecificPostElements(
     profileName,
     profileImg,
@@ -35,6 +44,7 @@ export const renderSpecificPost = async (post) => {
     postImgAlt,
     postBodyTitle,
     postBodyText,
-    buttonGroup
+    buttonGroup,
+    userLink
   );
 };

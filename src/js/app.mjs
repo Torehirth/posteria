@@ -107,9 +107,8 @@ const router = () => {
     case "/post/":
       // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
+      headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
-      // new post click
-      setupNewPostButtonListeners();
       // Display post
       specificPostHandler();
       displayUpdateModalListener();

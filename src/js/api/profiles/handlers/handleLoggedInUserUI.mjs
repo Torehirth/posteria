@@ -17,7 +17,6 @@ export const handleLoggedInUserUI = async () => {
   try {
     const data = await fetchAPI(url, "GET");
     const profile = data?.data || [];
-    console.log(profile);
     setUserProfileBanner(profile, "#profile-banner");
     setUserBio(profile, "#profile-bio");
     setUserProfileImage(profile, "#profile-image");
