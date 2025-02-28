@@ -7,7 +7,8 @@ export const createSpecificPostElements = (
   postImgAlt,
   postBodyTitle,
   postBodyText,
-  buttonGroup
+  buttonGroup,
+  link
 ) => {
   const postWrapper = document.createElement("section");
   postWrapper.id = "post-wrapper";
@@ -15,11 +16,11 @@ export const createSpecificPostElements = (
     "flex flex-col mb-4 mt-4 lg:mt-12 items-center md:max-w-2xl lg:max-w-2xl xl:max-w-3xl xxl:max-w-5xl";
 
   const mainContainer = document.createElement("div");
-  mainContainer.className = "flex flex-col gap-6";
+  mainContainer.className = "flex flex-col gap-6 max-w-4xl";
 
   // Author info section
   const authorLink = document.createElement("a");
-  authorLink.href = "#";
+  authorLink.href = link;
   authorLink.className = "flex gap-2 items-center w-fit";
 
   const authorImg = document.createElement("img");
@@ -50,7 +51,7 @@ export const createSpecificPostElements = (
   postContent.className = "flex flex-col gap-6 items-start";
 
   const postImageContainer = document.createElement("div");
-  postImageContainer.className = "flex justify-center max-h-screen lg:max-w-screen";
+  postImageContainer.className = "flex justify-center max-w-screen";
 
   const postImage = document.createElement("img");
   postImage.className = "object-cover rounded-lg";
