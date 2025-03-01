@@ -13,7 +13,7 @@ import { applySystemTheme, toggleColourTheme } from "./ui/common/handlers/themeH
 import { loginFormHandler } from "./events/auth/loginFormHandler.mjs";
 import { createPostHandler } from "./api/posts/handlers/createPostHandler.mjs";
 import { logOut } from "./ui/common/handlers/logoutHandler.mjs";
-import { searchInputEventListener } from "./api/posts/handlers/searchPostsHandler.mjs";
+import { searchInputEventListeners } from "./api/posts/handlers/searchPostsHandler.mjs";
 import {
   setupNewPostButtonListeners,
   applyNewPostStateFromURL,
@@ -75,7 +75,7 @@ const router = () => {
       createPostHandler();
       setupInfiniteScroll();
       // Search
-      searchInputEventListener();
+      searchInputEventListeners();
       // new post click
       setupNewPostButtonListeners();
       applyNewPostStateFromURL();

@@ -85,7 +85,7 @@ const handleViewMore = () => {
   searchPosts(true);
 };
 
-export const searchInputEventListener = () => {
+export const searchInputEventListeners = () => {
   searchInputDesktop.addEventListener("input", handleSearchInput);
   searchInputMobile.addEventListener("input", handleSearchInput);
   viewMoreBtnWrapper.addEventListener("click", handleViewMore);
