@@ -8,7 +8,7 @@ export const filterPosts = (posts, inputValue) => {
       post?.tags?.some((tag) => {
         return tag?.toLowerCase().trim().includes(inputValue);
       }) ||
-      post?.author?.name?.toLowerCase().trim().includes(inputValue)
+      post?.author?.email.toLowerCase().trim().includes(inputValue)
     );
   });
 };

@@ -1,49 +1,92 @@
 import { API_POSTS_URL } from "../../../constants/api.mjs";
-import { filterPosts } from "../../../events/posts/filterPosts.mjs";
 import { renderPosts } from "../../../events/posts/renderPosts.mjs";
 import { displayMessage } from "../../../ui/common/displayMessage.mjs";
 import { fetchAPI } from "../../utils/fetchAPI.mjs";
+import { getPostsHandler, setCurrentPage } from "./getPostsHandler.mjs";
 
 const searchInputDesktop = document.querySelector("#aside-feed-search");
 const searchInputMobile = document.querySelector("#feed-search");
+const createPostContainer = document.querySelector("#create-post-section");
 const postsContainer = document.querySelector("#feed-posts");
 const loader = document.querySelector("#loader");
 const messageContainer = document.querySelector("#aside-feed-search-container #info-message");
+const viewMoreBtnWrapper = document.querySelector("#view-more-btn-wrapper");
 
-export const searchInputEventListener = async () => {
-  document.addEventListener("input", (e) => {
-    e.preventDefault();
-    const searchPostsHandler = async (e) => {
-      const usersParam = "_author=true";
-      try {
-        const regex = /[^a-zA-Z0-9s]+/g; // Removes all spaces and special characters
-        const inputValue = e?.target?.value.toLowerCase().replace(regex, "") || "";
-        const data = await fetchAPI(`${API_POSTS_URL}?${usersParam}`, "GET");
-        const posts = data?.data || [];
+let currentPage = 1;
+let allPosts = [];
+let searchQuery = "";
 
-        if (inputValue.length) {
-          postsContainer.innerHTML = "";
-          loader.classList.add("hidden"); // Hides the loader to prevent observer to continue observing the loader = getPostHandler function wouldn't be called initially or by scroll.
-        }
+const searchPosts = async (isViewMore = false) => {
+  try {
+    const queryParam = `q=${searchQuery}&_author=true&limit=10&page=${currentPage}`;
+    const response = await fetchAPI(`${API_POSTS_URL}/search?${queryParam}`, "GET");
+    const newPosts = response?.data || [];
 
-        const filteredPosts = filterPosts(posts, inputValue);
-
-        if (!filteredPosts.length) {
-          displayMessage("#info-message", "warning", "No posts matches search criteria..");
-          messageContainer.classList.remove("hidden");
-        } else {
-          postsContainer.innerHTML = "";
-          renderPosts(filteredPosts, "#feed-posts");
-          messageContainer.classList.add("hidden");
-        }
-      } catch (err) {
-        console.error(err);
-        displayMessage("#info-message", "error", "Something went wrong searching the posts");
-      }
-    };
-
-    if (e.target === searchInputDesktop || e.target === searchInputMobile) {
-      searchPostsHandler(e);
+    if (searchQuery.length) {
+      createPostContainer.classList.add("hidden");
+      loader.classList.add("hidden");
+    } else {
+      createPostContainer.classList.remove("hidden");
     }
-  });
+
+    if (newPosts.length > 9) {
+      viewMoreBtnWrapper.classList.remove("hidden");
+    } else {
+      viewMoreBtnWrapper.classList.add("hidden");
+    }
+
+    // If no posts are found, show a message
+    if (!newPosts.length) {
+      if (isViewMore) {
+        displayMessage("#info-message", "warning", "No more posts to load.");
+      } else {
+        postsContainer.innerHTML = "";
+        displayMessage("#info-message", "warning", "No posts match your search.");
+      }
+      messageContainer.classList.remove("hidden");
+    } else {
+      // Add new posts to the existing posts
+      if (isViewMore) {
+        allPosts = [...allPosts, ...newPosts];
+      } else {
+        // Reset posts for a new search
+        allPosts = newPosts;
+      }
+      console.log(newPosts);
+
+      postsContainer.innerHTML = "";
+      renderPosts(allPosts, "#feed-posts");
+      messageContainer.classList.add("hidden");
+    }
+  } catch (error) {
+    console.error(error);
+    displayMessage("#info-message", "error", "Something went wrong while searching.");
+  }
+};
+
+// Function to handle search input
+const handleSearchInput = (e) => {
+  const inputValue = e.target.value.toLowerCase().trim();
+  if (inputValue) {
+    searchQuery = inputValue;
+    currentPage = 1;
+    searchPosts();
+  } else {
+    // Reset initial posts when erasing search input
+    postsContainer.innerHTML = "";
+    setCurrentPage(1);
+    getPostsHandler();
+  }
+};
+
+// Handles "View More" button click
+const handleViewMore = () => {
+  currentPage++;
+  searchPosts(true);
+};
+
+export const searchInputEventListener = () => {
+  searchInputDesktop.addEventListener("input", handleSearchInput);
+  searchInputMobile.addEventListener("input", handleSearchInput);
+  viewMoreBtnWrapper.addEventListener("click", handleViewMore);
 };

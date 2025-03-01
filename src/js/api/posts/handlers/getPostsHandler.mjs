@@ -31,6 +31,7 @@ export const getPostsHandler = async () => {
     renderPosts(posts, "#feed-posts");
 
     currentPage++;
+    return posts;
   } catch (err) {
     console.error(err);
     displayMessage(messageContainer, "error", "Failed to load posts. Try again later.");
