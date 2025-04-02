@@ -66,7 +66,7 @@ To build the project for production:
 npm run build
 ```
 
-To view the website locally, you can just open the index.html file in your preferred browser after running the build process.
+After running the build process, you can open the index.html file in your preferred browser to view the website locally.
 
 ## Contributing
 
