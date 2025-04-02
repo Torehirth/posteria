@@ -40,18 +40,14 @@ const router = () => {
   switch (pathname) {
     case "/index.html":
     case "/":
-      // Login page
       loginFormHandler();
-      // -- Theme --
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
       break;
     case "/register/index.html":
     case "/register/":
-      // -- Theme --
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
-      // -- Register --
       registerFormHandler();
       break;
 
@@ -59,28 +55,21 @@ const router = () => {
     case "/feed/":
       // Save page to session storage for navigating purposes
       saveToSessionStorage("previousPage", window.location.href);
-      // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
-      // -- Searchbar --
       toggleAsideSearchbar();
       closeSearchBarOnKeypress();
       closeSearchbarOnClick();
-      // -- Sort dropdown menu --
       toggleSortDropdownMenu();
       closeSortDropDownByClickOutside();
       closeSortDropdownByEscKey();
-      // Posts
       createPostHandler();
       setupInfiniteScroll();
-      // Search
       searchInputEventListeners();
-      // new post click
       setupNewPostButtonListeners();
       applyNewPostStateFromURL();
       setupClickOutsideNewPostHandler();
-      // Log out
       logOut();
       initializeFilterPostsByTag();
       sortPostsByDateListener();
@@ -89,27 +78,20 @@ const router = () => {
     case "/profile/":
       // Save page to session storage for navigating purposes
       saveToSessionStorage("previousPage", window.location.href);
-      // Display Profile UI
       displayProfileTabs();
       handleLoggedInUserUI();
-      // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
-      // new post click
       setupNewPostButtonListeners();
-      // Personal posts
       getUserPostsHandler();
-      // Log out
       logOut();
       break;
 
     case "/post/index.html":
     case "/post/":
-      // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
-      // Display post
       specificPostHandler();
       displayUpdateModalListener();
       navigateBack();
@@ -117,12 +99,9 @@ const router = () => {
 
     case "/user/index.html":
     case "/user/":
-      // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
-      // new post click
       setupNewPostButtonListeners();
-      // Profile UI
       displayProfileTabs();
       handleClickedUsersPosts();
       handleClickedUserUI();

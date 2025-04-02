@@ -17,7 +17,7 @@ Posteria offers the following features to enhance user experience:
 - Dark and light mode for optimal user accessibility.
 - Prototyped with user-centric design principles using Figma.
 
-This project is built with simplicity and scalability in mind, utilizing modern web development tools and techniques.
+This project is built with simplicity and scalability, utilizing modern web development tools and techniques.
 
 ## Built With
 
@@ -66,7 +66,7 @@ To build the project for production:
 npm run build
 ```
 
-To view the website locally, you can just open the index.html file in your preferred browser after running the build process.
+After running the build process, you can open the index.html file in your preferred browser to view the website locally.
 
 ## Contributing
 
