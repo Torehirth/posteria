@@ -14,14 +14,13 @@ export const initUpdatePost = () => {
 const updatePostHandler = async (e) => {
   e.preventDefault();
   const id = getQueryParameter("id");
+  const Url = `${API_POSTS_URL}/${id}`;
+  const postData = getFormDataFromModal(e);
 
   if (!id) {
     console.error("ID not found as query parameter");
     return;
   }
-
-  const Url = `${API_POSTS_URL}/${id}`;
-  const postData = getFormDataFromModal(e);
 
   try {
     isFieldsetDisabled(true, 0.7, "Publishing..");
@@ -36,7 +35,6 @@ const updatePostHandler = async (e) => {
 
     document.querySelector("#edit-label").innerHTML = "";
     document.querySelector("#post-wrapper").innerHTML = "";
-
     displayMessage("#info-message", "success", "Post edited successfully!");
 
     if (response.ok) {

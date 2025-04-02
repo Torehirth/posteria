@@ -9,7 +9,6 @@ const postContainer = document.querySelector("#post-container");
 
 export const renderSpecificPost = async (post) => {
   postContainer.innerHTML = "";
-
   const profileName = post?.author?.name || "User profile";
   const profileImg = post?.author?.avatar?.url || "../../src/assets/images/profile/default-avatar.webp";
   const profileImgAlt = post?.author?.avatar?.alt || "Profile image";

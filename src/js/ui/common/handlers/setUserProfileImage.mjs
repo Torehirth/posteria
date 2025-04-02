@@ -5,17 +5,16 @@ export const setUserProfileImage = (
   fallBackAltText = "Profile image"
 ) => {
   const { avatar } = profile;
+  const imgElement = document.querySelector(element);
   if (!avatar) {
     console.error("Userdata not found in storage");
     return;
   }
 
-  const imgElement = document.querySelector(element);
   if (!imgElement) {
     console.error(`Element ${element} not found!`);
     return;
   }
-
   imgElement.src = avatar?.url || fallBackImgURL;
   imgElement.alt = avatar?.alt || fallBackAltText;
 };

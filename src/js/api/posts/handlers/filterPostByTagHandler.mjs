@@ -25,9 +25,7 @@ export const filterPostByTagHandler = async () => {
     }
 
     document.querySelector("#feed-posts").innerHTML = "";
-
     filteredPostsByTag = sortPostsByDate(filteredPostsByTag, sortOrder);
-
     renderPosts(filteredPostsByTag, "#feed-posts");
   } catch (err) {
     displayMessage("#info-message", "error", err.message || "Filtering by tag didn't work");

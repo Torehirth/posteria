@@ -17,7 +17,6 @@ export const handleClickedUserUI = async () => {
   try {
     const data = await fetchAPI(url, "GET");
     const profile = data?.data || [];
-
     setUserProfileBanner(profile, "#profile-banner");
     setUserBio(profile, "#profile-bio");
     setUserProfileImage(profile, "#profile-image");

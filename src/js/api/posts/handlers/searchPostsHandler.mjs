@@ -52,7 +52,6 @@ const searchPosts = async (isViewMore = false) => {
         // Reset posts for a new search
         allPosts = newPosts;
       }
-      console.log(newPosts);
 
       postsContainer.innerHTML = "";
       renderPosts(allPosts, "#feed-posts");

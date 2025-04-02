@@ -126,8 +126,6 @@ const router = () => {
       displayProfileTabs();
       handleClickedUsersPosts();
       handleClickedUserUI();
-
-      // Log out
       logOut();
   }
 };

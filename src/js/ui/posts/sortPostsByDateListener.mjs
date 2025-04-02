@@ -3,12 +3,10 @@ import { sortPostsByDate } from "./sortPostsByDate.mjs";
 
 export const sortPostsByDateListener = () => {
   const sortDropDownWrapper = document.querySelector("#sort-menu");
-  const loader = document.querySelector("#loader");
 
   sortDropDownWrapper.addEventListener("click", (e) => {
     if (e.target.closest("#descending")) {
       e.preventDefault();
-
       document.querySelector("#descending-icon").classList.remove("opacity-0");
       document.querySelector("#ascending-icon").classList.add("opacity-0");
       initSortPostsByDate("desc");
@@ -21,6 +19,7 @@ export const sortPostsByDateListener = () => {
 };
 
 const initSortPostsByDate = (sortingOrder) => {
+  const loader = document.querySelector("#loader");
   if (loader) {
     loader.classList.remove("hidden");
   }

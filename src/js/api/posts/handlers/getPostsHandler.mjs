@@ -27,9 +27,7 @@ export const getPostsHandler = async () => {
     }
 
     posts = sortPostsByDate(posts, sortOrder);
-
     renderPosts(posts, "#feed-posts");
-
     currentPage++;
   } catch (err) {
     console.error(err);

@@ -30,9 +30,7 @@ const deletePost = async (e) => {
     document.querySelector("#post-wrapper").remove();
     // Resets the URL Without the ID as query parameter.
     resetURLWithoutRefresh();
-
     displayMessage("#info-message", "success", "Post deleted successfully!");
-
     setTimeout(() => {
       navigateBackOnDelete();
     }, 1500);

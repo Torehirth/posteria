@@ -14,6 +14,5 @@ export const sortPostsByDate = (posts, sortOrder = "desc") => {
       return dateA - dateB;
     }
   });
-
   return posts;
 };
