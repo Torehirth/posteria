@@ -89,11 +89,9 @@ const router = () => {
 
     case "/post/index.html":
     case "/post/":
-      // -- Theme --
       themeToggleBtn.addEventListener("click", toggleColourTheme);
       headerThemeToggleBtn.addEventListener("click", toggleColourTheme);
       applySystemTheme();
-      // Display post
       specificPostHandler();
       displayUpdateModalListener();
       navigateBack();
