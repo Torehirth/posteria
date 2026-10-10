@@ -1,7 +1,7 @@
 const searchButton = document.querySelector("#aside-search-btn");
 const searchInputContainer = document.querySelector("#aside-feed-search-container");
 const searchInputDesktop = document.querySelector("#aside-feed-search");
-const messageContainer = document.querySelector("#aside-feed-search-container #info-message");
+const messageContainer = document.querySelector("#search-message");
 
 export const toggleAsideSearchbar = () => {
   searchButton.addEventListener("click", (e) => {
