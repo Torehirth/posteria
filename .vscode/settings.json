@@ -1,7 +1,6 @@
 {
   "editor.wordWrap": "on",
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
@@ -9,9 +8,7 @@
   "prettier.bracketSameLine": true,
   "prettier.htmlWhitespaceSensitivity": "ignore",
   "prettier.trailingComma": "es5",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
