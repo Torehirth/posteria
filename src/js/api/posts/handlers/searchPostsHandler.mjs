@@ -9,7 +9,7 @@ const searchInputMobile = document.querySelector("#feed-search");
 const createPostContainer = document.querySelector("#create-post-section");
 const postsContainer = document.querySelector("#feed-posts");
 const loader = document.querySelector("#loader");
-const messageContainer = document.querySelector("#aside-feed-search-container #info-message");
+const messageContainer = document.querySelector("#aside-feed-search-container #search-message");
 const viewMoreBtnWrapper = document.querySelector("#view-more-btn-wrapper");
 
 let currentPage = 1;
@@ -38,10 +38,10 @@ const searchPosts = async (isViewMore = false) => {
     // If no posts are found, show a message
     if (!newPosts.length) {
       if (isViewMore) {
-        displayMessage("#info-message", "warning", "No more posts to load.");
+        displayMessage("#search-message", "warning", "No more posts to load.");
       } else {
         postsContainer.innerHTML = "";
-        displayMessage("#info-message", "warning", "No posts match your search.");
+        displayMessage("#search-message", "warning", "No posts match your search.");
       }
       messageContainer.classList.remove("hidden");
     } else {
