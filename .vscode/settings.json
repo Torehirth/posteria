@@ -1,6 +1,16 @@
 {
   "editor.wordWrap": "on",
-  "prettier.printWidth": 110,
-  "cSpell.words": ["Posteria"],
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "prettier.printWidth": 100,
+  "prettier.bracketSameLine": true,
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "prettier.trailingComma": "es5",
+
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "cSpell.words": ["Posteria"]
 }

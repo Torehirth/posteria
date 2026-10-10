@@ -1,6 +1,34 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --breakpoint-xs: 425px;
+  --breakpoint-sm: 550px;
+  --breakpoint-md: 650px;
+  --breakpoint-lg: 768px;
+  --breakpoint-xl: 1024px;
+  --breakpoint-xxl: 1280px;
+
+  --font-sans: "Open-Sans", sans-serif;
+
+  --color-darkGray: #323436;
+  --color-black: #181a1c;
+  --color-white: #f9f9f9;
+  --color-canvas: #fffaf0;
+
+  --color-eden-50: #f0fdf9;
+  --color-eden-100: #cbfcee;
+  --color-eden-200: #97f8dc;
+  --color-eden-300: #5bedc9;
+  --color-eden-400: #2ad7b2;
+  --color-eden-500: #11bb99;
+  --color-eden-600: #0a977d;
+  --color-eden-700: #0d7866;
+  --color-eden-800: #106356;
+  --color-eden-900: #124f45;
+  --color-eden-950: #03302b;
+}
 
 @layer base {
   @font-face {
@@ -23,7 +51,7 @@
 
 @layer components {
   .primary-btn {
-    @apply flex justify-center items-center py-1 px-5 bg-eden-400 text-black font-semibold rounded-md shadow-md hover:bg-eden-500 transition 
+    @apply flex justify-center items-center py-1 px-5 bg-eden-400 text-black font-semibold rounded-md shadow-md hover:bg-eden-500 transition
     focus:outline-none focus:ring-2 focus:ring-eden-500;
   }
   .secondary-btn {
@@ -45,7 +73,7 @@
   }
   .success {
     /* Success message */
-    @apply text-sm text-center border-2 border-green-600 rounded text-green-300 p-2;
+    @apply text-sm text-center border-2 border-green-600 rounded dark:text-green-300 text-green-900 p-2;
   }
   .warning {
     /* Warning message */
