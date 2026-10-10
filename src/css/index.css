@@ -73,7 +73,7 @@
   }
   .success {
     /* Success message */
-    @apply text-sm text-center border-2 border-green-600 rounded text-green-300 p-2;
+    @apply text-sm text-center border-2 border-green-600 rounded dark:text-green-300 text-green-900 p-2;
   }
   .warning {
     /* Warning message */
