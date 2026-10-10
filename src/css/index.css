@@ -1,6 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --breakpoint-xs: 425px;
+  --breakpoint-sm: 550px;
+  --breakpoint-md: 650px;
+  --breakpoint-lg: 768px;
+  --breakpoint-xl: 1024px;
+  --breakpoint-xxl: 1280px;
+
+  --font-sans: "Open-Sans", sans-serif;
+
+  --color-darkGray: #323436;
+  --color-black: #181a1c;
+  --color-white: #f9f9f9;
+
+  --color-eden-50: #f0fdf9;
+  --color-eden-100: #cbfcee;
+  --color-eden-200: #97f8dc;
+  --color-eden-300: #5bedc9;
+  --color-eden-400: #2ad7b2;
+  --color-eden-500: #11bb99;
+  --color-eden-600: #0a977d;
+  --color-eden-700: #0d7866;
+  --color-eden-800: #106356;
+  --color-eden-900: #124f45;
+  --color-eden-950: #03302b;
+}
 
 @layer base {
   @font-face {

@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth h-full">
+<!doctype html>
+<html
+  lang="en"
+  class="scroll-smooth h-full">
   <head>
     <!-- Basic meta tags/page info -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="ie=edge" />
     <!-- SEO meta tags -->
     <meta
       name="description"
@@ -12,13 +18,22 @@
     <meta
       name="keywords"
       content="Posteria, Social media, platform, application, CSS, Frameworks, Assignment, Tore Hirth, Tore M. Hirth" />
-    <meta name="author" content="Tore M. Hirth" />
+    <meta
+      name="author"
+      content="Tore M. Hirth" />
     <!-- Styles/CSS -->
-    <link rel="stylesheet" href="../src/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="../src/css/index.css" />
     <!-- JavaScript/Script -->
-    <script type="module" src="../src/js/app.mjs"></script>
+    <script
+      type="module"
+      src="../src/js/app.mjs"></script>
     <!-- favicon -->
-    <link rel="icon" href="../src/assets/logo/favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="../src/assets/logo/favicon.ico"
+      type="image/x-icon" />
     <!-- Page title -->
     <title>Feed | Posteria</title>
   </head>
@@ -26,7 +41,8 @@
     <!-- Desktop aside menu -->
     <aside class="hidden lg:flex sticky top-0 z-50 bg-transparent">
       <nav class="flex flex-col absolute">
-        <div class="flex flex-col gap-3 items-start justify-center h-screen my-auto font-semibold pl-1">
+        <div
+          class="flex flex-col gap-3 items-start justify-center h-screen my-auto font-semibold pl-1">
           <!-- search button -->
           <button
             id="aside-search-btn"
@@ -35,8 +51,8 @@
               id="aside-search-button"
               for="aside-feed-search"
               class="cursor-pointer flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0">
-              <span for="aside-feed-search"
-                ><svg
+              <span for="aside-feed-search">
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -49,7 +65,11 @@
                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                 </svg>
               </span>
-              <span for="aside-feed-search" class="hidden xl:block cursor-pointer">Search</span>
+              <span
+                for="aside-feed-search"
+                class="hidden xl:block cursor-pointer">
+                Search
+              </span>
             </label>
           </button>
           <!-- Feed button -->
@@ -76,8 +96,8 @@
           <a
             href="#"
             aria-label="Messages button"
-            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
-            ><svg
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400">
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -108,7 +128,11 @@
                 stroke-linejoin="round"
                 d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
-            <span class="hidden xl:block" for="post-title">New post</span>
+            <span
+              class="hidden xl:block"
+              for="post-title">
+              New post
+            </span>
             <span
               id="active-round-dot"
               class="hidden -ml-1 w-2 h-2 border-4 border-eden-400 rounded-full"></span>
@@ -117,8 +141,8 @@
           <a
             href="#"
             aria-label="Notifications button"
-            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
-            ><svg
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400">
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -136,8 +160,8 @@
           <a
             href="../profile/index.html"
             aria-label="Profile button"
-            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400"
-            ><svg
+            class="flex text-sm items-center lg:w-fit lg:ml-5 xl:w-full gap-4 py-2 xl:px-5 xl:ml-0 rounded-lg transition xl:hover:bg-eden-400 xl:hover:shadow-md xl:hover:dark:text-black xl:active:ring-2 xl:ring-eden-400">
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -214,8 +238,10 @@
     <header class="sticky top-0 bg-black z-50">
       <div class="flex items-center justify-start gap-6 px-3 py-1 xs:max-w-xl lg:hidden mx-auto">
         <!-- logo -->
-        <a href="#" aria-label="Home/feed button"
-          ><svg
+        <a
+          href="#"
+          aria-label="Home/feed button">
+          <svg
             aria-label="Posteria logo"
             width="41"
             height="40"
@@ -241,8 +267,8 @@
         <!-- search bar -->
         <div
           class="flex w-full items-center px-4 py-1 rounded-lg bg-gray-200 dark:bg-darkGray focus-within:bg-black focus-within:ring-1 ring-eden-400 dark:focus-within:bg-opacity-20">
-          <label for="feed-search"
-            ><svg
+          <label for="feed-search">
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -323,25 +349,37 @@
       <div class="hidden lg:block">
         <div
           id="aside-feed-search-container"
-          class="hidden flex-col justify-center transition-all max-w-xl mx-auto mt-2 px-4 py-1 rounded-lg focus-within:bg-black focus-within:ring ring-eden-400 focus-within:bg-transparent">
+          class="hidden flex-col justify-center transition-all max-w-xl mx-auto mt-2 px-4 py-1 rounded-lg focus-within:ring ring-eden-400">
           <input
             type="search"
             id="aside-feed-search"
             class="w-full pl-4 appearance-none bg-transparent border-none outline-none placeholder:text-black dark:placeholder-white placeholder:text-opacity-50 dark:placeholder-opacity-50 focus:py-1 transition-all hidden"
             placeholder="Search" />
-          <div id="info-message" class="hidden items-center justify-center mt-3 rounded-lg border-none"></div>
+          <div
+            id="info-message"
+            class="hidden items-center justify-center mt-3 rounded-lg border-none"></div>
         </div>
       </div>
       <!-- create post  -->
-      <section id="create-post-section" class="px-3">
+      <section
+        id="create-post-section"
+        class="px-3">
         <div class="flex flex-col gap-4 mt-4 max-w-xl mx-auto">
-          <label for="post-title" class="text-center text-lg font-semibold">Create new post</label>
+          <label
+            for="post-title"
+            class="text-center text-lg font-semibold">
+            Create new post
+          </label>
           <div id="info-message"></div>
           <!-- Form -->
-          <form id="create-post-form" enctype="multipart/form-data" class="flex flex-col gap-4 h-full">
+          <form
+            id="create-post-form"
+            enctype="multipart/form-data"
+            class="flex flex-col gap-4 h-full">
             <!-- Fieldset -->
             <fieldset class="flex flex-col gap-4">
-              <div class="border border-black dark:border-white rounded-lg focus-within:border-eden-400">
+              <div
+                class="border border-black dark:border-white rounded-lg focus-within:border-eden-400">
                 <input
                   type="text"
                   name="title"
@@ -388,7 +426,11 @@
                 </div>
               </div>
               <!-- Submit Button -->
-              <button type="submit" class="primary-btn w-fit px-6">Publish</button>
+              <button
+                type="submit"
+                class="primary-btn w-fit px-6">
+                Publish
+              </button>
             </fieldset>
           </form>
           <!-- Bottom Border -->
@@ -410,7 +452,10 @@
             <h1 class="text-2xl font-semibold">Feed</h1>
             <div class="flex gap-2 items-center">
               <span class="text-sm hidden lg:block">Sort</span>
-              <button id="sort-dropdown" type="menu" aria-label="Sort posts">
+              <button
+                id="sort-dropdown"
+                type="menu"
+                aria-label="Sort posts">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -427,7 +472,9 @@
             </div>
           </div>
           <!-- Sort dropdown menu -->
-          <div id="sort-menu" class="hidden relative flex flex-col items-end transition-all">
+          <div
+            id="sort-menu"
+            class="hidden relative flex flex-col items-end transition-all">
             <div
               class="absolute bg-darkGray flex flex-col items-center gap-2 w-40 mt-3 rounded-lg py-2 px-2 text-white text-sm">
               <!-- Sort by descending -->
@@ -443,7 +490,10 @@
                   stroke-width="1.5"
                   stroke="currentColor"
                   class="size-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5" />
                 </svg>
                 <span type="button">Descending</span>
               </button>
@@ -460,7 +510,10 @@
                   stroke-width="1.5"
                   stroke="currentColor"
                   class="size-4 opacity-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5" />
                 </svg>
                 <span type="button">Ascending</span>
               </button>
@@ -471,14 +524,24 @@
       <!-- Feed -->
       <section class="px-3 mt-8">
         <!-- post -->
-        <div id="feed-posts" class="flex flex-col mt-4 max-w-xl mx-auto">
+        <div
+          id="feed-posts"
+          class="flex flex-col mt-4 max-w-xl mx-auto">
           <div id="feed-info-message"></div>
         </div>
-        <div id="view-more-btn-wrapper" class="hidden flex w-full justify-center">
-          <button id="view-more-btn" class="primary-btn mb-4">View More</button>
+        <div
+          id="view-more-btn-wrapper"
+          class="hidden flex w-full justify-center">
+          <button
+            id="view-more-btn"
+            class="primary-btn mb-4">
+            View More
+          </button>
         </div>
         <!-- loader -->
-        <div id="loader" class="text-center">
+        <div
+          id="loader"
+          class="text-center">
           <div role="status">
             <svg
               aria-hidden="true"
@@ -502,8 +565,11 @@
     <footer class="sticky bottom-0 rounded-t-lg bg-darkGray text-white mt-auto">
       <nav class="flex justify-around items-center px-3 py-1 lg:hidden">
         <!-- Feed -->
-        <a href="#" aria-label="Feed/home button" class="text-eden-400"
-          ><svg
+        <a
+          href="#"
+          aria-label="Feed/home button"
+          class="text-eden-400">
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -517,8 +583,10 @@
           </svg>
         </a>
         <!-- messages/inbox -->
-        <a href="#" aria-label="Messages button"
-          ><svg
+        <a
+          href="#"
+          aria-label="Messages button">
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -532,8 +600,11 @@
           </svg>
         </a>
         <!-- plus/new post -->
-        <a href="#" aria-label="New post button" class="new-post-btn"
-          ><svg
+        <a
+          href="#"
+          aria-label="New post button"
+          class="new-post-btn">
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -547,8 +618,10 @@
           </svg>
         </a>
         <!-- notifications -->
-        <a href="#" aria-label="Notifications button"
-          ><svg
+        <a
+          href="#"
+          aria-label="Notifications button">
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -562,8 +635,10 @@
           </svg>
         </a>
         <!-- profile -->
-        <a href="../profile/index.html" aria-label="Profile button"
-          ><svg
+        <a
+          href="../profile/index.html"
+          aria-label="Profile button">
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
