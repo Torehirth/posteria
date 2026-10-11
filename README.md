@@ -1,79 +1,61 @@
 # Posteria
 
-<div align="left">
-  <img src="https://github.com/user-attachments/assets/6846cc91-4ec3-42f8-8acc-91982dc1d3be" alt="mobile" width="200">
-</div>
+Posteria is a responsive social media application built with JavaScript, Tailwind CSS, and the Noroff Social API. Users can create and interact with posts, manage their profiles, and connect with other users.
 
-Posteria is a social media platform for posting content and connecting with others. It aims to provide an intuitive, responsive, and visually appealing interface for users to share their thoughts and interact with their networks.
+[Live Demo](https://js2-posteria.netlify.app/)
 
-- [Live website](https://js2-posteria.netlify.app)
+<img src="https://github.com/user-attachments/assets/6846cc91-4ec3-42f8-8acc-91982dc1d3be" alt="Posteria mobile preview" width="200">
 
-## Description
+## Features
 
-Posteria offers the following features to enhance user experience:
+- User authentication and profile management
+- Create and share posts
+- Browse content and interact with other users
+- Responsive design for mobile and desktop
+- Dark and light mode
+- User interface designed and prototyped in Figma
 
-- Create and share posts with others.
-- Sleek and responsive design using Tailwind CSS.
-- Dark and light mode for optimal user accessibility.
-- Prototyped with user-centric design principles using Figma.
+## Tech Stack
 
-This project is built with simplicity and scalability, utilizing modern web development tools and techniques.
-
-## Built With
-
-The project utilizes the following technologies:
-
-- HTML
-- Tailwind CSS
-- JavaScript
-- Figma
+- **Frontend:** HTML, JavaScript, Tailwind CSS
+- **API:** Noroff Social API
+- **Design:** Figma
+- **Deployment:** Netlify
+- **Tooling:** npm, Git, GitHub
 
 ## Getting Started
 
-### Installing
+1. Clone the repository:
 
-To get started with Posteria, follow these steps:
+   ```bash
+   git clone https://github.com/Torehirth/posteria.git
+   cd posteria
+   ```
 
-1. Clone the repo:
+2. Install dependencies:
 
-```bash
-git clone https://github.com/torehirth/posteria.git
-```
+   ```bash
+   npm install
+   ```
 
-2. Navigate to the project directory:
+3. Start the development server:
 
-```bash
-cd posteria
-```
+   ```bash
+   npm run dev
+   ```
 
-3. Install the dependencies using NPM:
+4. Build for production:
 
-```bash
-npm install
-```
+   ```bash
+   npm run build
+   ```
 
-### Running
+## About
 
-To run the project in development mode with Tailwind CSS:
+This project was developed as part of the Front-End Development programme at Noroff.
 
-```bash
-npm run dev
-```
-
-To build the project for production:
-
-```bash
-npm run build
-```
-
-After running the build process, you can open the index.html file in your preferred browser to view the website locally.
-
-## Contributing
-
-Contributions are welcome! If you’d like to contribute to Posteria, please fork the repository, make changes, and submit a pull request. Feedback and suggestions are also appreciated—feel free to open an issue with your ideas.
+The main focus was building a responsive social media application using Tailwind CSS and JavaScript, integrating an external REST API, and applying user-centred design principles.
 
 ## Contact
 
-Feel free to reach out with any questions or feedback:
-
-[My LinkedIn page](https://www.linkedin.com/in/torehirth/)
+[LinkedIn](https://www.linkedin.com/in/torehirth/)
